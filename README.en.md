@@ -100,7 +100,7 @@ This set combines community improvements with the author's real-robot modificati
 
 > 🛒 **[Buy HAT / IMU boards from the author](https://item.taobao.com/item.htm?id=1095121548583)**
 >
-> **Please note: the author orders these PCBs for fabrication at JLCPCB (嘉立创).** Use this link to purchase HAT or IMU boards; confirm the variant, configuration, and included items on the listing and with the seller before ordering.
+> **Please note: these boards are fabricated at JLCPCB (嘉立创) and populated by the author. Ready to use on arrival, they are the same boards the author uses, validated through extended real-robot operation, with no jumper bridging required and no packet loss. Feetech AMP2.0 connectors make them convenient and easy to use.**
 
 🎬 **[Watch the complete IMU build · Bilibili](https://www.bilibili.com/video/BV1qapz6PERs/)**
 
