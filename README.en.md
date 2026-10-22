@@ -124,8 +124,8 @@ This project grew from one board, one duck, and many debugging sessions. I am an
     </td>
     <td align="center" valign="top" width="33%">
       <b>💬 Join the WeChat group</b><br><br>
-      <a href="docs/assets/community-wechat-qr.jpg"><img width="220" alt="WeChat community group QR code" src="docs/assets/community-wechat-qr.jpg" /></a><br>
-      <sub>Scan in WeChat, or click the QR code for the original image.<br>This QR code is valid before October 21, 2026.</sub>
+      <a href="docs/assets/community-wechat-qr.png"><img width="220" alt="WeChat community group QR code" src="docs/assets/community-wechat-qr.png" /></a><br>
+      <sub>Scan in WeChat, or click the QR code for the original image.<br>This QR code is valid before October 29, 2026.</sub>
     </td>
     <td align="center" valign="top" width="33%">
       <b>🛒 Buy a complete robot</b><br><br>
