@@ -2,6 +2,10 @@
 
 # DIY HAT and IMU hardware
 
+> 🛒 **[Buy HAT / IMU boards from the author](https://item.taobao.com/item.htm?id=1095121548583)**
+>
+> **Please note: the author orders these PCBs for fabrication at JLCPCB (嘉立创).** Use this link to purchase HAT or IMU boards; confirm the variant, configuration, and included items on the listing and with the seller before ordering.
+
 **[🔧 Assembly notes: 5 GHz Wi-Fi for ZERO and a 1000 µF capacitor across the main power input; wiring and precautions](../docs/ASSEMBLY-NOTES.en.md)**
 
 **The original HAT and independent torso IMU have passed extended real-robot use and operate normally. An AMP2.0 connector variant is also available.**

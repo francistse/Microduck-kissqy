@@ -2,6 +2,10 @@
 
 # IMU build timeline
 
+> 🛒 **[Buy HAT / IMU boards from the author](https://item.taobao.com/item.htm?id=1095121548583)**
+>
+> **Please note: the author orders these PCBs for fabrication at JLCPCB (嘉立创).** Use this link to purchase HAT or IMU boards; confirm the variant, configuration, and included items on the listing and with the seller before ordering.
+
 🎬 **[Watch the complete IMU build (Bilibili)](https://www.bilibili.com/video/BV1qapz6PERs/)**
 
 **For the Feetech build, start with [current IMU FT6 download and flashing](IMU-FIRMWARE.en.md).** The timeline below records hardware fabrication and Feetech adaptation.

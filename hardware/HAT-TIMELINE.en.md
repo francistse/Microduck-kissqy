@@ -2,6 +2,10 @@
 
 # HAT build timeline
 
+> 🛒 **[Buy HAT / IMU boards from the author](https://item.taobao.com/item.htm?id=1095121548583)**
+>
+> **Please note: the author orders these PCBs for fabrication at JLCPCB (嘉立创).** Use this link to purchase HAT or IMU boards; confirm the variant, configuration, and included items on the listing and with the seller before ordering.
+
 All dates below are in 2026. This records the process from studying the official design and choosing a two-layer board to home reflow and full-robot integration.
 
 **Current status, confirmed October 12, 2026: validated through extended use in the complete robot; operating normally with no identified issues.**

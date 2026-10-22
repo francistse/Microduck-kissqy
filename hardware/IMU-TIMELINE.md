@@ -2,6 +2,10 @@
 
 # IMU 制作时间线
 
+> 🛒 **[购买 HAT 主板 / IMU 板（作者提供）](https://item.taobao.com/item.htm?id=1095121548583)**
+>
+> **请注意：这些板子由作者自行在嘉立创打板。** 需要购买 HAT 或 IMU 的朋友可从此入口进入，具体款式、配置与发货内容以商品页面及下单沟通为准。
+
 🎬 **[观看 IMU 手工制作全过程（Bilibili）](https://www.bilibili.com/video/BV1qapz6PERs/)**
 
 **搭建飞特版本先看 [当前 IMU FT6 下载与烧录指南](IMU-FIRMWARE.md)**；下面记录硬件制作和飞特适配过程。

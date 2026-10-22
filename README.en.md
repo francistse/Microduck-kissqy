@@ -98,6 +98,10 @@ This set combines community improvements with the author's real-robot modificati
 
 ## 🔧 DIY HAT and IMU
 
+> 🛒 **[Buy HAT / IMU boards from the author](https://item.taobao.com/item.htm?id=1095121548583)**
+>
+> **Please note: the author orders these PCBs for fabrication at JLCPCB (嘉立创).** Use this link to purchase HAT or IMU boards; confirm the variant, configuration, and included items on the listing and with the seller before ordering.
+
 🎬 **[Watch the complete IMU build · Bilibili](https://www.bilibili.com/video/BV1qapz6PERs/)**
 
 Both the custom HAT and the independent torso IMU have passed extended real-robot use, operate normally, and have no identified issues.
