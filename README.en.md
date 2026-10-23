@@ -2,6 +2,22 @@
 
 <div align="center">
 
+# 🦆 Microduck Feetech HD1910 · Build, control and reinforcement learning
+
+A personal project based on Pollen Robotics Microduck, providing a **Radxa ZERO 3W system image, Feetech HD1910 firmware, Chinese-language robot and training consoles, DIY HAT / IMU boards and complete 3D printing files** for building, running and training a bipedal robot duck.
+
+**Stable public release: V167 / control.43 · Author: kissqy**
+
+[🚀 Complete build guide](docs/MICRODUCK-BUILD-GUIDE.en.md) · [❓ FAQ](docs/MICRODUCK-FAQ.en.md) · [🌐 Read the guides online](https://kissqy.github.io/Microduck-kissqy/guides/en.html)
+
+**An integrated ZERO 3W firmware image · Official Microduck 0.15.1 · Feetech HD1910 support · Two Chinese-language consoles**
+
+**Versions: Robot Console R17 V167 · Firmware control.43 · Training Studio R1.5.27 · First-boot Wi-Fi setup R5**
+
+[🦆 **Duck shopping guide**](DUCK-SHOPPING-LIST.en.md) · [🖨️ **Complete printing set · FrankenDuck**](hardware/3d-print-frankenduck/README.en.md) · [📥 Downloads](#downloads-and-versions) · [📚 Guides](docs/README.en.md) · [🛠️ Source](microduck-hd1910/README.en.md) · [🌱 The author's learning journey](docs/AUTHOR-JOURNEY.en.md)
+
+[🎮 Robot Console online demo](https://kissqy.github.io/Microduck-kissqy/) · [🧠 Training Studio online demo](https://kissqy.github.io/Microduck-kissqy/training/)
+
 ## 🎬 See the duck in action — 7 real-robot videos
 
 <table>
@@ -18,23 +34,23 @@
 
 <sub>These clips show the real robot. The online demos now match the Robot Console R17 V167 and Training Studio R1.5.27 interfaces. They use simulated data and cannot connect to your robot or run actual training.</sub>
 
-# 🦆 Microduck · Bring a little desktop duck to life
-
-### Flash the image. Connect to Wi-Fi. Open the console. Get your duck moving.
-
-**An integrated ZERO 3W firmware image · Official Microduck 0.15.1 · Feetech HD1910 support · Two Chinese-language consoles**
-
-**Versions: Robot Console R17 V167 · Firmware control.43 · Training Studio R1.5.27 · First-boot Wi-Fi setup R5**
-
-[🦆 **Duck shopping guide**](DUCK-SHOPPING-LIST.en.md) · [🖨️ **Complete printing set · FrankenDuck**](hardware/3d-print-frankenduck/README.en.md) · [📥 Downloads](#downloads-and-versions) · [📚 Guides](docs/README.en.md) · [🛠️ Source](microduck-hd1910/README.en.md) · [🌱 The author's learning journey](docs/AUTHOR-JOURNEY.en.md)
-
-[🎮 Robot Console online demo](https://kissqy.github.io/Microduck-kissqy/) · [🧠 Training Studio online demo](https://kissqy.github.io/Microduck-kissqy/training/)
 
 </div>
 
 > ✅ **Public Image R1 is available!** The integrated image has passed a fresh-card installation test covering boot, Wi-Fi setup, SSH, robot communication, and R17 recognition. **No need to compile the robot firmware yourself.**
 >
 > 📦 **Robot Console R17 V167 and Training Studio R1.5.27 are ready to download.** Compiled control.43 firmware and both console sources are also published. All downloads are grouped in the table below.
+
+## 🧭 Start with your goal
+
+| Your goal | Go here |
+| --- | --- |
+| Build a Microduck with Feetech servos | [Parts to first walking: build guide](docs/MICRODUCK-BUILD-GUIDE.en.md) |
+| Flash, calibrate and operate an assembled duck | [V167 user guide](microduck-hd1910/firmware/console/USER-GUIDE.en.md) |
+| Train walking, recovery or your own movements | [Training Studio R1.5.27](microduck-hd1910/training-console/USER-GUIDE.en.md) |
+| Build HAT and a separate IMU | [PCB projects, build records and flashing](hardware/README.en.md) |
+| Troubleshoot network, reboot, IMU or calibration | [FAQ and troubleshooting links](docs/MICRODUCK-FAQ.en.md) |
+
 
 ---
 

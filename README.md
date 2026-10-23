@@ -1,12 +1,22 @@
-
-
-
-
-
-
 **简体中文** | [English](README.en.md)
 
 <div align="center">
+
+# 🦆 Microduck 飞特 HD1910 · 实机搭建、中文中控与强化学习训练
+
+基于 Pollen Robotics Microduck 的个人机器人项目，提供 **Radxa ZERO 3W 系统镜像、飞特 HD1910 适配固件、中文机器人中控与训练中控、自制 HAT / IMU，以及全套 3D 打印件**。面向想自己搭建、运行或训练 Microduck 双足机器鸭的朋友。
+
+**稳定公开版：V167 / control.43 · 作者 kissqy**
+
+[🚀 从零搭建指南](docs/MICRODUCK-BUILD-GUIDE.md) · [❓ 常见问题](docs/MICRODUCK-FAQ.md) · [🌐 在线阅读教程](https://kissqy.github.io/Microduck-kissqy/guides/)
+
+**基于官方 Microduck 0.15.1 · 飞特 HD1910 适配 · 两套中文中控**
+
+**软件版本：机器人中控 R17 V167 · 固件 control.43 · 训练中控 R1.5.27 · 首次配网 R5**
+
+[🦆 **鸭子采购总清单**](DUCK-SHOPPING-LIST.md) · [🖨️ **打印全套 · 缝合怪版**](hardware/3d-print-frankenduck/) · [📥 前往下载区](#下载与版本) · [📚 使用说明](docs/README.md) · [🛠️ 源码](microduck-hd1910/README.md) · [🌱 作者如何从新手进阶](docs/AUTHOR-JOURNEY.md)
+
+[🎮 机器人中控在线演示](https://kissqy.github.io/Microduck-kissqy/) · [🧠 训练中控在线演示](https://kissqy.github.io/Microduck-kissqy/training/)
 
 ## 🎬 看看鸭鸭的真实表现（7 段视频）
 
@@ -24,23 +34,23 @@
 
 <sub>以上为实机视频。在线演示已同步机器人中控 R17 V167 与训练中控 R1.5.27 的界面，使用模拟数据，不连接实机，也不会真正训练。</sub>
 
-# 🦆 Microduck · 让桌面上的小鸭动起来
-
-### 刷好镜像，连上 Wi-Fi，打开中控。简单一点，好玩很多。
-
-**基于官方 Microduck 0.15.1 · 飞特 HD1910 适配 · 两套中文中控**
-
-**软件版本：机器人中控 R17 V167 · 固件 control.43 · 训练中控 R1.5.27 · 首次配网 R5**
-
-[🦆 **鸭子采购总清单**](DUCK-SHOPPING-LIST.md) · [🖨️ **打印全套 · 缝合怪版**](hardware/3d-print-frankenduck/) · [📥 前往下载区](#下载与版本) · [📚 使用说明](docs/README.md) · [🛠️ 源码](microduck-hd1910/README.md) · [🌱 作者如何从新手进阶](docs/AUTHOR-JOURNEY.md)
-
-[🎮 机器人中控在线演示](https://kissqy.github.io/Microduck-kissqy/) · [🧠 训练中控在线演示](https://kissqy.github.io/Microduck-kissqy/training/)
 
 </div>
 
 > ✅ **Public Image R1 已正式发布！** 整合镜像已通过重新刷卡、首次配网、SSH、机器人通信和 R17 中控识别测试，**无需自行编译机器人固件。**
 >
 > 📦 **机器人中控 R17 V167 和训练中控 R1.5.27 已上传，可直接下载。** 配套的已编译 control.43 固件及两个中控源码也已公开，下载统一见下方表格。
+
+## 🧭 从你要做的事情开始
+
+| 你的目标 | 直接入口 |
+| --- | --- |
+| 想自己做一只 Microduck 飞特版 | [采购到第一次行走的完整路线](docs/MICRODUCK-BUILD-GUIDE.md) |
+| 已经装好，准备刷机、标定和操作 | [V167 使用指南](microduck-hd1910/firmware/console/README.zh-CN.md) |
+| 想训练行走、起身或自己的动作 | [训练中控 R1.5.27](microduck-hd1910/training-console/README.zh-CN.md) |
+| 想制作 HAT 或独立 IMU | [硬件工程、制作记录和烧录入口](hardware/README.md) |
+| 遇到断网、重启、IMU 或标定问题 | [常见问题与排查入口](docs/MICRODUCK-FAQ.md) |
+
 
 ---
 

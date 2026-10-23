@@ -8,10 +8,12 @@ English editions of the homepage, user guides, hardware records, and technical n
 
 | Guide | 中文 | English |
 | --- | --- | --- |
+| 🚀 Microduck HD1910 从零搭建 / Complete build guide | [中文](MICRODUCK-BUILD-GUIDE.md) | [English](MICRODUCK-BUILD-GUIDE.en.md) |
+| ❓ 刷机、标定、IMU、断网与重启 / FAQ | [中文](MICRODUCK-FAQ.md) | [English](MICRODUCK-FAQ.en.md) |
 | 🔧 装机与使用注意事项 / Assembly: 5 GHz Wi-Fi & 1000 µF input capacitor | [中文](ASSEMBLY-NOTES.md) | [English](ASSEMBLY-NOTES.en.md) |
 | Repository layout and repeated resources | [中文](REPOSITORY-LAYOUT.md) | [English](REPOSITORY-LAYOUT.en.md) |
 | Compiled Feetech firmware control.43 — download and install | [中文](../release-assets/README.md) | [English](../release-assets/README.en.md) |
-| 🎬 See the duck in action — 5 real-robot videos | [中文](../README.md) | [English](../README.en.md) |
+| 🎬 See the duck in action — 7 real-robot videos | [中文](../README.md) | [English](../README.en.md) |
 | 🌱 The author's learning journey — timeline and complete question recap | [中文](AUTHOR-JOURNEY.md) | [English](AUTHOR-JOURNEY.en.md) |
 | Current public Microduck release | [中文](../START-HERE.txt) | [English](../START-HERE.en.md) |
 | 🦆 Microduck integrated system image R1 | [中文](releases/public-image-r1.md) | [English](releases/public-image-r1.en.md) |
