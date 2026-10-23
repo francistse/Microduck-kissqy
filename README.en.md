@@ -18,6 +18,16 @@ A personal project with a working physical replica based on Pollen Robotics Micr
 
 [🎮 Robot Console online demo](https://kissqy.github.io/Microduck-kissqy/) · [🧠 Training Studio online demo](https://kissqy.github.io/Microduck-kissqy/training/)
 
+<table align="center">
+  <tr>
+    <td align="center" valign="top">
+      <b>💬 Join the WeChat group</b><br><br>
+      <a href="docs/assets/community-wechat-qr.png"><img width="220" alt="WeChat community group QR code" src="docs/assets/community-wechat-qr.png" /></a><br>
+      <sub>Scan in WeChat, or click the QR code for the original image.<br>This QR code is valid before October 29, 2026.</sub>
+    </td>
+  </tr>
+</table>
+
 ## 🎬 See the duck in action — 7 real-robot videos
 
 <table>
@@ -138,16 +148,11 @@ This project grew from one board, one duck, and many debugging sessions. I am an
 
 <table align="center">
   <tr>
-    <td align="center" valign="top" width="33%">
+    <td align="center" valign="top" width="50%">
       <b>❤️ Support the author</b><br><br>
       <img width="180" alt="QR code to support the author" src="https://github.com/user-attachments/assets/49054608-65ba-41d6-b3f1-a97941976c4b" />
     </td>
-    <td align="center" valign="top" width="33%">
-      <b>💬 Join the WeChat group</b><br><br>
-      <a href="docs/assets/community-wechat-qr.png"><img width="220" alt="WeChat community group QR code" src="docs/assets/community-wechat-qr.png" /></a><br>
-      <sub>Scan in WeChat, or click the QR code for the original image.<br>This QR code is valid before October 29, 2026.</sub>
-    </td>
-    <td align="center" valign="top" width="33%">
+    <td align="center" valign="top" width="50%">
       <b>🛒 Buy a complete robot</b><br><br>
       <a href="docs/assets/purchase-wechat-qr.jpg"><img width="220" alt="WeChat contact QR code for complete robot purchases" src="docs/assets/purchase-wechat-qr.jpg" /></a><br>
       <sub>Scan in WeChat to ask about purchasing a complete robot.<br>Click the QR code for the original image.</sub>

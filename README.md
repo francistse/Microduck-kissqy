@@ -20,6 +20,16 @@
 
 [🎮 机器人中控在线演示](https://kissqy.github.io/Microduck-kissqy/) · [🧠 训练中控在线演示](https://kissqy.github.io/Microduck-kissqy/training/)
 
+<table align="center">
+  <tr>
+    <td align="center" valign="top">
+      <b>💬 加群交流</b><br><br>
+      <a href="docs/assets/community-wechat-qr.png"><img width="220" alt="微信交流群二维码" src="docs/assets/community-wechat-qr.png" /></a><br>
+      <sub>微信扫一扫，或点击二维码查看原图。<br>本二维码在 2026 年 10 月 29 日前有效。</sub>
+    </td>
+  </tr>
+</table>
+
 ## 🎬 看看鸭鸭的真实表现（7 段视频）
 
 <table>
@@ -139,16 +149,11 @@
 
 <table align="center">
   <tr>
-    <td align="center" valign="top" width="33%">
+    <td align="center" valign="top" width="50%">
       <b>❤️ 支持作者</b><br><br>
       <img width="180" alt="支持作者的二维码" src="https://github.com/user-attachments/assets/49054608-65ba-41d6-b3f1-a97941976c4b" />
     </td>
-    <td align="center" valign="top" width="33%">
-      <b>💬 加群交流</b><br><br>
-      <a href="docs/assets/community-wechat-qr.png"><img width="220" alt="微信交流群二维码" src="docs/assets/community-wechat-qr.png" /></a><br>
-      <sub>微信扫一扫，或点击二维码查看原图。<br>本二维码在 2026 年 10 月 29 日前有效。</sub>
-    </td>
-    <td align="center" valign="top" width="33%">
+    <td align="center" valign="top" width="50%">
       <b>🛒 整机购买</b><br><br>
       <a href="docs/assets/purchase-wechat-qr.jpg"><img width="220" alt="整机购买微信二维码" src="docs/assets/purchase-wechat-qr.jpg" /></a><br>
       <sub>微信扫码咨询整机购买。<br>点击二维码查看原图。</sub>
