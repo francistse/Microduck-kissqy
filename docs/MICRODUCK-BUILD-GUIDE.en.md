@@ -1,8 +1,8 @@
 [简体中文](MICRODUCK-BUILD-GUIDE.md) | **English**
 
-# Build a Microduck with Feetech HD1910: parts, assembly, firmware, calibration and training
+# Microduck Feetech HD1910 replica guide: parts, 3D printing, firmware, calibration and training
 
-Microduck-kissqy is kissqy's personal project based on Pollen Robotics Microduck 0.15.1, for **Radxa ZERO 3W, 15 Feetech HD1910 servos and this repository's HAT / torso IMU**. It includes a system image, a Chinese-language Robot Console, a separate reinforcement-learning Training Studio, PCB projects and printing files.
+Microduck-kissqy is kissqy's working physical replica project based on Pollen Robotics Microduck 0.15.1, for **Radxa ZERO 3W, 15 Feetech HD1910 servos and this repository's HAT / torso IMU**. It includes a system image, a Chinese-language Robot Console, a separate reinforcement-learning Training Studio, PCB projects and printing files.
 
 **Stable public baseline: Robot Console R17 V167 / control.43 / Training Studio R1.5.27.** Updated October 23, 2026. See the [release baseline and validation scope](../microduck-hd1910/docs/BASELINE.en.md). Source is available; the author's original additions carry personal noncommercial terms, while upstream and third-party components retain their respective licenses. See [component licensing](../microduck-hd1910/LICENSE).
 

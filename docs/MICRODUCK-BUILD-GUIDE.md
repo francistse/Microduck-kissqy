@@ -1,8 +1,8 @@
 **简体中文** | [English](MICRODUCK-BUILD-GUIDE.en.md)
 
-# Microduck 飞特 HD1910 从零搭建指南：采购、装配、刷机、标定与训练
+# Microduck 飞特版从零复刻教程：材料清单、3D 打印、刷机、标定与训练
 
-Microduck-kissqy 是 kissqy 基于 Pollen Robotics Microduck 0.15.1 制作的个人机器人项目，面向 **Radxa ZERO 3W + 15 个飞特 HD1910 舵机 + 本仓库 HAT / IMU**。这里提供系统镜像、中文机器人中控、独立强化学习训练中控、自制电路板工程，以及全套打印件和摆盘。
+Microduck-kissqy 是 kissqy 基于 Pollen Robotics Microduck 0.15.1、已完成实机复刻的个人项目，面向 **Radxa ZERO 3W + 15 个飞特 HD1910 舵机 + 本仓库 HAT / IMU**。这里提供系统镜像、中文机器人中控、独立强化学习训练中控、自制电路板工程，以及全套打印件和摆盘。
 
 **当前稳定公开版本：机器人中控 R17 V167 / 固件 control.43 / 训练中控 R1.5.27。** 本指南更新于 2026-10-23。版本及验证依据见[发布基线](../microduck-hd1910/docs/BASELINE.md)。源码可获取；作者原创部分采用个人非商业许可，官方和第三方部分保留各自许可，见[分项许可](../microduck-hd1910/LICENSE)。
 

@@ -2,13 +2,13 @@
 
 <div align="center">
 
-# 🦆 Microduck Feetech HD1910 · Build, control and reinforcement learning
+# 🦆 Microduck Feetech HD1910 Replica · Build, control and reinforcement learning
 
-A personal project based on Pollen Robotics Microduck, providing a **Radxa ZERO 3W system image, Feetech HD1910 firmware, Chinese-language robot and training consoles, DIY HAT / IMU boards and complete 3D printing files** for building, running and training a bipedal robot duck.
+A personal project with a working physical replica based on Pollen Robotics Microduck, providing a **Radxa ZERO 3W system image, Feetech HD1910 firmware, Chinese-language robot and training consoles, DIY HAT / IMU boards and complete 3D printing files** for building, running and training a bipedal robot duck.
 
 **Stable public release: V167 / control.43 · Author: kissqy**
 
-[🚀 Complete build guide](docs/MICRODUCK-BUILD-GUIDE.en.md) · [❓ FAQ](docs/MICRODUCK-FAQ.en.md) · [🌐 Read the guides online](https://kissqy.github.io/Microduck-kissqy/guides/en.html)
+[🚀 Complete replica build guide](docs/MICRODUCK-BUILD-GUIDE.en.md) · [❓ FAQ](docs/MICRODUCK-FAQ.en.md) · [🌐 Read the guides online](https://kissqy.github.io/Microduck-kissqy/guides/en.html)
 
 **An integrated ZERO 3W firmware image · Official Microduck 0.15.1 · Feetech HD1910 support · Two Chinese-language consoles**
 

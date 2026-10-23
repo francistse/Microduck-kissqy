@@ -1,8 +1,16 @@
 [简体中文](MICRODUCK-FAQ.md) | **English**
 
-# Microduck Feetech FAQ: setup, calibration, IMU, gamepad Wi-Fi interference and power reboots
+# Microduck Feetech replica FAQ: setup, calibration, IMU, gamepad Wi-Fi interference and power reboots
 
-Scope: Microduck-kissqy, Radxa ZERO 3W, Feetech HD1910, Robot Console V167 / control.43. Author: kissqy. Updated October 23, 2026. [Complete build guide](MICRODUCK-BUILD-GUIDE.en.md).
+Scope: Microduck-kissqy, Radxa ZERO 3W, Feetech HD1910, Robot Console V167 / control.43. Author: kissqy. Updated October 23, 2026. [Complete replica build guide](MICRODUCK-BUILD-GUIDE.en.md).
+
+## What does a Microduck replica cost, and where is the BOM?
+
+The [shopping guide and cost breakdown](../DUCK-SHOPPING-LIST.en.md) separate body parts, HAT, IMU and tools using historical orders. Check the stated scope for printing, equipment, consumables, labor and unpriced items; the priced-material subtotal is not everyone's final build cost.
+
+## Where are the replica STL files and 3MF plates?
+
+The [FrankenDuck printing page](../hardware/3d-print-frankenduck/README.en.md) provides STLs, a five-plate 3MF project, previews and checksums. Adapt slicing to your printer and materials, and check the battery-holder and IMU mounting scope.
 
 ## What do I download for the HD1910 build?
 

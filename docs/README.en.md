@@ -1,6 +1,6 @@
 [简体中文](README.md) | **English**
 
-# Microduck documentation
+# Microduck replica documentation
 
 English editions of the homepage, user guides, hardware records, and technical notes. Current application interfaces remain Chinese; English guides include button labels for reference. Raw test logs, source code, and formal licenses retain their original text.
 
@@ -8,7 +8,7 @@ English editions of the homepage, user guides, hardware records, and technical n
 
 | Guide | 中文 | English |
 | --- | --- | --- |
-| 🚀 Microduck HD1910 从零搭建 / Complete build guide | [中文](MICRODUCK-BUILD-GUIDE.md) | [English](MICRODUCK-BUILD-GUIDE.en.md) |
+| 🚀 Microduck HD1910 从零复刻 / Complete replica build guide | [中文](MICRODUCK-BUILD-GUIDE.md) | [English](MICRODUCK-BUILD-GUIDE.en.md) |
 | ❓ 刷机、标定、IMU、断网与重启 / FAQ | [中文](MICRODUCK-FAQ.md) | [English](MICRODUCK-FAQ.en.md) |
 | 🔧 装机与使用注意事项 / Assembly: 5 GHz Wi-Fi & 1000 µF input capacitor | [中文](ASSEMBLY-NOTES.md) | [English](ASSEMBLY-NOTES.en.md) |
 | Repository layout and repeated resources | [中文](REPOSITORY-LAYOUT.md) | [English](REPOSITORY-LAYOUT.en.md) |

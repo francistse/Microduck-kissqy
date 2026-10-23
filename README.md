@@ -2,13 +2,15 @@
 
 <div align="center">
 
-# 🦆 Microduck 飞特 HD1910 · 实机搭建、中文中控与强化学习训练
+# 🦆 Microduck 飞特 HD1910 复刻 · 中文中控、强化学习训练与自制硬件
 
-基于 Pollen Robotics Microduck 的个人机器人项目，提供 **Radxa ZERO 3W 系统镜像、飞特 HD1910 适配固件、中文机器人中控与训练中控、自制 HAT / IMU，以及全套 3D 打印件**。面向想自己搭建、运行或训练 Microduck 双足机器鸭的朋友。
+基于 Pollen Robotics Microduck、已完成实机复刻的个人项目，提供 **Radxa ZERO 3W 系统镜像、飞特 HD1910 适配固件、中文机器人中控与训练中控、自制 HAT / IMU，以及全套 3D 打印件**。面向想在国内复刻、运行或训练 Microduck 双足机器鸭的朋友。
+
+**想复刻一只 Microduck？** 这里把材料采购、打印件、HAT／IMU 电路板、系统镜像、中文中控和训练流程串在一起，先从[飞特版复刻教程](docs/MICRODUCK-BUILD-GUIDE.md)开始。
 
 **稳定公开版：V167 / control.43 · 作者 kissqy**
 
-[🚀 从零搭建指南](docs/MICRODUCK-BUILD-GUIDE.md) · [❓ 常见问题](docs/MICRODUCK-FAQ.md) · [🌐 在线阅读教程](https://kissqy.github.io/Microduck-kissqy/guides/)
+[🚀 从零复刻教程](docs/MICRODUCK-BUILD-GUIDE.md) · [❓ 常见问题](docs/MICRODUCK-FAQ.md) · [🌐 在线阅读教程](https://kissqy.github.io/Microduck-kissqy/guides/)
 
 **基于官方 Microduck 0.15.1 · 飞特 HD1910 适配 · 两套中文中控**
 

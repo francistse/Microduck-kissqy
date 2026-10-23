@@ -1,8 +1,16 @@
 **简体中文** | [English](MICRODUCK-FAQ.en.md)
 
-# Microduck 飞特版常见问题：刷机、标定、IMU、手柄断网与供电重启
+# Microduck 飞特版复刻常见问题：刷机、标定、IMU、手柄断网与供电重启
 
-适用：Microduck-kissqy，Radxa ZERO 3W、飞特 HD1910、机器人中控 V167 / control.43。作者：kissqy；更新：2026-10-23。[从零搭建总指南](MICRODUCK-BUILD-GUIDE.md)。
+适用：Microduck-kissqy，Radxa ZERO 3W、飞特 HD1910、机器人中控 V167 / control.43。作者：kissqy；更新：2026-10-23。[从零复刻总指南](MICRODUCK-BUILD-GUIDE.md)。
+
+## Microduck 复刻需要多少钱？材料清单在哪里？
+
+本仓库提供按实际订单整理的[复刻材料清单与成本明细](../DUCK-SHOPPING-LIST.md)，分别列出本体、HAT、IMU 与工具。表中价格是历史采购记录，打印件、设备、耗材、手工时间及未列价项目的计价范围以该页说明为准，不能把已列材料合计当成所有人的最终复刻总成本。
+
+## Microduck 复刻的 3D 打印 STL 和摆盘在哪里？
+
+[缝合怪打印件页](../hardware/3d-print-frankenduck/README.md)提供全套 STL、5 盘 3MF、预览和校验值。按自己的打印机与材料调整切片设置，电池仓和 IMU 安装位的适配范围见该页。
 
 ## Microduck 飞特 HD1910 版需要下载什么？
 
@@ -48,4 +56,4 @@ SSH 超时本身不能证明一定是无线干扰；仍需结合 ZERO 是否重�
 
 在 [Issues](https://github.com/kissqy/Microduck-kissqy/issues) 写清：硬件与接口版本、机器人中控版本、实际固件标识、操作步骤、异常现象及日志或视频。先区分连接失败、服务启动失败、通信异常和运动异常，有助于复现。
 
-[搭建总指南](MICRODUCK-BUILD-GUIDE.md) · [文档目录](README.md) · [仓库首页](../README.md)
+[复刻总指南](MICRODUCK-BUILD-GUIDE.md) · [文档目录](README.md) · [仓库首页](../README.md)
