@@ -25,16 +25,16 @@
 
 | Item | Free PCB coupons | No PCB coupons |
 | --- | ---: | ---: |
-| 🦆 Duck body, including reference spare stock | ¥2205.43 | ¥2205.43 |
+| 🦆 Duck body, including reference spare stock | ¥2139.79 | ¥2139.79 |
 | 🔧 HAT complete board | ¥16.72 | ¥20.72 |
 | 🔧 IMU complete board | ¥12.33 | ¥16.33 |
-| **🦆 Whole duck total** | **¥2234.49** | **¥2242.49** |
+| **🦆 Whole duck total** | **¥2168.85** | **¥2176.85** |
 
 Totals use unrounded board costs and are then rounded to two decimal places.
 
 **Scope:** the listed hardware and reference spare stock only. **3D printers, printed parts, printing materials, build tools, soldering and cleaning consumables are excluded.** Bearings, wires, screws and connectors use the purchase quantities below, which include spare stock. TF/microSD cards and other items without recorded prices are outside this priced subtotal.
 
-The board lines above allocate component costs by actual use, including their historical shipping share. Without coupons, PCBs cost **¥20 for five boards per design (¥4 per board)**. Buying board components in whole packages for the first time brings the initial product budget to **¥2291.60 with free PCBs**, or **¥2331.60 without coupons**, including one five-board batch of each design. New-order shipping is separate.
+The board lines above allocate component costs by actual use, including their historical shipping share. Without coupons, PCBs cost **¥20 for five boards per design (¥4 per board)**. Buying board components in whole packages for the first time brings the initial product budget to **¥2225.96 with free PCBs**, or **¥2265.96 without coupons**, including one five-board batch of each design. New-order shipping is separate.
 
 ## Duck body
 
@@ -47,7 +47,7 @@ The board lines above allocate component costs by actual use, including their hi
 | **飞特 HD1910 串口总线舵机**<br>HD-1910-C001；HD-1910-C001 | 只 | 15 | ¥99.00 | ¥1485.00 | 深圳飞特舵机工厂店<br>[Product](https://item.taobao.com/item.htm?id=1078248851201) |
 | **Radxa ZERO 3W**<br>2GB RAM 无 eMMC 带排针[【Microduck 原版主板】]；2GB RAM / 无eMMC / 带排针 | 个 | 1 | ¥309.00 | ¥309.00 | 瑞莎计算机(深圳)有限公司<br>[Product](https://item.taobao.com/item.htm?id=763812025816) |
 | **NP-F550 电池与双充套装**<br>【NP-F550补光灯专用▲2200mAh】2电+标准双充套裝；沣标 NP-F550 / 2200mAh / 2块电池＋标准双充 | 套 | 1 | ¥84.59 | ¥84.59 | fb数码旗舰店<br>[Product](https://item.taobao.com/item.htm?id=585415365001) |
-| **IMX219 160° camera**<br>SKU: **IMX219 160度摄像头** | 个 | 1 | ¥129.99 (previous model reference) | ¥129.99 | 树莓派零售商<br>[Product](https://item.taobao.com/item.htm?id=1083291197130&skuId=6300750750661) |
+| **IMX219 160° camera**<br>SKU: **IMX219 160度摄像头** | 个 | 1 | ¥64.35 | ¥64.35 | 树莓派零售商<br>[Product](https://item.taobao.com/item.htm?id=1083291197130&skuId=6300750750661) |
 | **8×8 ToF 测距模块**<br>VL53L5X V2模块配盖片；VL53L5X V2模块配盖片（商品标题 VL53L5CX） | 个 | 1 | ¥49.50 | ¥49.50 | 都会明武电子<br>[Product](https://item.taobao.com/item.htm?id=737603917521) |
 | **扬声器**<br>3525腔体-4Ω3W/喇叭；3525 腔体 / 4Ω 3W | 个 | 1 | ¥3.08 | ¥3.08 | 深圳市优信电子科技有限公司<br>[Product](https://item.taobao.com/item.htm?id=683920556900) |
 
@@ -101,7 +101,7 @@ NP-F550 is the original 2200mAh kit with two batteries and a standard dual charg
 - **飞特 HD1910 串口总线舵机**：作者两次订单分别购入13只和2只，共15只；选择 HD-1910-C001 款式。
 - **Radxa ZERO 3W**：已完成订单的主板款式；属于配套主控，不计入 HAT 84 个器件。
 - **NP-F550 电池与双充套装**：按“NP-F550补光灯专用▲2200mAh，2电+标准双充套裝”原款式购买。
-- **IMX219 160° camera**: buy from **树莓派零售商**, selecting the exact SKU **IMX219 160度摄像头** (SKU ID `6300750750661`). The ¥129.99 camera allowance and totals retain the previous model's historical budget reference; the replacement camera's price is subject to the product page at checkout.
+- **IMX219 160° camera**: buy from **树莓派零售商**, selecting the exact SKU **IMX219 160度摄像头** (SKU ID `6300750750661`). Reference unit price: **¥64.35**, included in the totals above; check the product page at checkout for the final price.
 - **8×8 ToF 测距模块**：外接模块，不是 PCB 上的裸芯片；模块接线和供电按已验证方案。
 - **扬声器**：订单自带1.25端子；HAT板座是 EH 2P，需改接或转接，不能直接认为插头相同。
 - **6700 开式薄壁轴承**：按订单参考采购数量计入，包含备料；尺寸顺序为内径×外径×宽度；两次订单为3只和2只。
