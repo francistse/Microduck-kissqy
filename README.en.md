@@ -153,9 +153,9 @@ This project grew from one board, one duck, and many debugging sessions. I am an
       <img width="180" alt="QR code to support the author" src="https://github.com/user-attachments/assets/49054608-65ba-41d6-b3f1-a97941976c4b" />
     </td>
     <td align="center" valign="top" width="50%">
-      <b>🛒 Buy a complete robot</b><br><br>
-      <a href="docs/assets/purchase-wechat-qr.jpg"><img width="220" alt="WeChat contact QR code for complete robot purchases" src="docs/assets/purchase-wechat-qr.jpg" /></a><br>
-      <sub>Scan in WeChat to ask about purchasing a complete robot.<br>Click the QR code for the original image.</sub>
+      <b>💬 Contact the author</b><br><br>
+      <a href="docs/assets/purchase-wechat-qr.jpg"><img width="220" alt="WeChat QR code to contact the author" src="docs/assets/purchase-wechat-qr.jpg" /></a><br>
+      <sub>Scan in WeChat to contact the author.<br>Click the QR code for the original image.</sub>
     </td>
   </tr>
 </table>
