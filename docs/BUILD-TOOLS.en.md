@@ -4,14 +4,9 @@
 
 [🦆 Back to the main duck shopping guide](../DUCK-SHOPPING-LIST.en.md)
 
-> [!NOTE]
-> **Tools are a separate category and are outside the duck hardware total. Reuse what you already have; choose solder-paste packaging as needed.**
-
-Choose the tools and consumables needed for soldering, reflow, assembly and debugging. Tools you already own can be reused.
-
 ## Budgeting for tools from scratch
 
-**For a first DIY HAT / IMU build, allow about ¥800–1000 for tools and consumables.** This is an estimate based on the historical prices below, not a current shop quotation. The main shopping guide adds this allowance to the first hardware purchase budget; it is separate from the hardware material subtotal.
+DIY board budget: **¥800–1000** for tools and consumables. Buying assembled HAT / IMU boards does not require board-soldering equipment.
 
 | Reference set | Amount |
 | --- | ---: |
@@ -22,9 +17,7 @@ Choose the tools and consumables needed for soldering, reflow, assembly and debu
 | **Listed reference set** | **¥685.58** |
 | **Allowance including additional hand tools and small purchases** | **About ¥800–1000** |
 
-Solder paste is counted once; the 50g, 30g and 10g options are alternatives. This reference set includes optional hot-air rework equipment, which you can omit if unnecessary. Reuse existing tools. Additional screwdrivers, cutters, a multimeter, shipping and consumable replenishment use the allowance as needed; they are not individually quoted here.
-
-**A 3D printer is separate: budget ¥3500 as specified by the author.** Filament, printing electricity, failed prints and purchased printed parts are excluded from both allowances. [See the combined first-build budgets](../DUCK-SHOPPING-LIST.en.md#first-build-budget-scenarios).
+Historical prices; one solder-paste packaging option and two stencils are counted. Reuse existing tools and omit optional rework equipment as needed. [Total cost comparison](../DUCK-SHOPPING-LIST.en.md#total-cost-comparison).
 
 | Item | Exact variant / specification | Quantity / use | Recorded price / purchase unit | Shop / product |
 | --- | --- | --- | --- | --- |

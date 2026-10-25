@@ -59,37 +59,20 @@ Minimum pack counts below apply to each row for one set. Rows with the same prod
 
 ### Build cost
 
-**Historical order-based estimate for one HAT and one IMU.** These amounts cover board-mounted components and PCBs. Component costs allocate each order's actual payment, including its recorded shipping, by item value and then by the number of components used.
+| Board | DIY materials · free PCB coupons | DIY materials · no coupons | Assembled board |
+| --- | ---: | ---: | ---: |
+| HAT | ¥16.72 | ¥20.72 | [¥199](https://item.taobao.com/item.htm?id=1095121548583) |
+| IMU | ¥20.38 | ¥24.38 | [¥99](https://item.taobao.com/item.htm?id=1095121548583) |
+| **Both boards** | **¥37.11** | **¥45.11** | **¥298** |
 
-IMU U2 (LSM6DSV16XTR) is budgeted at **¥13.80 each**. Other components use the listed historical allocated costs. New-order shipping is separate.
+DIY amounts above cover parts fitted to the boards, excluding tools and labor. For the first purchase, use full-pack amounts below and add **¥800–1000** for [tools and consumables](../docs/BUILD-TOOLS.en.md#budgeting-for-tools-from-scratch); assembled boards are ready to use.
 
-#### DIY soldering material cost per board
+| First component purchase | HAT only | IMU only | Both, shared packs combined |
+| --- | ---: | ---: | ---: |
+| Free PCB coupons | ¥66.88 | ¥35.20 | ¥94.22 |
+| No coupons · five PCBs per design | ¥86.88 | ¥55.20 | ¥134.22 |
 
-> [!IMPORTANT]
-> **These are materials for DIY soldering, not prices for tested, assembled boards.** You still need component placement, soldering, IMU flashing and testing. Tools, labor, assembly services and rework losses are excluded. [The author's ready-to-use HAT / IMU boards](https://item.taobao.com/item.htm?id=1095121548583) are sold separately at their actual assembled-board prices.
-
-| Item | 1 HAT | 1 IMU | 1 HAT + 1 IMU |
-| --- | --- | --- | --- |
-| Board-mounted components, including allocated historical shipping | ¥16.72 | ¥20.38 | ¥37.11 |
-| PCB with a free coupon | ¥0.00 | ¥0.00 | ¥0.00 |
-| **DIY materials with free PCB coupons** | **¥16.72** | **¥20.38** | **¥37.11** |
-| PCB without a coupon, per-board allocation | ¥4.00 | ¥4.00 | ¥8.00 |
-| **DIY materials without free PCB coupons** | **¥20.72** | **¥24.38** | **¥45.11** |
-
-PCB pricing supplied by the author: free with a coupon, or ¥20 for five boards of one design without a coupon, equivalent to ¥4 per board.
-
-#### Initial purchase budget
-
-Buying full packs leaves spare components. The estimates below use historical product prices and the package sizes listed here; shipping for a new order is separate. Shared variants are combined when purchasing both boards together.
-
-| Item | HAT only | IMU only | Both boards together |
-| --- | --- | --- | --- |
-| Packaged components, product amount | ¥66.88 | ¥35.20 | ¥94.22 |
-| **Initial budget with free PCB coupons** | **¥66.88** | **¥35.20** | **¥94.22** |
-| PCB batch without coupons: five of each design | ¥20.00 | ¥20.00 | ¥40.00 |
-| **Initial budget without free PCB coupons** | **¥86.88** | **¥55.20** | **¥134.22** |
-
-If you order a separate stencil for each board, add **¥24 total** at the latest recorded price of ¥12 per stencil. Stencils can be reused. Solder paste, other consumables, tools, the ZERO 3W, and external modules are separate.
+PCB reference: ¥20 for five of one design without coupons. U2 LSM6DSV16XTR: ¥13.80 each; other component costs use historical order allocations. Stencils are included in the separate tool budget; shipping is extra.
 
 <details>
 <summary>Component cost breakdown — 46 BOM groups</summary>
