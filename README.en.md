@@ -23,7 +23,7 @@ A personal project with a working physical replica based on Pollen Robotics Micr
     <td align="center" valign="top">
       <b>💬 Join the WeChat group</b><br><br>
       <a href="docs/assets/community-wechat-qr.png"><img width="220" alt="WeChat community group QR code" src="docs/assets/community-wechat-qr.png" /></a><br>
-      <sub>Scan in WeChat, or click the QR code for the original image.<br>This QR code is valid before October 29, 2026.</sub>
+      <sub>Scan in WeChat, or click the QR code for the original image.<br>This QR code is valid before November 1, 2026.</sub>
     </td>
   </tr>
 </table>
