@@ -9,6 +9,23 @@
 
 Choose the tools and consumables needed for soldering, reflow, assembly and debugging. Tools you already own can be reused.
 
+## Budgeting for tools from scratch
+
+**For a first DIY HAT / IMU build, allow about ¥800–1000 for tools and consumables.** This is an estimate based on the historical prices below, not a current shop quotation. The main shopping guide adds this allowance to the first hardware purchase budget; it is separate from the hardware material subtotal.
+
+| Reference set | Amount |
+| --- | ---: |
+| Soldering station ¥106.68 + hotplate ¥188.00 + hot-air rework station ¥268.00 | ¥562.68 |
+| ST-LINK ¥9.84 + Feetech USB adapter ¥45.00 | ¥54.84 |
+| Two custom stencils at ¥12 each | ¥24.00 |
+| One 30g solder-paste syringe ¥13.80 + tweezers ¥1.98 + wick ¥3.91 + flux ¥3.28 + cleaning kit ¥14.16 + two tips ¥6.93 | ¥44.06 |
+| **Listed reference set** | **¥685.58** |
+| **Allowance including additional hand tools and small purchases** | **About ¥800–1000** |
+
+Solder paste is counted once; the 50g, 30g and 10g options are alternatives. This reference set includes optional hot-air rework equipment, which you can omit if unnecessary. Reuse existing tools. Additional screwdrivers, cutters, a multimeter, shipping and consumable replenishment use the allowance as needed; they are not individually quoted here.
+
+**A 3D printer is separate: budget ¥3500 as specified by the author.** Filament, printing electricity, failed prints and purchased printed parts are excluded from both allowances. [See the combined first-build budgets](../DUCK-SHOPPING-LIST.en.md#first-build-budget-scenarios).
+
 | Item | Exact variant / specification | Quantity / use | Recorded price / purchase unit | Shop / product |
 | --- | --- | --- | --- | --- |
 | ST-LINK V2 | **ST-LINK V2 仿真器 进口芯片软件可升级版本（颜色随机发）1个**<br>STM32 仿真器，订单进口芯片版本 | 已有可不买<br>用于 IMU STM32 的 SWD 烧录。<br>Pack size: 1 | ¥9.84 | zazr旗舰店<br>[Product](https://item.taobao.com/item.htm?id=581798084270) |

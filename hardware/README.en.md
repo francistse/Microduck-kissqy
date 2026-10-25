@@ -61,17 +61,20 @@ Minimum pack counts below apply to each row for one set. Rows with the same prod
 
 **Historical order-based estimate for one HAT and one IMU.** These amounts cover board-mounted components and PCBs. Component costs allocate each order's actual payment, including its recorded shipping, by item value and then by the number of components used.
 
-**October 25, 2026 update:** the IMU U2 LSM6DSV16XTR purchase source has changed; the chip reference price is **¥13.80 each**, replacing ¥5.75 in the calculations. Other components retain their historical allocated costs. New-order shipping is separate.
+IMU U2 (LSM6DSV16XTR) is budgeted at **¥13.80 each**. Other components use the listed historical allocated costs. New-order shipping is separate.
 
-#### Material cost per board
+#### DIY soldering material cost per board
+
+> [!IMPORTANT]
+> **These are materials for DIY soldering, not prices for tested, assembled boards.** You still need component placement, soldering, IMU flashing and testing. Tools, labor, assembly services and rework losses are excluded. [The author's ready-to-use HAT / IMU boards](https://item.taobao.com/item.htm?id=1095121548583) are sold separately at their actual assembled-board prices.
 
 | Item | 1 HAT | 1 IMU | 1 HAT + 1 IMU |
 | --- | --- | --- | --- |
 | Board-mounted components, including allocated historical shipping | ¥16.72 | ¥20.38 | ¥37.11 |
 | PCB with a free coupon | ¥0.00 | ¥0.00 | ¥0.00 |
-| **Material cost with free PCB coupons** | **¥16.72** | **¥20.38** | **¥37.11** |
+| **DIY materials with free PCB coupons** | **¥16.72** | **¥20.38** | **¥37.11** |
 | PCB without a coupon, per-board allocation | ¥4.00 | ¥4.00 | ¥8.00 |
-| **Material cost without free PCB coupons** | **¥20.72** | **¥24.38** | **¥45.11** |
+| **DIY materials without free PCB coupons** | **¥20.72** | **¥24.38** | **¥45.11** |
 
 PCB pricing supplied by the author: free with a coupon, or ¥20 for five boards of one design without a coupon, equivalent to ¥4 per board.
 

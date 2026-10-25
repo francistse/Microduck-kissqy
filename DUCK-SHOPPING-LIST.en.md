@@ -16,27 +16,45 @@
 | Category | Contents | Entry |
 | --- | --- | --- |
 | **🦆 Duck body** | Controller, servos, NP-F batteries, camera, ToF, speaker, bearings, screws and wiring | [Body list below](#duck-body) |
-| **🔧 PCB** | HAT and IMU complete-board costs; detailed BOMs and fabrication records | [PCB summary below](#pcb) · [Detailed board procurement](hardware/README.en.md#shopping-list) |
+| **🔧 PCB** | HAT / IMU DIY material costs and assembled-board purchase entry; BOMs and build records | [PCB summary below](#pcb) · [Detailed board procurement](hardware/README.en.md#shopping-list) |
 | **🧰 Tools** | Solder paste, tweezers, hotplate, soldering stations and debugging tools | [Separate tools list](docs/BUILD-TOOLS.en.md) |
 
-## Total cost
+## Hardware material subtotal (tools and printed parts excluded)
+
+> [!IMPORTANT]
+> **Building from scratch costs more than the hardware subtotal below. Allow about ¥3400–3700 for the first component purchases plus tools, or ¥6900–7200 if you also buy a printer budgeted at ¥3500. Printed parts / filament and printing costs are still extra.** See the budget scenarios below.
 
 **Configuration: one duck with 15 HD-1910-C001 servos, ZERO 3W, an NP-F550 two-battery/dual-charger kit, camera, ToF, speaker and one GameSir 启明星2 wireless gamepad, plus one HAT and one IMU.**
 
 | Item | Free PCB coupons | No PCB coupons |
 | --- | ---: | ---: |
-| 🦆 Duck body, including reference spare stock | ¥2229.70 | ¥2229.70 |
-| 🔧 HAT complete board | ¥16.72 | ¥20.72 |
-| 🔧 IMU complete board | ¥20.38 | ¥24.38 |
-| **🦆 Whole duck total** | **¥2266.81** | **¥2274.81** |
+| 🦆 Duck body, including reference spare stock | ¥2529.70 | ¥2529.70 |
+| 🔧 HAT DIY soldering materials | ¥16.72 | ¥20.72 |
+| 🔧 IMU DIY soldering materials | ¥20.38 | ¥24.38 |
+| **🦆 Listed hardware subtotal** | **¥2566.81** | **¥2574.81** |
+
+> [!IMPORTANT]
+> **The HAT / IMU amounts above are DIY material costs, NOT assembled-board selling prices.** HAT: **¥16.72 / ¥20.72**; IMU: **¥20.38 / ¥24.38** (free PCB coupon / no coupon). You must source the components, place and solder them, flash the IMU and test the boards yourself. Tools, labor, assembly services and rework losses are extra. The author's ready-to-use assembled boards are a separate purchase at their actual selling prices.
 
 Totals use unrounded board costs and are then rounded to two decimal places.
 
-**October 25, 2026 update:** IMU U2 LSM6DSV16XTR now uses the **¥13.80** chip price (up ¥8.05); one **¥89.91** gamepad has been added. The whole-duck and initial purchase budgets therefore increase by **¥97.96**. [IMU procurement and cost breakdown](hardware/README.en.md#build-cost).
-
 **Scope:** the listed hardware and reference spare stock only. **3D printers, printed parts, printing materials, build tools, soldering and cleaning consumables are excluded.** Bearings, wires, screws and connectors use the purchase quantities below, which include spare stock. TF/microSD cards and other items without recorded prices are outside this priced subtotal.
 
-The board lines above allocate component costs by actual use, including their historical shipping share. Without coupons, PCBs cost **¥20 for five boards per design (¥4 per board)**. Buying board components in whole packages for the first time brings the initial product budget to **¥2323.92 with free PCBs**, or **¥2363.92 without coupons**, including one five-board batch of each design. New-order shipping is separate.
+The board lines above allocate component costs by actual use, including their historical shipping share. Without coupons, PCBs cost **¥20 for five boards per design (¥4 per board)**. Buying board components in whole packages for the first time brings the initial product budget to **¥2623.92 with free PCBs**, or **¥2663.92 without coupons**, including one five-board batch of each design. New-order shipping is separate.
+
+### First-build budget scenarios
+
+These estimates assume you assemble the HAT and IMU yourself. Use the **first purchase budget for full component packs**, rather than the lower cost allocated to components fitted on one robot.
+
+| Starting point | Budget | Included |
+| --- | ---: | --- |
+| You already have tools and printing access | **About ¥2600–2700** | First hardware purchase: ¥2623.92 with free PCB coupons, or ¥2663.92 without; includes one gamepad |
+| You need to buy tools as well | **About ¥3400–3700** | First hardware purchase + **¥800–1000** allowance for soldering, reflow, programming/debugging tools and consumables |
+| You need tools and a 3D printer | **About ¥6900–7200** | The preceding scenario + **¥3500** printer allowance supplied by the author |
+
+**All three scenarios exclude purchased printed parts, printing-service charges, filament and printing electricity, assembly labor, a computer, and unpriced items such as the microSD card.** Printer ownership does not include the material or running cost of printing the robot. Keep an additional margin for shipping, price changes, failed prints and damaged components. If buying assembled HAT / IMU boards, replace the DIY board budget with their actual purchase prices.
+
+The [tool allowance breakdown](docs/BUILD-TOOLS.en.md#budgeting-for-tools-from-scratch) uses **¥685.58** of listed tools and consumables as a reference set, then rounds the allowance to **¥800–1000** for additional hand tools and small purchases. Existing tools can be reused; optional rework equipment need not all be purchased.
 
 ## Duck body
 
@@ -46,7 +64,7 @@ The board lines above allocate component costs by actual use, including their hi
 
 | Item / exact variant | Unit | Reference quantity | Historical unit price | Subtotal | Shop / link |
 | --- | --- | ---: | ---: | ---: | --- |
-| **飞特 HD1910 串口总线舵机**<br>HD-1910-C001；HD-1910-C001 | 只 | 15 | ¥99.00 | ¥1485.00 | 深圳飞特舵机工厂店<br>[Product](https://item.taobao.com/item.htm?id=1078248851201) |
+| **飞特 HD1910 串口总线舵机**<br>HD-1910-C001；HD-1910-C001 | 只 | 15 | ¥119.00 | ¥1785.00 | 深圳飞特舵机工厂店<br>[Product](https://item.taobao.com/item.htm?id=1078248851201) |
 | **Radxa ZERO 3W**<br>2GB RAM 无 eMMC 带排针[【Microduck 原版主板】]；2GB RAM / 无eMMC / 带排针 | 个 | 1 | ¥309.00 | ¥309.00 | 瑞莎计算机(深圳)有限公司<br>[Product](https://item.taobao.com/item.htm?id=763812025816) |
 | **NP-F550 电池与双充套装**<br>【NP-F550补光灯专用▲2200mAh】2电+标准双充套裝；沣标 NP-F550 / 2200mAh / 2块电池＋标准双充 | 套 | 1 | ¥84.59 | ¥84.59 | fb数码旗舰店<br>[Product](https://item.taobao.com/item.htm?id=585415365001) |
 | **IMX219 160° camera**<br>SKU: **IMX219 160度摄像头** | 个 | 1 | ¥64.35 | ¥64.35 | 树莓派零售商<br>[Product](https://item.taobao.com/item.htm?id=1083291197130&skuId=6300750750661) |
@@ -130,7 +148,9 @@ NP-F550 is the original 2200mAh kit with two batteries and a standard dual charg
 
 ## PCB
 
-**🔧 HAT and IMU are the PCB branch of the duck build.** Each complete board is counted once in the duck total. Their detailed component and reference-designator lists stay in the original hardware directory.
+**Assembled-board option:** [Buy HAT / IMU boards from the author](https://item.taobao.com/item.htm?id=1095121548583). The figures above budget for DIY boards; replace those amounts with the actual assembled-board prices when choosing this option. PCB material costs are not assembled-board selling prices.
+
+**🔧 HAT and IMU are the PCB branch of the duck build.** The hardware subtotal includes DIY material costs for one of each board. Their detailed component and reference-designator lists stay in the original hardware directory.
 
 | Board | Original detailed list | Fabrication record |
 | --- | --- | --- |
