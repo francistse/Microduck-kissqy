@@ -154,9 +154,9 @@
       <img width="180" alt="支持作者的二维码" src="https://github.com/user-attachments/assets/49054608-65ba-41d6-b3f1-a97941976c4b" />
     </td>
     <td align="center" valign="top" width="50%">
-      <b>🛒 整机购买</b><br><br>
-      <a href="docs/assets/purchase-wechat-qr.jpg"><img width="220" alt="整机购买微信二维码" src="docs/assets/purchase-wechat-qr.jpg" /></a><br>
-      <sub>微信扫码咨询整机购买。<br>点击二维码查看原图。</sub>
+      <b>💬 联系作者</b><br><br>
+      <a href="docs/assets/purchase-wechat-qr.jpg"><img width="220" alt="联系作者微信二维码" src="docs/assets/purchase-wechat-qr.jpg" /></a><br>
+      <sub>微信扫码联系作者。<br>点击二维码查看原图。</sub>
     </td>
   </tr>
 </table>
