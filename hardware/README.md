@@ -55,21 +55,23 @@ HAT 的思路是先分析官方器件及外围，按实际需要精简，再用�
 
 最少拍数按每行单套用量计算；同商品、同款式的用料可以合并数量后，再按每拍含量向上取整。
 
-[🦆 返回鸭子采购总清单](../DUCK-SHOPPING-LIST.md) · [制作成本](#制作成本) · [板上器件](#板上器件) · [裸板与打样](#裸板与打样) · [完整位号BOM](#完整位号bom) · [🧰 工具清单](../docs/BUILD-TOOLS.md) · [另存Excel（可选）](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/hardware/Microduck-HAT-IMU-Shopping-List-20261013.xlsx)
+[🦆 返回鸭子采购总清单](../DUCK-SHOPPING-LIST.md) · [制作成本](#制作成本) · [板上器件](#板上器件) · [裸板与打样](#裸板与打样) · [完整位号BOM](#完整位号bom) · [🧰 工具清单](../docs/BUILD-TOOLS.md) · [Excel历史快照（2026-10-13，最新采购以本页为准）](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/hardware/Microduck-HAT-IMU-Shopping-List-20261013.xlsx)
 
 ### 制作成本
 
 **按历史订单测算，基准为1块 HAT + 1块 IMU。** 以下统计板上元器件与 PCB 的材料成本。元器件按订单实付金额（含原订单运费）分摊，再按单板实际用量计算。
 
+**2026-10-25 更新：** IMU 的 U2（LSM6DSV16XTR）已更换购买来源，按 **¥13.80/个** 重新计算，替代原来的 ¥5.75；其余器件沿用历史分摊成本，重新下单的运费另计。
+
 #### 单板材料成本
 
 | 项目 | HAT 1块 | IMU 1块 | HAT + IMU 1套 |
 | --- | --- | --- | --- |
-| 板上元器件（含历史运费分摊） | ¥16.72 | ¥12.33 | ¥29.06 |
+| 板上元器件（含历史运费分摊） | ¥16.72 | ¥20.38 | ¥37.11 |
 | PCB：有免费券 | ¥0.00 | ¥0.00 | ¥0.00 |
-| **有券：单板材料成本** | **¥16.72** | **¥12.33** | **¥29.06** |
+| **有券：单板材料成本** | **¥16.72** | **¥20.38** | **¥37.11** |
 | PCB：无券，折算到单板 | ¥4.00 | ¥4.00 | ¥8.00 |
-| **无券：单板材料成本** | **¥20.72** | **¥16.33** | **¥37.06** |
+| **无券：单板材料成本** | **¥20.72** | **¥24.38** | **¥45.11** |
 
 PCB 按作者提供的价格计算：立创有券免费；无券每种板20元5张，折合4元/张。
 
@@ -79,10 +81,10 @@ PCB 按作者提供的价格计算：立创有券免费；无券每种板20元5�
 
 | 项目 | 仅制作 HAT | 仅制作 IMU | HAT + IMU 合并采购 |
 | --- | --- | --- | --- |
-| 按包装采购的元器件商品金额 | ¥66.88 | ¥27.15 | ¥86.17 |
-| **有券：首批商品预算** | **¥66.88** | **¥27.15** | **¥86.17** |
+| 按包装采购的元器件商品金额 | ¥66.88 | ¥35.20 | ¥94.22 |
+| **有券：首批商品预算** | **¥66.88** | **¥35.20** | **¥94.22** |
 | 无券 PCB 首批：每种5张 | ¥20.00 | ¥20.00 | ¥40.00 |
-| **无券：首批商品预算** | **¥86.88** | **¥47.15** | **¥126.17** |
+| **无券：首批商品预算** | **¥86.88** | **¥55.20** | **¥134.22** |
 
 若 HAT、IMU 各定制1张钢网，按最近订单12元/张，首次另加 **24元**；钢网可重复使用。锡膏等耗材、制作工具、ZERO 3W 与外接模块单独计算。
 
@@ -136,7 +138,7 @@ PCB 按作者提供的价格计算：立创有券免费；无券每种板20元5�
 | 0603WAF330JT5E<br>33R/33欧;0603 1%（100个） | 100 | ¥1.46 | ¥0.014600 | 0 / ¥0.000000 | 1 / ¥0.014600 |
 | 0603WAF1001T5E<br>1K;0603 1%（100个） | 100 | ¥1.44 | ¥0.014400 | 0 / ¥0.000000 | 1 / ¥0.014400 |
 | STM32G031F8P6<br>全新原装 | 1 | ¥4.83 | ¥4.967405 | 0 / ¥0.000000 | 1 / ¥4.967405 |
-| LSM6DSV16XTR<br>LSM6DSV16XTR | 1 | ¥5.75 | ¥5.750000 | 0 / ¥0.000000 | 1 / ¥5.750000 |
+| LSM6DSV16XTR<br>LSM6DSV16XTR | 1 | ¥13.80 | ¥13.800000 | 0 / ¥0.000000 | 1 / ¥13.800000 |
 | TLV70433DBVR<br>TLV70433DBVR | 1 | ¥0.47 | ¥0.470000 | 0 / ¥0.000000 | 1 / ¥0.470000 |
 | SN74LVC2G125DCUR<br>商品无选项，按商品标题完整型号购买 | 1 | ¥0.43 | ¥0.478000 | 0 / ¥0.000000 | 1 / ¥0.478000 |
 
@@ -213,7 +215,7 @@ PCB 按作者提供的价格计算：立创有券免费；无券每种板20元5�
 | [PESD5V0S1BA](https://www.lcsc.com/product-detail/C330094.html)<br>SOD-323；反向截止电压(Vrwm):5V@Max；最大钳位电压:10V；峰值脉冲电流(Ipp)@10/1000us:5A@8/20us；击穿电压:5.8V | **商品无选项，按商品标题完整型号购买**<br>PESD5V0S1BA / SOD-323 双向TVS，按商品完整型号购买。 | — | **1**<br>D1 | 1个 / 拍<br>最少 **1拍** | 深圳市优信电子科技有限公司<br>[购买商品](https://item.taobao.com/item.htm?id=891785167202) |
 | [19-217/GHC-YR1S2/3T](https://www.lcsc.com/product-detail/Light-Emitting-Diodes-LED_Everlight-Elec-19-217-GHC-YR1S2-3T_C72043.html)<br>0603；110mW | **0603 蓝色=100个**<br>实际采购：0603 蓝色LED，100个包装。 | — | **1**<br>D2 | 100个 / 拍<br>最少 **1拍** | 泰辰电子<br>[购买商品](https://item.taobao.com/item.htm?id=1025817117811) |
 | [STM32G031F8P6](https://item.szlcsc.com/549612.html)<br>TSSOP-20；CPU内核:ARM Cortex-M0+；CPU最大主频:64MHz；CPU位数:32 Bit | **全新原装**<br>STM32G031F8P6 / TSSOP-20，按商品完整型号购买。 | — | **1**<br>U1 | 1个 / 拍<br>最少 **1拍** | 深圳市新纶电子<br>[购买商品](https://item.taobao.com/item.htm?id=726808419708) |
-| [LSM6DSV16XTR](https://item.szlcsc.com/5993815.html)<br>LGA-14(2.5x3)；传感器类型:IMU(加速度计+陀螺仪)；接口类型:I2C；SPI | **LSM6DSV16XTR**<br>LSM6DSV16XTR / LGA-14，在多型号商品页选择 LSM6DSV16XTR。 | — | **1**<br>U2 | 1个 / 拍<br>最少 **1拍** | 深圳市RTC电子<br>[购买商品](https://item.taobao.com/item.htm?id=640391703111) |
+| [LSM6DSV16XTR](https://item.szlcsc.com/5993815.html)<br>LGA-14(2.5x3)；传感器类型:IMU(加速度计+陀螺仪)；接口类型:I2C；SPI | **LSM6DSV16XTR**<br>LSM6DSV16XTR / LGA-14；指定购买 LSM6DSV16XTR，参考单价 ¥13.80/个。 | — | **1**<br>U2 | 1个 / 拍<br>最少 **1拍** | 淘宝<br>[购买商品](https://e.tb.cn/h.j3ZZ8HNmUBbhzqy?tk=jMe5TxTIPLE) |
 | [TLV70433DBVR](https://www.lcsc.com/product-detail/C94917.html)<br>SOT-23-5；输出极性:正极；工作电压:24V；输出电压:3.3V；输出电流:150mA；电源纹波抑制比(PSRR):60dB@(100kHz)；输出类型:固定 | **TLV70433DBVR**<br>TLV70433DBVR / 3.3V / SOT-23-5。 | — | **1**<br>U3 | 1个 / 拍<br>最少 **1拍** | 深圳市恒芯科创电子<br>[购买商品](https://item.taobao.com/item.htm?id=747094785928) |
 | [SN74LVC2G125DCUR](https://www.lcsc.com/product-detail/C21404.html)<br>VSSOP-8；输入类型:-；工作电压:1.65V~5.5V；元件数:2；每个元件位数:1；灌电流(IOL):32mA；拉电流(IOH):32mA | **商品无选项，按商品标题完整型号购买**<br>SN74LVC2G125DCUR / VSSOP-8，按商品完整型号购买。 | — | **1**<br>U4 | 1个 / 拍<br>最少 **1拍** | 深圳市垚鑫电子科技<br>[购买商品](https://item.taobao.com/item.htm?id=705642638300) |
 
@@ -347,7 +349,7 @@ PCB 按作者提供的价格计算：立创有券免费；无券每种板20元5�
 | **R6**<br>33R / DXL TX series | 0603WAF330JT5E<br>C23140 | 0603<br>33Ω / ±1% / ±100ppm/℃ / 100mW | 33R/33欧;0603 1%（100个）<br>33Ω / ±1% / 0603，用于IMU R6。 | [商品](https://item.taobao.com/item.htm?id=947267344247) · [工程型号](https://item.szlcsc.com/23867.html) |
 | **R7**<br>1k / debug LED | 0603WAF1001T5E<br>C21190 | 0603<br>1kΩ / ±1% / ±100ppm/℃ / 100mW | 1K;0603 1%（100个）<br>1kΩ / ±1% / 0603，八月备料订单。 | [商品](https://item.taobao.com/item.htm?id=947267344247) · [工程型号](https://item.szlcsc.com/21904.html) |
 | **U1**<br>STM32G031F8P6 | STM32G031F8P6<br>C529334 | TSSOP-20<br>CPU内核:ARM Cortex-M0+；CPU最大主频:64MHz；CPU位数:32 Bit | 全新原装<br>STM32G031F8P6 / TSSOP-20，按商品完整型号购买。 | [商品](https://item.taobao.com/item.htm?id=726808419708) · [工程型号](https://item.szlcsc.com/549612.html) |
-| **U2**<br>LSM6DSV16XTR | LSM6DSV16XTR<br>C5267406 | LGA-14(2.5x3)<br>传感器类型:IMU(加速度计+陀螺仪)；接口类型:I2C；SPI | LSM6DSV16XTR<br>LSM6DSV16XTR / LGA-14，在多型号商品页选择 LSM6DSV16XTR。 | [商品](https://item.taobao.com/item.htm?id=640391703111) · [工程型号](https://item.szlcsc.com/5993815.html) |
+| **U2**<br>LSM6DSV16XTR | LSM6DSV16XTR<br>C5267406 | LGA-14(2.5x3)<br>传感器类型:IMU(加速度计+陀螺仪)；接口类型:I2C；SPI | LSM6DSV16XTR<br>LSM6DSV16XTR / LGA-14；指定购买 LSM6DSV16XTR，参考单价 ¥13.80/个。 | [商品](https://e.tb.cn/h.j3ZZ8HNmUBbhzqy?tk=jMe5TxTIPLE) · [工程型号](https://item.szlcsc.com/5993815.html) |
 | **U3**<br>TLV70433DBVR | TLV70433DBVR<br>C94917 | SOT-23-5<br>输出极性:正极；工作电压:24V；输出电压:3.3V；输出电流:150mA；电源纹波抑制比(PSRR):60dB@(100kHz)；输出类型:固定 | TLV70433DBVR<br>TLV70433DBVR / 3.3V / SOT-23-5。 | [商品](https://item.taobao.com/item.htm?id=747094785928) · [工程型号](https://www.lcsc.com/product-detail/C94917.html) |
 | **U4**<br>SN74LVC2G125DCUR | SN74LVC2G125DCUR<br>C21404 | VSSOP-8<br>输入类型:-；工作电压:1.65V~5.5V；元件数:2；每个元件位数:1；灌电流(IOL):32mA；拉电流(IOH):32mA | 商品无选项，按商品标题完整型号购买<br>SN74LVC2G125DCUR / VSSOP-8，按商品完整型号购买。 | [商品](https://item.taobao.com/item.htm?id=705642638300) · [工程型号](https://www.lcsc.com/product-detail/C21404.html) |
 

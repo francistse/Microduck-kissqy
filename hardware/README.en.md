@@ -55,21 +55,23 @@ This is the duck build’s **🔧 PCB procurement branch**. Preview the HAT and 
 
 Minimum pack counts below apply to each row for one set. Rows with the same product and variant can be combined before rounding up to whole packs.
 
-[🦆 Main duck shopping guide](../DUCK-SHOPPING-LIST.en.md) · [Build cost](#build-cost) · [Board components](#board-components) · [Bare PCB fabrication](#bare-pcbs-and-fabrication) · [Full reference-designator BOMs](#full-reference-designator-boms) · [🧰 Tools](../docs/BUILD-TOOLS.en.md) · [Optional Excel download (Chinese)](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/hardware/Microduck-HAT-IMU-Shopping-List-20261013.xlsx)
+[🦆 Main duck shopping guide](../DUCK-SHOPPING-LIST.en.md) · [Build cost](#build-cost) · [Board components](#board-components) · [Bare PCB fabrication](#bare-pcbs-and-fabrication) · [Full reference-designator BOMs](#full-reference-designator-boms) · [🧰 Tools](../docs/BUILD-TOOLS.en.md) · [Excel snapshot (2026-10-13, Chinese; use this page for current purchases)](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/hardware/Microduck-HAT-IMU-Shopping-List-20261013.xlsx)
 
 ### Build cost
 
 **Historical order-based estimate for one HAT and one IMU.** These amounts cover board-mounted components and PCBs. Component costs allocate each order's actual payment, including its recorded shipping, by item value and then by the number of components used.
 
+**October 25, 2026 update:** the IMU U2 LSM6DSV16XTR purchase source has changed; the chip reference price is **¥13.80 each**, replacing ¥5.75 in the calculations. Other components retain their historical allocated costs. New-order shipping is separate.
+
 #### Material cost per board
 
 | Item | 1 HAT | 1 IMU | 1 HAT + 1 IMU |
 | --- | --- | --- | --- |
-| Board-mounted components, including allocated historical shipping | ¥16.72 | ¥12.33 | ¥29.06 |
+| Board-mounted components, including allocated historical shipping | ¥16.72 | ¥20.38 | ¥37.11 |
 | PCB with a free coupon | ¥0.00 | ¥0.00 | ¥0.00 |
-| **Material cost with free PCB coupons** | **¥16.72** | **¥12.33** | **¥29.06** |
+| **Material cost with free PCB coupons** | **¥16.72** | **¥20.38** | **¥37.11** |
 | PCB without a coupon, per-board allocation | ¥4.00 | ¥4.00 | ¥8.00 |
-| **Material cost without free PCB coupons** | **¥20.72** | **¥16.33** | **¥37.06** |
+| **Material cost without free PCB coupons** | **¥20.72** | **¥24.38** | **¥45.11** |
 
 PCB pricing supplied by the author: free with a coupon, or ¥20 for five boards of one design without a coupon, equivalent to ¥4 per board.
 
@@ -79,10 +81,10 @@ Buying full packs leaves spare components. The estimates below use historical pr
 
 | Item | HAT only | IMU only | Both boards together |
 | --- | --- | --- | --- |
-| Packaged components, product amount | ¥66.88 | ¥27.15 | ¥86.17 |
-| **Initial budget with free PCB coupons** | **¥66.88** | **¥27.15** | **¥86.17** |
+| Packaged components, product amount | ¥66.88 | ¥35.20 | ¥94.22 |
+| **Initial budget with free PCB coupons** | **¥66.88** | **¥35.20** | **¥94.22** |
 | PCB batch without coupons: five of each design | ¥20.00 | ¥20.00 | ¥40.00 |
-| **Initial budget without free PCB coupons** | **¥86.88** | **¥47.15** | **¥126.17** |
+| **Initial budget without free PCB coupons** | **¥86.88** | **¥55.20** | **¥134.22** |
 
 If you order a separate stencil for each board, add **¥24 total** at the latest recorded price of ¥12 per stencil. Stencils can be reused. Solder paste, other consumables, tools, the ZERO 3W, and external modules are separate.
 
@@ -136,7 +138,7 @@ Recorded product prices are per purchase unit. Allocated per-component costs inc
 | 0603WAF330JT5E<br>33R/33欧;0603 1%（100个） | 100 | ¥1.46 | ¥0.014600 | 0 / ¥0.000000 | 1 / ¥0.014600 |
 | 0603WAF1001T5E<br>1K;0603 1%（100个） | 100 | ¥1.44 | ¥0.014400 | 0 / ¥0.000000 | 1 / ¥0.014400 |
 | STM32G031F8P6<br>全新原装 | 1 | ¥4.83 | ¥4.967405 | 0 / ¥0.000000 | 1 / ¥4.967405 |
-| LSM6DSV16XTR<br>LSM6DSV16XTR | 1 | ¥5.75 | ¥5.750000 | 0 / ¥0.000000 | 1 / ¥5.750000 |
+| LSM6DSV16XTR<br>LSM6DSV16XTR | 1 | ¥13.80 | ¥13.800000 | 0 / ¥0.000000 | 1 / ¥13.800000 |
 | TLV70433DBVR<br>TLV70433DBVR | 1 | ¥0.47 | ¥0.470000 | 0 / ¥0.000000 | 1 / ¥0.470000 |
 | SN74LVC2G125DCUR<br>商品无选项，按商品标题完整型号购买 | 1 | ¥0.43 | ¥0.478000 | 0 / ¥0.000000 | 1 / ¥0.478000 |
 
@@ -213,7 +215,7 @@ Recorded product prices are per purchase unit. Allocated per-component costs inc
 | [PESD5V0S1BA](https://www.lcsc.com/product-detail/C330094.html)<br>SOD-323；反向截止电压(Vrwm):5V@Max；最大钳位电压:10V；峰值脉冲电流(Ipp)@10/1000us:5A@8/20us；击穿电压:5.8V | **商品无选项，按商品标题完整型号购买**<br>PESD5V0S1BA / SOD-323 双向TVS，按商品完整型号购买。 | — | **1**<br>D1 | 1 pcs / pack<br>**1 pack(s)** | 深圳市优信电子科技有限公司<br>[Product](https://item.taobao.com/item.htm?id=891785167202) |
 | [19-217/GHC-YR1S2/3T](https://www.lcsc.com/product-detail/Light-Emitting-Diodes-LED_Everlight-Elec-19-217-GHC-YR1S2-3T_C72043.html)<br>0603；110mW | **0603 蓝色=100个**<br>实际采购：0603 蓝色LED，100个包装。 | — | **1**<br>D2 | 100 pcs / pack<br>**1 pack(s)** | 泰辰电子<br>[Product](https://item.taobao.com/item.htm?id=1025817117811) |
 | [STM32G031F8P6](https://item.szlcsc.com/549612.html)<br>TSSOP-20；CPU内核:ARM Cortex-M0+；CPU最大主频:64MHz；CPU位数:32 Bit | **全新原装**<br>STM32G031F8P6 / TSSOP-20，按商品完整型号购买。 | — | **1**<br>U1 | 1 pcs / pack<br>**1 pack(s)** | 深圳市新纶电子<br>[Product](https://item.taobao.com/item.htm?id=726808419708) |
-| [LSM6DSV16XTR](https://item.szlcsc.com/5993815.html)<br>LGA-14(2.5x3)；传感器类型:IMU(加速度计+陀螺仪)；接口类型:I2C；SPI | **LSM6DSV16XTR**<br>LSM6DSV16XTR / LGA-14，在多型号商品页选择 LSM6DSV16XTR。 | — | **1**<br>U2 | 1 pcs / pack<br>**1 pack(s)** | 深圳市RTC电子<br>[Product](https://item.taobao.com/item.htm?id=640391703111) |
+| [LSM6DSV16XTR](https://item.szlcsc.com/5993815.html)<br>LGA-14(2.5x3)；传感器类型:IMU(加速度计+陀螺仪)；接口类型:I2C；SPI | **LSM6DSV16XTR**<br>LSM6DSV16XTR / LGA-14；指定购买 LSM6DSV16XTR，参考单价 ¥13.80/个。 | — | **1**<br>U2 | 1 pcs / pack<br>**1 pack(s)** | Taobao<br>[Product](https://e.tb.cn/h.j3ZZ8HNmUBbhzqy?tk=jMe5TxTIPLE) |
 | [TLV70433DBVR](https://www.lcsc.com/product-detail/C94917.html)<br>SOT-23-5；输出极性:正极；工作电压:24V；输出电压:3.3V；输出电流:150mA；电源纹波抑制比(PSRR):60dB@(100kHz)；输出类型:固定 | **TLV70433DBVR**<br>TLV70433DBVR / 3.3V / SOT-23-5。 | — | **1**<br>U3 | 1 pcs / pack<br>**1 pack(s)** | 深圳市恒芯科创电子<br>[Product](https://item.taobao.com/item.htm?id=747094785928) |
 | [SN74LVC2G125DCUR](https://www.lcsc.com/product-detail/C21404.html)<br>VSSOP-8；输入类型:-；工作电压:1.65V~5.5V；元件数:2；每个元件位数:1；灌电流(IOL):32mA；拉电流(IOH):32mA | **商品无选项，按商品标题完整型号购买**<br>SN74LVC2G125DCUR / VSSOP-8，按商品完整型号购买。 | — | **1**<br>U4 | 1 pcs / pack<br>**1 pack(s)** | 深圳市垚鑫电子科技<br>[Product](https://item.taobao.com/item.htm?id=705642638300) |
 
@@ -347,7 +349,7 @@ Expand either table to inspect each component. Project attributes and the actual
 | **R6**<br>33R / DXL TX series | 0603WAF330JT5E<br>C23140 | 0603<br>33Ω / ±1% / ±100ppm/℃ / 100mW | 33R/33欧;0603 1%（100个）<br>33Ω / ±1% / 0603，用于IMU R6。 | [Product](https://item.taobao.com/item.htm?id=947267344247) · [Project model](https://item.szlcsc.com/23867.html) |
 | **R7**<br>1k / debug LED | 0603WAF1001T5E<br>C21190 | 0603<br>1kΩ / ±1% / ±100ppm/℃ / 100mW | 1K;0603 1%（100个）<br>1kΩ / ±1% / 0603，八月备料订单。 | [Product](https://item.taobao.com/item.htm?id=947267344247) · [Project model](https://item.szlcsc.com/21904.html) |
 | **U1**<br>STM32G031F8P6 | STM32G031F8P6<br>C529334 | TSSOP-20<br>CPU内核:ARM Cortex-M0+；CPU最大主频:64MHz；CPU位数:32 Bit | 全新原装<br>STM32G031F8P6 / TSSOP-20，按商品完整型号购买。 | [Product](https://item.taobao.com/item.htm?id=726808419708) · [Project model](https://item.szlcsc.com/549612.html) |
-| **U2**<br>LSM6DSV16XTR | LSM6DSV16XTR<br>C5267406 | LGA-14(2.5x3)<br>传感器类型:IMU(加速度计+陀螺仪)；接口类型:I2C；SPI | LSM6DSV16XTR<br>LSM6DSV16XTR / LGA-14，在多型号商品页选择 LSM6DSV16XTR。 | [Product](https://item.taobao.com/item.htm?id=640391703111) · [Project model](https://item.szlcsc.com/5993815.html) |
+| **U2**<br>LSM6DSV16XTR | LSM6DSV16XTR<br>C5267406 | LGA-14(2.5x3)<br>传感器类型:IMU(加速度计+陀螺仪)；接口类型:I2C；SPI | LSM6DSV16XTR<br>LSM6DSV16XTR / LGA-14；指定购买 LSM6DSV16XTR，参考单价 ¥13.80/个。 | [Product](https://e.tb.cn/h.j3ZZ8HNmUBbhzqy?tk=jMe5TxTIPLE) · [Project model](https://item.szlcsc.com/5993815.html) |
 | **U3**<br>TLV70433DBVR | TLV70433DBVR<br>C94917 | SOT-23-5<br>输出极性:正极；工作电压:24V；输出电压:3.3V；输出电流:150mA；电源纹波抑制比(PSRR):60dB@(100kHz)；输出类型:固定 | TLV70433DBVR<br>TLV70433DBVR / 3.3V / SOT-23-5。 | [Product](https://item.taobao.com/item.htm?id=747094785928) · [Project model](https://www.lcsc.com/product-detail/C94917.html) |
 | **U4**<br>SN74LVC2G125DCUR | SN74LVC2G125DCUR<br>C21404 | VSSOP-8<br>输入类型:-；工作电压:1.65V~5.5V；元件数:2；每个元件位数:1；灌电流(IOL):32mA；拉电流(IOH):32mA | 商品无选项，按商品标题完整型号购买<br>SN74LVC2G125DCUR / VSSOP-8，按商品完整型号购买。 | [Product](https://item.taobao.com/item.htm?id=705642638300) · [Project model](https://www.lcsc.com/product-detail/C21404.html) |
 

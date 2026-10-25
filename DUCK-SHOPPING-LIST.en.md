@@ -21,20 +21,22 @@
 
 ## Total cost
 
-**Configuration: one duck with 15 HD-1910-C001 servos, ZERO 3W, an NP-F550 two-battery/dual-charger kit, camera, ToF and speaker, plus one HAT and one IMU.**
+**Configuration: one duck with 15 HD-1910-C001 servos, ZERO 3W, an NP-F550 two-battery/dual-charger kit, camera, ToF, speaker and one GameSir 启明星2 wireless gamepad, plus one HAT and one IMU.**
 
 | Item | Free PCB coupons | No PCB coupons |
 | --- | ---: | ---: |
-| 🦆 Duck body, including reference spare stock | ¥2139.79 | ¥2139.79 |
+| 🦆 Duck body, including reference spare stock | ¥2229.70 | ¥2229.70 |
 | 🔧 HAT complete board | ¥16.72 | ¥20.72 |
-| 🔧 IMU complete board | ¥12.33 | ¥16.33 |
-| **🦆 Whole duck total** | **¥2168.85** | **¥2176.85** |
+| 🔧 IMU complete board | ¥20.38 | ¥24.38 |
+| **🦆 Whole duck total** | **¥2266.81** | **¥2274.81** |
 
 Totals use unrounded board costs and are then rounded to two decimal places.
 
+**October 25, 2026 update:** IMU U2 LSM6DSV16XTR now uses the **¥13.80** chip price (up ¥8.05); one **¥89.91** gamepad has been added. The whole-duck and initial purchase budgets therefore increase by **¥97.96**. [IMU procurement and cost breakdown](hardware/README.en.md#build-cost).
+
 **Scope:** the listed hardware and reference spare stock only. **3D printers, printed parts, printing materials, build tools, soldering and cleaning consumables are excluded.** Bearings, wires, screws and connectors use the purchase quantities below, which include spare stock. TF/microSD cards and other items without recorded prices are outside this priced subtotal.
 
-The board lines above allocate component costs by actual use, including their historical shipping share. Without coupons, PCBs cost **¥20 for five boards per design (¥4 per board)**. Buying board components in whole packages for the first time brings the initial product budget to **¥2225.96 with free PCBs**, or **¥2265.96 without coupons**, including one five-board batch of each design. New-order shipping is separate.
+The board lines above allocate component costs by actual use, including their historical shipping share. Without coupons, PCBs cost **¥20 for five boards per design (¥4 per board)**. Buying board components in whole packages for the first time brings the initial product budget to **¥2323.92 with free PCBs**, or **¥2363.92 without coupons**, including one five-board batch of each design. New-order shipping is separate.
 
 ## Duck body
 
@@ -50,6 +52,7 @@ The board lines above allocate component costs by actual use, including their hi
 | **IMX219 160° camera**<br>SKU: **IMX219 160度摄像头** | 个 | 1 | ¥64.35 | ¥64.35 | 树莓派零售商<br>[Product](https://item.taobao.com/item.htm?id=1083291197130&skuId=6300750750661) |
 | **8×8 ToF 测距模块**<br>VL53L5X V2模块配盖片；VL53L5X V2模块配盖片（商品标题 VL53L5CX） | 个 | 1 | ¥49.50 | ¥49.50 | 都会明武电子<br>[Product](https://item.taobao.com/item.htm?id=737603917521) |
 | **扬声器**<br>3525腔体-4Ω3W/喇叭；3525 腔体 / 4Ω 3W | 个 | 1 | ¥3.08 | ¥3.08 | 深圳市优信电子科技有限公司<br>[Product](https://item.taobao.com/item.htm?id=683920556900) |
+| **GameSir 启明星2 wireless gamepad**<br>盖世小鸡启明星2；Bluetooth / Xbox mode | 个 | 1 | ¥89.91 | ¥89.91 | Taobao<br>[Product](https://e.tb.cn/h.j3ZcczhbdezbYBk?tk=1u6dTxTGFkS) |
 
 ### ⚙️ Bearings
 
@@ -104,6 +107,7 @@ NP-F550 is the original 2200mAh kit with two batteries and a standard dual charg
 - **IMX219 160° camera**: buy from **树莓派零售商**, selecting the exact SKU **IMX219 160度摄像头** (SKU ID `6300750750661`). Reference unit price: **¥64.35**, included in the totals above; check the product page at checkout for the final price.
 - **8×8 ToF 测距模块**：外接模块，不是 PCB 上的裸芯片；模块接线和供电按已验证方案。
 - **扬声器**：订单自带1.25端子；HAT板座是 EH 2P，需改接或转接，不能直接认为插头相同。
+- **GameSir 启明星2 wireless gamepad**: one unit at the author's reference price of **¥89.91**, included in the duck body subtotal and whole-duck totals. Select the listed model; color and bundle are subject to the product page.
 - **6700 开式薄壁轴承**：按订单参考采购数量计入，包含备料；尺寸顺序为内径×外径×宽度；两次订单为3只和2只。
 - **ET2216 薄壁轴承**：按订单参考采购数量计入，包含备料；尺寸顺序为内径×外径×宽度；两次订单为10只和2只。
 - **M2×4 十字盘头平尾自攻螺丝**：每种买1包（200只），包含备料；按打印模型及对应安装位置选择长度；每包数量是备料数量。
@@ -141,4 +145,4 @@ NP-F550 is the original 2200mAh kit with two batteries and a standard dual charg
 
 **[🧰 Open the tools and consumables list](docs/BUILD-TOOLS.en.md)**
 
-[📊 Optional Excel download (Chinese)](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/hardware/Microduck-HAT-IMU-Shopping-List-20261013.xlsx)
+[📊 Excel snapshot (2026-10-13, Chinese; use the online lists for current purchases)](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/hardware/Microduck-HAT-IMU-Shopping-List-20261013.xlsx)
