@@ -8,6 +8,10 @@
 
 [🚀 从零复刻教程](docs/MICRODUCK-BUILD-GUIDE.md) · [📥 下载](#下载与版本) · [❓ 常见问题](docs/MICRODUCK-FAQ.md) · [🌐 在线教程](https://kissqy.github.io/Microduck-kissqy/guides/)
 
+## 🦩 单脚独立 · 火烈鸟实机挑战
+
+<a href="https://github.com/user-attachments/assets/71fc2c95-8499-49f6-924b-837df42814cf"><img width="900" alt="火烈鸟单脚独立实机视频，点击封面播放" src="docs/assets/flamingo-feature-cover.webp" /></a>
+
 <table align="center">
   <tr>
     <td align="center" valign="top">
@@ -18,12 +22,12 @@
   </tr>
 </table>
 
-## 🎬 看看鸭鸭的真实表现（7 段视频）
+## 🎬 更多实机视频
 
 <table>
 <tr>
       <td width="10%"><video src="https://github.com/user-attachments/assets/0ec5b46b-1ec0-483a-a95d-3b3f307e155f" controls></video></td>
-   <td width="10%"><video src="https://github.com/user-attachments/assets/71fc2c95-8499-49f6-924b-837df42814cf" controls></video></td>
+   
   <td width="10%"><video src="https://github.com/user-attachments/assets/d09a6bfe-7a28-4266-ba90-de2b331472ad" controls></video></td>
   <td width="10%"><video src="https://github.com/user-attachments/assets/a604c0e0-af01-413f-ab00-99ccd26db8d5" controls></video></td>
   <td width="10%"><video src="https://github.com/user-attachments/assets/4508d91c-e91c-40f4-8c3e-5ca5a3f959c3" controls></video></td>

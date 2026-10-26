@@ -8,6 +8,10 @@ From a collection of parts to a walking, forward-rolling robot duck—and then t
 
 [🚀 Complete build guide](docs/MICRODUCK-BUILD-GUIDE.en.md) · [📥 Downloads](#downloads-and-versions) · [❓ FAQ](docs/MICRODUCK-FAQ.en.md) · [🌐 Online guides](https://kissqy.github.io/Microduck-kissqy/guides/en.html)
 
+## 🦩 One-legged balance · Real-robot Flamingo
+
+<a href="https://github.com/user-attachments/assets/71fc2c95-8499-49f6-924b-837df42814cf"><img width="900" alt="Flamingo one-legged balance on the real robot — click to play" src="docs/assets/flamingo-feature-cover.webp" /></a>
+
 <table align="center">
   <tr>
     <td align="center" valign="top">
@@ -18,12 +22,12 @@ From a collection of parts to a walking, forward-rolling robot duck—and then t
   </tr>
 </table>
 
-## 🎬 See the duck in action — 7 real-robot videos
+## 🎬 More real-robot videos
 
 <table>
 <tr>
       <td width="10%"><video src="https://github.com/user-attachments/assets/0ec5b46b-1ec0-483a-a95d-3b3f307e155f" controls></video></td>
-   <td width="10%"><video src="https://github.com/user-attachments/assets/71fc2c95-8499-49f6-924b-837df42814cf" controls></video></td>
+   
   <td width="10%"><video src="https://github.com/user-attachments/assets/d09a6bfe-7a28-4266-ba90-de2b331472ad" controls></video></td>
   <td width="10%"><video src="https://github.com/user-attachments/assets/a604c0e0-af01-413f-ab00-99ccd26db8d5" controls></video></td>
   <td width="10%"><video src="https://github.com/user-attachments/assets/4508d91c-e91c-40f4-8c3e-5ca5a3f959c3" controls></video></td>
