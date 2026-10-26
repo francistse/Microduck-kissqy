@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>单脚独立 · 自训新突破 | Microduck</title>
+<meta name="description" content="Microduck 飞特 HD1910 作者自训单脚独立实机视频。">
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;display:grid;place-items:center;background:#fff8ca}
+.stage{position:relative;width:min(100%,1500px);aspect-ratio:1672/941}
+.cover{display:block;width:100%;height:100%}
+video{position:absolute;left:37.5598%;top:9.1392%;width:24.8804%;height:78.6397%;object-fit:contain;background:#202020;visibility:hidden}
+button{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;cursor:pointer}
+button:focus-visible{outline:5px solid #00877b;outline-offset:-5px}
+button[hidden]{display:none}
+</style>
+</head>
+<body>
+<main class="stage" aria-label="单脚独立实机视频">
+<img class="cover" src="assets/one-leg-balance-cover.webp" alt="单脚独立，自训新突破">
+<video id="balance-video" controls playsinline preload="none" aria-label="单脚独立实机视频">
+<source src="https://github.com/user-attachments/assets/71fc2c95-8499-49f6-924b-837df42814cf" type="video/mp4">
+</video>
+<button id="play" type="button" aria-label="播放单脚独立实机视频"></button>
+</main>
+<script>
+const button=document.getElementById('play');
+const video=document.getElementById('balance-video');
+button.addEventListener('click',()=>{
+  button.hidden=true;
+  video.style.visibility='visible';
+  video.play().catch(()=>{video.focus()});
+});
+</script>
+</body>
+</html>

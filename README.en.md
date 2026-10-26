@@ -10,7 +10,7 @@ From a collection of parts to a walking, forward-rolling robot duck—and then t
 
 ## 🏆 One-legged balance · A new training milestone
 
-<a href="https://github.com/user-attachments/assets/71fc2c95-8499-49f6-924b-837df42814cf"><img width="900" alt="Custom-trained one-legged balance on the real robot — click to play" src="docs/assets/one-leg-balance-cover.webp" /></a>
+<a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html"><img width="900" alt="Custom-trained one-legged balance on the real robot — click to play" src="docs/assets/one-leg-balance-cover.webp" /></a>
 
 <table align="center">
   <tr>
