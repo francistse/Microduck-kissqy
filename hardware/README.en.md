@@ -61,9 +61,9 @@ Minimum pack counts below apply to each row for one set. Rows with the same prod
 
 | Board | DIY materials · free PCB coupons | DIY materials · no coupons | Assembled board |
 | --- | ---: | ---: | ---: |
-| HAT | ¥16.72 | ¥20.72 | [¥199](https://item.taobao.com/item.htm?id=1095121548583) |
+| HAT | ¥16.72 | ¥20.72 | [¥119](https://item.taobao.com/item.htm?id=1095121548583) |
 | IMU | ¥20.38 | ¥24.38 | [¥99](https://item.taobao.com/item.htm?id=1095121548583) |
-| **Both boards** | **¥37.11** | **¥45.11** | **¥298** |
+| **Both boards** | **¥37.11** | **¥45.11** | **¥218** |
 
 DIY amounts above cover parts fitted to the boards, excluding tools and labor. For the first purchase, use full-pack amounts below and add **¥800–1000** for [tools and consumables](../docs/BUILD-TOOLS.en.md#budgeting-for-tools-from-scratch); assembled boards are ready to use.
 

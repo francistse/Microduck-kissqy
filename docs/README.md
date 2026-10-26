@@ -17,6 +17,8 @@
 
 [新手路线总入口](https://kissqy.github.io/Microduck-kissqy/build/) · [中控图文使用教程](https://kissqy.github.io/Microduck-kissqy/console-guide.html)
 
+采购参考已含忆捷 32GB TF 卡 ¥39.90 与[山泽双头高速读卡器（SD／TF 卡同读）](https://3.cn/393kj-8k?jkl=@I2cIJ7xKJzv@)1 个 ¥22.90；成品板路线已列价小计 ¥2787.80，打印、HUB 与电池接入等未报价费用和运费另计。已有读卡器可复用。
+
 ## Start here / 入门
 
 | 说明 | 中文 | English |

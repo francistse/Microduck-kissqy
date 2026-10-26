@@ -1,7 +1,7 @@
 {
   "currency": "CNY",
   "reviewed": "2026-10-27",
-  "priceBasis": "作者历史采购记录、成品板定价及补充的京东 TF 卡报价；商品价格以下单时为准。",
+  "priceBasis": "作者历史采购记录、成品板定价及补充的京东 TF 卡与读卡器报价；商品价格以下单时为准。",
   "items": [
     {
       "id": "part-01",
@@ -37,7 +37,19 @@
       "subtotalCents": 3990,
       "group": "electronics",
       "url": "https://3.cn/392wR-H7?jkl=@D1sNrEalQdG@",
-      "note": "作者补充的京东购买入口与参考价格；刷入配套系统镜像，读卡器另备。"
+      "note": "作者补充的京东购买入口与参考价格；刷入配套系统镜像，读卡器已单独列价。"
+    },
+    {
+      "id": "card",
+      "name": "山泽双头高速读卡器",
+      "spec": "SD／TF 卡同读；用于将系统镜像写入 TF 卡。",
+      "unit": "个",
+      "quantity": 1,
+      "unitQuote": "22.90",
+      "subtotalCents": 2290,
+      "group": "electronics",
+      "url": "https://3.cn/393kj-8k?jkl=@I2cIJ7xKJzv@",
+      "note": "作者补充的京东购买入口与参考价格；已有兼容读卡器可复用。"
     },
     {
       "id": "part-03",
@@ -310,12 +322,6 @@
       "name": "HUB 与电池接入配件",
       "spec": "按选用电池仓补齐 HUB、接线与电池触点；向作者确认供货与价格。",
       "url": "https://github.com/kissqy/Microduck-kissqy/blob/main/docs/assets/purchase-wechat-qr.jpg"
-    },
-    {
-      "id": "card",
-      "name": "TF 读卡器",
-      "spec": "用于把镜像写入 TF 卡；32GB TF 卡已在上方按 ¥39.90 列价，已有读卡器可复用。",
-      "url": "https://github.com/kissqy/Microduck-kissqy/blob/main/docs/releases/public-image-r1.md"
     },
     {
       "id": "capacitor",

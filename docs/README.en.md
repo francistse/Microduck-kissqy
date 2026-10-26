@@ -17,6 +17,8 @@ Use the released motion models and Robot Console for everyday operation. The gui
 
 [Build-route overview (Chinese)](https://kissqy.github.io/Microduck-kissqy/build/) · [Illustrated console guide (Chinese)](https://kissqy.github.io/Microduck-kissqy/console-guide.html)
 
+The priced purchase reference includes an EAGET 32GB microSD card at CNY 39.90 and one [SAMZHE dual-head high-speed card reader with simultaneous SD / TF card reading](https://3.cn/393kj-8k?jkl=@I2cIJ7xKJzv@) at CNY 22.90. The assembled-board reference subtotal is CNY 2787.80, before printing, unpriced HUB / battery-connection parts and shipping. Reuse an existing card reader if available.
+
 ## Start here / 入门
 
 | Guide | 中文 | English |

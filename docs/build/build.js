@@ -5,7 +5,7 @@ let state=readState();
 const save=field=>{try{const latest=readState();latest[field]=state[field];localStorage.setItem(storageKey,JSON.stringify(latest));}catch{}};
 const priceInput=key=>{const raw=state.costs[key];if(raw===undefined||raw==='')return null;const number=Number(raw);return Number.isFinite(number)&&number>=0&&number<=1000000?Math.round(number*100):null;};
 let data;
-try{const response=await fetch(new URL('./data.json?v=20261027-wires',import.meta.url));if(response.ok)data=await response.json();}catch{}
+try{const response=await fetch(new URL('./data.json?v=20261027-reader-diy',import.meta.url));if(response.ok)data=await response.json();}catch{}
 if(data){
  const body=data.items.reduce((sum,item)=>sum+item.subtotalCents,0),boards=data.boards.reduce((sum,item)=>sum+item.subtotalCents,0),assembled=body+boards;
  const plans=[{id:'own',fields:['ownPrint','extras','shipping']},{id:'service',fields:['printService','extras','shipping'],quote:'printService',quoteText:'待填代打报价'},{id:'buy-printer',fields:['printer','ownPrint','extras','shipping'],quote:'printer',quoteText:'待填打印机价格'}];
@@ -27,6 +27,8 @@ if(data){
  }
  function updateBudget(){
   plans.forEach(plan=>{const card=document.querySelector('[data-plan="'+plan.id+'"]');if(!card)return;const values=plan.fields.map(cost),addition=values.reduce((s,v)=>s+(v??0),0),needsQuote=plan.quote&&cost(plan.quote)===null,price=card.querySelector('[data-price]');price.textContent=needsQuote?plan.quoteText:money(assembled+addition);price.classList.toggle('quote-needed',!!needsQuote);const missing=plan.fields.filter((_,i)=>values[i]===null);card.querySelector('[data-pending]').textContent=needsQuote?(plan.id==='service'?'填入整套代打报价后计算；无需购买打印机。':'填入设备价格后计算这一档预算。'):missing.length?'＋待补：'+missing.map(x=>names[x]).join('、'):'已含你填写的补充预算';});
+  plans.forEach(plan=>{const row=document.querySelector('[data-diy-plan="'+plan.id+'"]');if(!row)return;const addition=plan.fields.reduce((sum,key)=>sum+(cost(key)??0),0),needsQuote=plan.quote&&cost(plan.quote)===null;row.querySelectorAll('[data-diy-tools]').forEach(cell=>{const buyTools=cell.dataset.diyTools==='new',minimum=body+data.diyMaterialsMinCents+(buyTools?data.diyToolsMinCents:0)+addition,maximum=body+data.diyMaterialsMaxCents+(buyTools?data.diyToolsMaxCents:0)+addition;cell.textContent=needsQuote?plan.quoteText:money(minimum)+'–'+money(maximum);});});
+  const diyHint=document.getElementById('diy-budget-state');if(diyHint){const missing=Object.keys(names).filter(key=>cost(key)===null);diyHint.textContent=(missing.length?'仍需补齐：'+missing.map(key=>names[key]).join('、')+'。':'已计入你填写的补充费用。')+'各项按对应打印方式计算；自焊工具已单列，同一工具不要再填进待补配件。';}
   document.querySelectorAll('[data-base-total]').forEach(el=>el.textContent=money(assembled));
   const hint=document.getElementById('budget-state');if(hint)hint.textContent=Object.values(state.costs).some(x=>x!=='')?'已按打印方式更新预算并保存在这台设备。设备费只计入“买机器自己打”，代打费只计入“找人代打”。':'打印机设备费按参考 ¥3500 预填，可改为实际报价；代打未报价时不展示总额。其他待补费用另计。';
  }
