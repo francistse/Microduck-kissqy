@@ -8,9 +8,9 @@ From a collection of parts to a walking, forward-rolling robot duck—and then t
 
 [🚀 Complete build guide](docs/MICRODUCK-BUILD-GUIDE.en.md) · [📥 Downloads](#downloads-and-versions) · [❓ FAQ](docs/MICRODUCK-FAQ.en.md) · [🌐 Online guides](https://kissqy.github.io/Microduck-kissqy/guides/en.html)
 
-## 🦩 One-legged balance · Real-robot Flamingo
+## 🏆 One-legged balance · A new training milestone
 
-<a href="https://github.com/user-attachments/assets/71fc2c95-8499-49f6-924b-837df42814cf"><img width="900" alt="Flamingo one-legged balance on the real robot — click to play" src="docs/assets/flamingo-feature-cover.webp" /></a>
+<a href="https://github.com/user-attachments/assets/71fc2c95-8499-49f6-924b-837df42814cf"><img width="900" alt="Custom-trained one-legged balance on the real robot — click to play" src="docs/assets/one-leg-balance-cover.webp" /></a>
 
 <table align="center">
   <tr>
