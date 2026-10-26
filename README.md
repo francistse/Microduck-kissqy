@@ -12,8 +12,6 @@
 
 <a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html"><img width="900" alt="Microduck 单脚独立实机视频与微信交流群，点击图片观看视频，扫码加群交流" src="docs/assets/community-one-leg-banner.webp" /></a>
 
-[▶ 观看单脚独立实机视频](https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html) · [💬 单独二维码](docs/assets/community-wechat-qr.png) · [查看合图大图](docs/assets/community-one-leg-banner.webp)
-
 <sub>群二维码在 2026 年 11 月 1 日前有效。</sub>
 
 ## 🎬 更多实机视频
