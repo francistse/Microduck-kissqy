@@ -10,17 +10,11 @@ From a collection of parts to a walking, forward-rolling robot duck—and then t
 
 ## 🏆 One-legged balance · A new training milestone
 
-<a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html"><img width="900" alt="Custom-trained one-legged balance on the real robot — click to play" src="docs/assets/one-leg-balance-cover.webp" /></a>
+<a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html"><img width="900" alt="Microduck one-legged balance video and WeChat community QR code — click to watch, scan to join" src="docs/assets/community-one-leg-banner.webp" /></a>
 
-<table align="center">
-  <tr>
-    <td align="center" valign="top">
-      <b>💬 Join the WeChat group</b><br><br>
-      <a href="docs/assets/community-wechat-poster.webp"><img width="760" alt="Microduck robot photo and WeChat community QR code" src="docs/assets/community-wechat-poster.webp" /></a><br>
-      <sub>Valid before November 1, 2026 · Click the image for full size · <a href="docs/assets/community-wechat-qr.png">QR code only</a></sub>
-    </td>
-  </tr>
-</table>
+[▶ Watch the one-legged balance video](https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html) · [💬 QR code only](docs/assets/community-wechat-qr.png) · [Full-size banner](docs/assets/community-one-leg-banner.webp)
+
+<sub>The group QR code is valid before November 1, 2026.</sub>
 
 ## 🎬 More real-robot videos
 

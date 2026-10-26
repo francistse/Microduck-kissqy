@@ -10,17 +10,11 @@
 
 ## 🏆 单脚独立 · 自训新突破
 
-<a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html"><img width="900" alt="作者自训单脚独立实机视频，点击封面播放" src="docs/assets/one-leg-balance-cover.webp" /></a>
+<a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html"><img width="900" alt="Microduck 单脚独立实机视频与微信交流群，点击图片观看视频，扫码加群交流" src="docs/assets/community-one-leg-banner.webp" /></a>
 
-<table align="center">
-  <tr>
-    <td align="center" valign="top">
-      <b>💬 加群交流</b><br><br>
-      <a href="docs/assets/community-wechat-poster.webp"><img width="760" alt="Microduck 实机照片与微信交流群二维码" src="docs/assets/community-wechat-poster.webp" /></a><br>
-      <sub>2026 年 11 月 1 日前有效 · 点击图片查看大图 · <a href="docs/assets/community-wechat-qr.png">单独二维码</a></sub>
-    </td>
-  </tr>
-</table>
+[▶ 观看单脚独立实机视频](https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html) · [💬 单独二维码](docs/assets/community-wechat-qr.png) · [查看合图大图](docs/assets/community-one-leg-banner.webp)
+
+<sub>群二维码在 2026 年 11 月 1 日前有效。</sub>
 
 ## 🎬 更多实机视频
 
