@@ -21,7 +21,7 @@ An assembled robot can start at step 4. For finding the robot's IP after imaging
 
 ## 1. How much will it cost?
 
-**The assembled-board option has a priced reference subtotal of CNY 2787.60**: CNY 2569.60 for the reference body purchases (including the EAGET 32GB microSD card at CNY 39.90), HAT CNY 119 and IMU CNY 99. DIY board materials plus a basic tool allowance produce a reference range of CNY 3463.82–3703.82.
+**The assembled-board option has a priced reference subtotal of CNY 2764.90**: CNY 2546.90 for the reference body purchases (including the EAGET 32GB microSD card at CNY 39.90), HAT CNY 119 and IMU CNY 99. DIY board materials plus a basic tool allowance produce a reference range of CNY 3441.12–3681.12.
 
 These are not final delivered totals: printing, the card reader, HUB / battery-connection parts and other unpriced items still need quotes; shipping is extra. Historical quantities include spare stock. [Open the budget page to add your costs (Chinese) →](https://kissqy.github.io/Microduck-kissqy/build/budget.html)
 

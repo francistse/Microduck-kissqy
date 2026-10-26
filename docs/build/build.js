@@ -5,7 +5,7 @@ let state=readState();
 const save=field=>{try{const latest=readState();latest[field]=state[field];localStorage.setItem(storageKey,JSON.stringify(latest));}catch{}};
 const priceInput=key=>{const raw=state.costs[key];if(raw===undefined||raw==='')return null;const number=Number(raw);return Number.isFinite(number)&&number>=0&&number<=1000000?Math.round(number*100):null;};
 let data;
-try{const response=await fetch(new URL('./data.json?v=20261027-printing-tf',import.meta.url));if(response.ok)data=await response.json();}catch{}
+try{const response=await fetch(new URL('./data.json?v=20261027-wires',import.meta.url));if(response.ok)data=await response.json();}catch{}
 if(data){
  const body=data.items.reduce((sum,item)=>sum+item.subtotalCents,0),boards=data.boards.reduce((sum,item)=>sum+item.subtotalCents,0),assembled=body+boards;
  const plans=[{id:'own',fields:['ownPrint','extras','shipping']},{id:'service',fields:['printService','extras','shipping'],quote:'printService',quoteText:'待填代打报价'},{id:'buy-printer',fields:['printer','ownPrint','extras','shipping'],quote:'printer',quoteText:'待填打印机价格'}];

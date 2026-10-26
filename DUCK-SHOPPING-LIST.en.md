@@ -4,22 +4,22 @@
 
 [🏠 Project homepage](README.en.md)
 
-**Assembled-board reference subtotal: CNY 2787.60**, before printing and unpriced items such as the card reader, HUB and battery connections; shipping is extra.
+**Assembled-board reference subtotal: CNY 2764.90**, before printing and unpriced items such as the card reader, HUB and battery connections; shipping is extra.
 
 **[Open the shopping checklist (Chinese) →](https://kissqy.github.io/Microduck-kissqy/build/shopping.html)** · [Compare budget totals (Chinese)](https://kissqy.github.io/Microduck-kissqy/build/budget.html)
 
-The online pages show totals first, then specifications, quantities and purchase links. The tables below preserve the author's historical purchase references. Normal use uses the released models and Robot Console.
+The online pages show totals first, then specifications, quantities and purchase links. The tables below use the author's purchase references, filtered for the default assembled-board route. Normal use uses the released models and Robot Console.
 
 ## Total cost comparison
 
 | Item | Buy assembled boards | DIY boards, including tools |
 | --- | ---: | ---: |
-| Duck body, including gamepad and reference spare stock | ¥2569.60 | ¥2569.60 |
+| Duck body, including gamepad and reference spare stock | ¥2546.90 | ¥2546.90 |
 | HAT + IMU | [HAT ¥119 + IMU ¥99](https://item.taobao.com/item.htm?id=1095121548583) | ¥94.22–134.22 · first component purchase |
 | Soldering / programming tools and consumables | Not required for board soldering | ¥800–1000 |
-| **Total without a printer** | **¥2787.60** | **¥3463.82–3703.82** |
+| **Total without a printer** | **¥2764.90** | **¥3441.12–3681.12** |
 | 3D printer allowance | +¥3500 | +¥3500 |
-| **Total including a printer** | **¥6287.60** | **¥6963.82–7203.82** |
+| **Total including a printer** | **¥6264.90** | **¥6941.12–7181.12** |
 
 - **All totals exclude printed parts, filament / printing costs, labor, a computer and unpriced items such as the card reader, HUB and battery connections; new-order shipping and losses are extra.** The body includes 15 HD1910 servos at ¥119 each.
 - DIY board materials use full component packs; the range covers free PCB coupons / no coupons. [Board cost breakdown](hardware/README.en.md#build-cost) · [Tool budget](docs/BUILD-TOOLS.en.md#budgeting-for-tools-from-scratch). Reuse existing tools; the assembled-board option assumes you have normal assembly hand tools.
@@ -28,7 +28,7 @@ The author added the EAGET 32GB monitoring / dashcam microSD card at CNY 39.90. 
 
 ## Duck body
 
-**🔌 The original tables on this page describe EH2.5 HAT / IMU boards; Feetech servos use AMP2.0 cables. An AMP2.0 project variant is also available, with AMP2.0 bus sockets, HP1.25 audio sockets, and an added LED plus 1kΩ resistor. See its [separate parts guide](hardware/AMP2.0-VERSION.en.md).** Choose the version for your wiring.
+**Choose ready-made cables matching the assembled HAT / IMU connectors. Feetech HD1910 servos use AMP2.0 3P servo cables; select matching ready-made adapter cables for peripheral modules.** See the [board connector guide](hardware/AMP2.0-VERSION.en.md) for details.
 
 ### 🦆 Controller, servos and external modules
 
@@ -75,14 +75,9 @@ From the author's **October 14, 2026** order. This is a reference purchase quant
 
 | Item / exact variant | Unit | Reference quantity | Historical unit price | Subtotal | Shop / link |
 | --- | --- | ---: | ---: | ---: | --- |
-| **EH 2P 母壳**<br>EH2.5MM 2P胶壳（50个）；EH 2P，配 HAT J1/J2/J9 | 包（50个） | 1 | ¥2.20 | ¥2.20 | 启色数码旗舰店<br>[Product](https://item.taobao.com/item.htm?id=832569969546) |
-| **EH 3P 母壳**<br>EH2.5MM 3P胶壳（50个）；EH 3P，配 HAT J13/J14、IMU J1 | 包（50个） | 1 | ¥2.80 | ¥2.80 | 启色数码旗舰店<br>[Product](https://item.taobao.com/item.htm?id=832569969546) |
-| **EH 压接端子**<br>EH2.5MM 端子（100个）；EH2.5MM 端子 | 包（100个） | 1 | ¥3.50 | ¥3.50 | 启色数码旗舰店<br>[Product](https://item.taobao.com/item.htm?id=832569969546) |
 | **SH1.0 4P 转杜邦母线**<br>0.2m;1.0-4P转杜邦母（5条）；SH1.0 4P / 20cm / 杜邦母 | 包（5个） | 1 | ¥4.56 | ¥4.56 | 信容芯旗舰店<br>[Product](https://item.taobao.com/item.htm?id=895049863252) |
 | **AMP2.0 3P 舵机线 20cm**<br>200mm;1007/24#;3P;AMP2.0；200mm / 1007 / 24AWG / 3P / AMP2.0 | 条 | 30 | ¥0.90 | ¥27.00 | 永茂电子<br>[Product](https://item.taobao.com/item.htm?id=825340808235) |
 | **AMP2.0 3P 舵机线 10cm**<br>100mm;1007/24#;3P;AMP2.0；100mm / 1007 / 24AWG / 3P / AMP2.0 | 条 | 30 | ¥0.90 | ¥27.00 | 永茂电子<br>[Product](https://item.taobao.com/item.htm?id=825340808235) |
-| **22AWG 三芯硅胶排线**<br>黑色;3芯;22AWG;1m；黑色 / 3芯 / 22AWG / 1m | 米 | 3 | ¥3.5933 | ¥10.78 | 萨牛旗舰店<br>[Product](https://item.taobao.com/item.htm?id=781764816472) |
-| **22AWG 单芯硅胶线**<br>22AWG(0.33平方)黑色 2米；黑色 / 22AWG / 0.33mm² / 2m | 个 | 1 | ¥3.42 | ¥3.42 | 渡竹旗舰店<br>[Product](https://item.taobao.com/item.htm?id=736162720327) |
 | **彩色热缩管套装**<br>袋装 164片 彩色 【2倍收缩】；164片 / 彩色 / 2倍收缩 | 个 | 1 | ¥0.99 | ¥0.99 | 圣佰路旗舰店<br>[Product](https://item.taobao.com/item.htm?id=945215173380) |
 
 NP-F550 is the original 2200mAh kit with two batteries and a standard dual charger. The M2×5 screws had a historical ¥0 promotional amount; this is not a regular selling price.
@@ -95,7 +90,7 @@ NP-F550 is the original 2200mAh kit with two batteries and a standard dual charg
 - **NP-F550 电池与双充套装**：按“NP-F550补光灯专用▲2200mAh，2电+标准双充套裝”原款式购买。
 - **IMX219 160° camera**: buy from **树莓派零售商**, selecting the exact SKU **IMX219 160度摄像头** (SKU ID `6300750750661`). Reference unit price: **¥64.35**, included in the totals above; check the product page at checkout for the final price.
 - **8×8 ToF 测距模块**：外接模块，不是 PCB 上的裸芯片；模块接线和供电按已验证方案。
-- **扬声器**：订单自带1.25端子；HAT板座是 EH 2P，需改接或转接，不能直接认为插头相同。
+- **Speaker / 扬声器**: choose the 3525 enclosure / 4Ω 3W variant. Match its connector to the assembled HAT and use a matching ready-made cable or adapter cable.
 - **GameSir 启明星2 wireless gamepad**: one unit at the author's reference price of **¥89.91**, included in the duck body subtotal and whole-duck totals. Select the listed model; color and bundle are subject to the product page.
 - **6700 开式薄壁轴承**：按订单参考采购数量计入，包含备料；尺寸顺序为内径×外径×宽度；两次订单为3只和2只。
 - **ET2216 薄壁轴承**：按订单参考采购数量计入，包含备料；尺寸顺序为内径×外径×宽度；两次订单为10只和2只。
@@ -105,14 +100,9 @@ NP-F550 is the original 2200mAh kit with two batteries and a standard dual charg
 - **M2×8 十字盘头平尾自攻螺丝**：每种买1包（200只），包含备料；按打印模型及对应安装位置选择长度；每包数量是备料数量。
 - **M2×12 十字盘头平尾自攻螺丝**：每种买1包（200只），包含备料；按打印模型及对应安装位置选择长度；每包数量是备料数量。
 - **M2.6×8 十字盘头平尾自攻螺丝**：每种买1包（200只），包含备料；按打印模型及对应安装位置选择长度；每包数量是备料数量。
-- **EH 2P 母壳**：每只母壳配2个EH压接端子；按EH2.5款式购买，与板上的EH接口配套。
-- **EH 3P 母壳**：每只母壳还需3个压接端子。
-- **EH 压接端子**：与EH母壳成套使用，按EH2.5MM端子款式购买。
 - **SH1.0 4P 转杜邦母线**：用于外部接口转接；每根线的脚序按 HAT J5 与模块核对，不按线色猜。
 - **AMP2.0 3P 舵机线 20cm**：按订单参考采购数量计入，包含备料；用于飞特舵机线束；10cm和20cm按实际走线位置选择。
 - **AMP2.0 3P 舵机线 10cm**：按订单参考采购数量计入，包含备料；与20cm线是不同长度选项，数量按实际线束方案准备。
-- **22AWG 三芯硅胶排线**：原订单2米×3.63元＋1米×3.52元，合计3米10.78元；单价按两次订单均价。
-- **22AWG 单芯硅胶线**：用于自制接线，按22AWG黑色2米款式购买。
 - **彩色热缩管套装**：用于接线处绝缘及整理。
 
 </details>

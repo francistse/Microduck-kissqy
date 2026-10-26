@@ -196,42 +196,6 @@
       "note": "采购包数包含参考备料；按打印件与装配位置使用。"
     },
     {
-      "id": "part-16",
-      "name": "EH 2P 母壳",
-      "spec": "EH2.5MM 2P胶壳（50个）；EH 2P，配 HAT J1/J2/J9",
-      "unit": "包（50个）",
-      "quantity": 1,
-      "unitQuote": "2.20",
-      "subtotalCents": 220,
-      "group": "wiring",
-      "url": "https://item.taobao.com/item.htm?id=832569969546",
-      "note": "接口规格与板卡版本匹配后购买。"
-    },
-    {
-      "id": "part-17",
-      "name": "EH 3P 母壳",
-      "spec": "EH2.5MM 3P胶壳（50个）；EH 3P，配 HAT J13/J14、IMU J1",
-      "unit": "包（50个）",
-      "quantity": 1,
-      "unitQuote": "2.80",
-      "subtotalCents": 280,
-      "group": "wiring",
-      "url": "https://item.taobao.com/item.htm?id=832569969546",
-      "note": "接口规格与板卡版本匹配后购买。"
-    },
-    {
-      "id": "part-18",
-      "name": "EH 压接端子",
-      "spec": "EH2.5MM 端子（100个）；EH2.5MM 端子",
-      "unit": "包（100个）",
-      "quantity": 1,
-      "unitQuote": "3.50",
-      "subtotalCents": 350,
-      "group": "wiring",
-      "url": "https://item.taobao.com/item.htm?id=832569969546",
-      "note": "接口规格与板卡版本匹配后购买。"
-    },
-    {
       "id": "part-19",
       "name": "SH1.0 4P 转杜邦母线",
       "spec": "0.2m;1.0-4P转杜邦母（5条）；SH1.0 4P / 20cm / 杜邦母",
@@ -266,30 +230,6 @@
       "group": "wiring",
       "url": "https://item.taobao.com/item.htm?id=825340808235",
       "note": "历史采购数量含备料，并非装机必须各用 30 条。"
-    },
-    {
-      "id": "part-22",
-      "name": "22AWG 三芯硅胶排线",
-      "spec": "黑色;3芯;22AWG;1m；黑色 / 3芯 / 22AWG / 1m",
-      "unit": "米",
-      "quantity": 3,
-      "unitQuote": "3.5933",
-      "subtotalCents": 1078,
-      "group": "wiring",
-      "url": "https://item.taobao.com/item.htm?id=781764816472",
-      "note": "接口规格与板卡版本匹配后购买。"
-    },
-    {
-      "id": "part-23",
-      "name": "22AWG 单芯硅胶线",
-      "spec": "22AWG(0.33平方)黑色 2米；黑色 / 22AWG / 0.33mm² / 2m",
-      "unit": "个",
-      "quantity": 1,
-      "unitQuote": "3.42",
-      "subtotalCents": 342,
-      "group": "wiring",
-      "url": "https://item.taobao.com/item.htm?id=736162720327",
-      "note": "接口规格与板卡版本匹配后购买。"
     },
     {
       "id": "part-24",

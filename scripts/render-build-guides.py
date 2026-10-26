@@ -40,9 +40,9 @@ def next_page(index):
 def shell(filename,title,description,content,index=-1):
  nav=''.join(f'<a href="{f}"'+(' aria-current="page"' if index==i else '')+f'><b>{i+1:02}</b><span>{label}</span></a>' for i,(f,label,_,_) in enumerate(ROUTES))
  return f'''<!doctype html>
-<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d1113"><title>{E(title)} · Microduck 飞特版</title><meta name="description" content="{E(description,quote=True)}"><link rel="canonical" href="https://kissqy.github.io/Microduck-kissqy/build/{filename if filename!='index.html' else ''}"><link rel="stylesheet" href="build.css?v=20261027-printing"></head>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d1113"><title>{E(title)} · Microduck 飞特版</title><meta name="description" content="{E(description,quote=True)}"><link rel="canonical" href="https://kissqy.github.io/Microduck-kissqy/build/{filename if filename!='index.html' else ''}"><link rel="stylesheet" href="build.css?v=20261027-wires"></head>
 <body><header class="site-header"><div class="header-main"><a class="brand" href="./"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#c1f577"/><path d="M9 23h9V11h12v11h-7v9H9z" fill="#24311e"/></svg>microduck <small>从零到第一次行走</small></a><nav class="header-links" aria-label="其他入口"><a href="{REPO}">项目首页 ↗</a><a href="../console-guide.html">中控教程</a></nav></div><nav class="route-nav" aria-label="新手四步">{nav}</nav></header>
-<main class="wrap">{content}<footer class="site-footer"><div>Microduck 飞特版 · kissqy<br>使用配套现成动作模型，日常操作使用机器人中控。</div><div><a href="{FILE}docs/MICRODUCK-FAQ.md">常见问题</a> · <a href="{FILE}docs/assets/purchase-wechat-qr.jpg">联系作者</a> · <a href="{FILE}microduck-hd1910/LICENSE">分项许可</a></div></footer></main><script type="module" src="build.js?v=20261027-printing"></script></body></html>'''
+<main class="wrap">{content}<footer class="site-footer"><div>Microduck 飞特版 · kissqy<br>使用配套现成动作模型，日常操作使用机器人中控。</div><div><a href="{FILE}docs/MICRODUCK-FAQ.md">常见问题</a> · <a href="{FILE}docs/assets/purchase-wechat-qr.jpg">联系作者</a> · <a href="{FILE}microduck-hd1910/LICENSE">分项许可</a></div></footer></main><script type="module" src="build.js?v=20261027-wires"></script></body></html>'''
 
 def head(number,title,lead,badge=''):
  return '<section class="page-head"><p class="eyebrow">'+number+'</p><div class="head-line"><div><h1>'+title+'</h1><p class="lead">'+lead+'</p></div>'+(f'<span class="badge">{badge}</span>' if badge else '')+'</div></section>'
@@ -68,7 +68,6 @@ budget=budget.replace('value="3500"',f'value="{D["printerReferenceCents"]/100:g}
 
 def purchase_row(item):
  spec=E(item['spec']);note=E(item['note'])
- if item['name'].startswith('EH '):note='仅 EH2.5 接口板需要；AMP2.0 成品板按实际接头选线。'
  return f'<tr><td class="item-name"><label class="prepared-label"><input type="checkbox" data-prepared="{item["id"]}" aria-label="{E(item["name"],quote=True)} 已备齐"><span><strong>{E(item["name"])}</strong><span class="spec">{spec}<br>{note}</span></span></label></td><td class="quantity" data-label="参考采购量">{item["quantity"]} {E(item["unit"])}</td><td class="amount" data-label="历史单价">¥{E(item["unitQuote"])}</td><td class="amount" data-label="小计">{money(item["subtotalCents"])}</td><td class="buy">'+link(item['url'],'购买 ↗')+'</td></tr>'
 
 shop=head('02 / SHOPPING','我要买什么？','下面就是成品板路线的采购清单：按型号、数量和购买入口准备。','完整参考配置 · 含备料')
@@ -78,7 +77,6 @@ shop+='<p class="price-note">勾选自己已买到或可复用的物品，进度
 shop+='<nav class="toc" aria-label="采购分类">'+''.join(link('#'+g['id'],g['name']) for g in D['groups'])+link('#unpriced','待补项目')+link('#optional','选配')+'</nav>'
 for group in D['groups']:
  shop+=f'<section class="purchase-group" id="{group["id"]}"><h2>{group["name"]} <span class="small">{money(totals[group["id"]])}</span></h2>'
- if group['id']=='wiring':shop+='<div class="note-box"><p>线材表包含 EH2.5 版时期的历史采购记录。购买成品板时先向店铺确认接口版本，再选对应插头和成品线；AMP2.0 板不要照买 EH 母壳与端子。'+link(FILE+'hardware/AMP2.0-VERSION.md','查看对应接口规格 ↗')+'</p></div>'
  shop+='<div class="table-wrap"><table class="shopping-table"><thead><tr><th>物品与指定规格</th><th>参考采购量</th><th class="amount">历史单价</th><th class="amount">小计</th><th>购买入口</th></tr></thead><tbody>'+''.join(purchase_row(item) for item in D['boards']+D['items'] if item['group']==group['id'])+'</tbody></table></div></section>'
 shop+='<section class="panel" id="unpriced"><h2>还要补齐这些项目</h2><p class="small">下面尚无完整报价，没有假设为免费；取得报价后填回预算页。已有并可复用的项目也可以勾选。</p><div class="unpriced-list">'
 for item in D['unpriced']:
