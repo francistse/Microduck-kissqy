@@ -99,9 +99,9 @@ The released interfaces are Chinese. English guides above retain the original bu
 
 ## 🖨️ Complete printing set · FrankenDuck
 
-This set combines community improvements with the author's real-robot modifications, including STL files and a reference plate project. **Install rollers without removing the servos.** Choose a HUB-clamping battery holder or the official-style holder with thicker latches; both IMU mounts fit this repository's IMU. Rollers use **623ZZ (3×10×4 mm)** bearings.
+This set combines community improvements with the author's real-robot modifications, including STL files and a reference plate project. **Install rollers without removing the servos.** Choose a HUB-clamping battery holder or the official-style holder with thicker latches; both IMU mounts fit this repository's IMU.
 
-[Printing files, plate previews, and battery holders](hardware/3d-print-frankenduck/README.en.md) · [623ZZ purchasing](DUCK-SHOPPING-LIST.en.md#optional-roller-bearings)
+[Printing files, plate previews, and battery holders](hardware/3d-print-frankenduck/README.en.md)
 
 ## 🔧 DIY HAT and IMU
 
