@@ -43,29 +43,30 @@ video{display:block;width:100%;aspect-ratio:9/16;object-fit:contain;background:#
 :focus-visible{outline:3px solid var(--orange);outline-offset:5px}
 @media(min-width:1600px){.layout{max-width:1380px;grid-template-columns:minmax(0,1fr) minmax(320px,560px)}}
 @media(max-width:720px){
-.topbar{padding:18px 20px}.brand{font-size:18px}.brand-mark{width:34px;height:34px}.back{font-size:13px;padding:10px 13px}
-.layout{display:flex;flex-direction:column;padding:15px 18px 32px;gap:24px}
-.copy{width:100%;padding:0;text-align:center}.eyebrow{font-size:13px}
-h1{font-size:clamp(44px,13vw,72px);line-height:1.1;letter-spacing:-2px;margin:17px 0 14px}h1 br{display:none}
-.description{font-size:15px;max-width:none;line-height:1.8}.tags{justify-content:center;margin:17px 0 0;gap:8px}.tag{font-size:12px;padding:7px 11px}.project-link{display:none}
-.player-wrap{width:min(100%,440px)}.player{padding:8px;border-radius:29px}video{border-radius:21px}.play{inset:8px;border-radius:21px}.play-circle{width:72px;height:72px}
+.topbar{padding:12px 16px}.brand{font-size:17px}.brand-mark{width:34px;height:34px}.back{font-size:12px;padding:9px 12px}
+.layout{display:flex;flex-direction:column;justify-content:flex-start;min-height:calc(100svh - 58px);padding:4px 16px 16px;gap:12px}
+.copy{width:100%;padding:0;text-align:center}.copy .eyebrow{font-size:12px;letter-spacing:1px}
+h1{font-size:clamp(30px,8vw,38px);line-height:1.1;letter-spacing:-1px;margin:6px 0 0}h1 br{display:none}
+.copy .description,.copy .tags,.copy .project-link{display:none}
+.player-wrap{width:min(100%,440px,calc((100svh - 218px)*9/16 + 12px))}
+.player{padding:6px;border-radius:25px}video{border-radius:19px}.play{inset:6px;border-radius:19px}.play-circle{width:66px;height:66px}
+.player-actions{margin-top:6px;gap:24px}.text-button{font-size:13px;padding:8px 4px}.status:empty{display:none}.status{font-size:12px;margin-top:2px}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 
-.layout{min-height:calc(100svh - 86px)}
+@media(min-width:721px){.layout{min-height:calc(100svh - 86px)}}
 .gallery{max-width:1240px;margin:0 auto;padding:60px 5vw 88px;border-top:1px solid #12494316}
 .gallery-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}
 .gallery-heading h2{font-size:clamp(29px,4vw,44px);line-height:1.2;letter-spacing:-1px;margin:15px 0 12px}
 .gallery-heading p{color:var(--muted);font-size:16px;line-height:1.8;margin:0}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-.video-card{min-width:0;align-self:start;background:#ffffffb8;border:1px solid #fff;border-radius:25px;padding:12px;box-shadow:0 10px 35px #1249430a}
+.gallery-grid{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:4px;overscroll-behavior-x:contain;padding:6px 4px 20px;scrollbar-color:#12494366 #1249430b;scrollbar-width:thin}
+.video-card{flex:0 0 clamp(260px,29vw,350px);scroll-snap-align:start;min-width:0;align-self:start;background:#ffffffb8;border:1px solid #fff;border-radius:25px;padding:12px;box-shadow:0 10px 35px #1249430a}
 .clip-heading{display:flex;align-items:center;gap:10px;padding:4px 5px 15px}
 .clip-number{color:var(--orange);font-size:14px;font-weight:800}
 .clip-heading h3{font-size:16px;margin:0;font-weight:750}
-.video-card video{aspect-ratio:9/16;border-radius:15px}
+.video-card video{aspect-ratio:9/16;max-height:min(62svh,540px);border-radius:15px}
 .gallery-footer{margin-top:36px;text-align:center}
-@media(max-width:1000px){.gallery-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:720px){.layout{min-height:calc(100svh - 70px)}.gallery{padding:38px 18px 48px}.gallery-heading{margin-bottom:22px}.gallery-heading p{font-size:14px}.gallery-grid{grid-template-columns:minmax(0,1fr);gap:22px;max-width:440px;margin:auto}}
+@media(max-width:720px){.gallery{padding:28px 16px 36px}.gallery-heading{margin-bottom:16px}.gallery-heading h2{font-size:27px}.gallery-heading p{font-size:14px}.gallery-grid{gap:14px;margin-right:-16px;padding-right:16px}.video-card{flex-basis:min(82vw,320px);padding:10px;border-radius:22px}.gallery-footer{margin-top:24px}}
 </style>
 </head>
 <body>
@@ -93,8 +94,8 @@ h1{font-size:clamp(44px,13vw,72px);line-height:1.1;letter-spacing:-2px;margin:17
 </section>
 </main>
 <section id="more-videos" class="gallery" aria-labelledby="gallery-title">
-<div class="gallery-heading"><div><div class="eyebrow"><span class="dot" aria-hidden="true"></span>更多实机表现</div><h2 id="gallery-title">这只小鸭，还有更多可能。</h2><p>从平衡到运动，继续看看它在真实世界里的表现。</p></div></div>
-<div class="gallery-grid">
+<div class="gallery-heading"><div><div class="eyebrow"><span class="dot" aria-hidden="true"></span>更多实机表现</div><h2 id="gallery-title">这只小鸭，还有更多可能。</h2><p>左右滑动，继续看小鸭的更多实机表现。</p></div></div>
+<div class="gallery-grid" role="region" aria-label="实机视频，左右滑动查看" tabindex="0">
 <article class="video-card">
 <div class="clip-heading"><span class="clip-number">01</span><h3>实机记录</h3></div>
 <video controls playsinline preload="metadata" aria-label="实机视频 1"><source src="https://github.com/user-attachments/assets/0ec5b46b-1ec0-483a-a95d-3b3f307e155f" type="video/mp4"></video>
