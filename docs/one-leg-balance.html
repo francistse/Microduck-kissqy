@@ -28,7 +28,7 @@ h1 span{color:var(--orange)}
 .tag{font-size:14px;font-weight:650;padding:9px 14px;border-radius:100px;background:#fff9;border:1px solid #12494313}
 .project-link{display:inline-flex;gap:12px;align-items:center;font-size:16px;font-weight:750;border-bottom:2px solid #ff682e66;padding-bottom:7px}
 .project-link:hover{border-color:var(--orange)}
-.player-wrap{position:relative;width:min(100%,calc((100svh - 130px)*9/16));justify-self:center}
+.player-wrap{position:relative;width:min(100%,calc((100svh - 210px)*9/16));justify-self:center}
 .player{position:relative;padding:10px;background:#ffffffdf;border:1px solid #fff;border-radius:34px;box-shadow:0 22px 65px #1249431b,0 3px 8px #12494309}
 video{display:block;width:100%;aspect-ratio:9/16;object-fit:contain;background:#1b2925;border-radius:25px}
 .play{position:absolute;inset:10px;border:0;border-radius:25px;display:flex;align-items:center;justify-content:center;background:linear-gradient(transparent 45%,#082b2212);color:white}
@@ -68,7 +68,7 @@ h1{font-size:clamp(44px,13vw,72px);line-height:1.1;letter-spacing:-2px;margin:17
 </section>
 <section class="player-wrap" aria-label="单脚独立实机视频">
 <div class="player">
-<video id="balance-video" controls playsinline preload="metadata">
+<video id="balance-video" controls playsinline preload="metadata" poster="assets/one-leg-balance-poster.webp">
 <source src="https://github.com/user-attachments/assets/71fc2c95-8499-49f6-924b-837df42814cf" type="video/mp4">
 </video>
 <button id="play" class="play" type="button" aria-label="播放单脚独立实机视频"><span class="play-circle"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 3.5a1 1 0 0 1 1.5-.86l13 8a1 1 0 0 1 0 1.72l-13 8A1 1 0 0 1 6 19.5Z"/></svg></span></button>
