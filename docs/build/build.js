@@ -12,6 +12,19 @@ if(data){
  const names={ownPrint:'打印耗材',printService:'代打费用',printer:'打印机设备费',extras:'待补配件',shipping:'运费与零星费用'};
  const defaultValues={printer:String(data.printerReferenceCents/100)};
  const cost=key=>key==='printer'&&state.costs[key]===undefined?data.printerReferenceCents:priceInput(key);
+ const printingChoices=new Map([
+  ['service',{title:'无打印机 · 找人代打',description:'先准备下面的基础零件，再向代打商购买整套打印服务；不需要购买打印机。',items:['把完整打印包交给代打商，硬质结构件与 TPU 部件一起询价。','提前确认电池仓版本，电池仓选择其中一份。','基础零件参考小计 '+money(assembled)+'；代打费和其他待补费用另计。'],action:'填写代打报价 →'}],
+  ['buy-printer',{title:'无打印机 · 买机器自己打',description:'先准备下面的基础零件，另外购买打印机与相应耗材。',items:['打印机设备参考预算 '+money(data.printerReferenceCents)+'，按实际选用机型的报价填写。','准备硬质结构件耗材与 TPU 耗材，按自己的打印机调整切片配置。','基础零件参考小计 '+money(assembled)+'；设备费、耗材和其他待补费用分别计入。'],action:'调整打印机设备预算 →'}],
+ ]);
+ const printingChoice=printingChoices.get(new URLSearchParams(location.search).get('printing'));
+ const choicePanel=document.getElementById('printing-choice');
+ if(choicePanel&&printingChoice){
+  document.getElementById('printing-choice-title').textContent=printingChoice.title;
+  document.getElementById('printing-choice-description').textContent=printingChoice.description;
+  document.getElementById('printing-choice-items').replaceChildren(...printingChoice.items.map(text=>{const item=document.createElement('li');item.textContent=text;return item;}));
+  document.getElementById('printing-choice-quote').textContent=printingChoice.action;
+  choicePanel.hidden=false;
+ }
  function updateBudget(){
   plans.forEach(plan=>{const card=document.querySelector('[data-plan="'+plan.id+'"]');if(!card)return;const values=plan.fields.map(cost),addition=values.reduce((s,v)=>s+(v??0),0),needsQuote=plan.quote&&cost(plan.quote)===null,price=card.querySelector('[data-price]');price.textContent=needsQuote?plan.quoteText:money(assembled+addition);price.classList.toggle('quote-needed',!!needsQuote);const missing=plan.fields.filter((_,i)=>values[i]===null);card.querySelector('[data-pending]').textContent=needsQuote?(plan.id==='service'?'填入整套代打报价后计算；无需购买打印机。':'填入设备价格后计算这一档预算。'):missing.length?'＋待补：'+missing.map(x=>names[x]).join('、'):'已含你填写的补充预算';});
   document.querySelectorAll('[data-base-total]').forEach(el=>el.textContent=money(assembled));
