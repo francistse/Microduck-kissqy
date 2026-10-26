@@ -2,7 +2,9 @@
 
 # 🖨️ Complete duck printing parts · FrankenDuck edition
 
-**This set combines improvements from several community makers with modifications kissqy made while assembling, running, and maintaining the real robot. That is why it is called the “FrankenDuck” edition.** The changes are numerous and are not listed individually. This package supplies the author's complete duck printing parts and reference plate layout.
+**This set combines improvements from several community makers with modifications kissqy made while assembling, running, and maintaining the real robot. That is why it is called the “FrankenDuck” edition.** This package supplies the author's complete duck printing parts, reference plate layout, and a summary of the main improvements.
+
+**The listed price for a complete FrankenDuck printing service is CNY 199.** No printer purchase is needed; shipping is extra. [Contact the author about printing and colors](../../docs/assets/purchase-wechat-qr.jpg). The files below are available for self-printing.
 
 **[⬇️ Download the complete package (RAR, 14.54 MiB)](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/hardware/3d-print-frankenduck/Microduck-Print-FrankenDuck-20261015.rar)** · [SHA256](SHA256SUMS) · [Package file list](FILES.md) · [Duck shopping guide](../../DUCK-SHOPPING-LIST.en.md) · [Homepage](../../README.en.md)
 
@@ -14,12 +16,18 @@ Published **October 15, 2026**. The archive contains **36 STL files and one 3MF 
 - **Removed the outer counterbores from both leg shells** to retain more material around the screw holes and reduce the risk of breakage in a fall.
 - **Integrated an interchangeable-foot design based on the official roller shoes**, making it easier to swap feet and roller assemblies without removing the servos.
 
-## Read these first
+## What this edition improves
 
-- **The foot kit allows rollers to be installed without removing the servos.** This makes installation and maintenance easier.
-- **Choose one of two battery holders.** One clamps a HUB board; the other follows the official-style structure with thicker latch sections.
-- **Both holders have an IMU mount designed for this repository's DIY IMU.** For another IMU, adapt the mount to your board shape, dimensions, and attachment method.
-- **The rollers use 623ZZ bearings: 3 mm bore × 10 mm outer diameter × 4 mm width.** [Product from the supplied order](https://item.taobao.com/item.htm?id=618009195719), seller **EVT进口轴承**, exact order variant **“623 内3外10厚4”**.
+| Improvement | Assembly and use |
+| --- | --- |
+| **Print orientation** | The part arrangement considers assembly clearance, bearing load support, and structural strength. Use the supplied plates as a reference when printing. |
+| **Battery holder** | Thicker retaining plates. The author reports over a hundred battery removal/insertion cycles without broken latches, and no battery-contact power interruption during repeated falls of the author's robot. |
+| **IMU mounting** | Fits the author's separate IMU setup. The author's calibration data can be a reference, but each robot still needs its own servo and IMU calibration. |
+| **Roller changes** | Swap feet and roller assemblies without removing the servos. |
+| **Head cooling** | Head ventilation openings help the controller dissipate heat. |
+| **Assembly details** | Revised hip-rotation components, easier leg assembly, stronger screw-hole areas, mounting posts for both camera sizes, and adaptation to the complete Feetech setup. |
+
+The rollers use **623ZZ bearings (3 mm bore × 10 mm outer diameter × 4 mm width)**. [Product from the supplied order](https://item.taobao.com/item.htm?id=618009195719), seller **EVT进口轴承**, exact variant **“623 内3外10厚4”**. Roller bearings are purchased separately as an option.
 
 ## Choose the battery holder
 
@@ -30,7 +38,7 @@ Both files are under `3D打印缝合怪版/stl模型/躯体部分/` in the archi
 | **HUB-clamping holder** | `电池仓_M2.5螺丝_HUB组合.stl` | Choose when the holder also needs to clamp the HUB board. HUB combination structure using M2.5 screws; choose as needed. |
 | **Official-style holder with thicker latches** | `电池仓_卡扣加厚.stl` | Official-style battery holder with thicker latch sections; import this STL to replace the holder on the plate if preferred. |
 
-Both fit [this repository's IMU](../README.en.md). Flashing and wiring instructions are in the [FT6 guide](../IMU-FIRMWARE.en.md).
+Both fit [this repository's IMU](../README.en.md). Adapt the mount for another IMU board shape, dimensions, and fastening method. Flashing and wiring instructions are in the [FT6 guide](../IMU-FIRMWARE.en.md).
 
 ## Use the package
 
@@ -62,3 +70,4 @@ These images come directly from the supplied 3MF project. Plate 5 is the TPU gro
 This set starts from the official Microduck structure, incorporates improvements from multiple community makers, and combines them with kissqy's practical robot modifications. Credit belongs to the upstream project and the contributing makers. Original works retain their source rights and licenses; kissqy's additions follow this project's [component licenses](../../microduck-hd1910/LICENSE).
 
 Archive paths, sizes, and SHA256 hashes are recorded in [FILE-MANIFEST.json](FILE-MANIFEST.json).
+

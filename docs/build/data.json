@@ -1,7 +1,7 @@
 {
   "currency": "CNY",
   "reviewed": "2026-10-27",
-  "priceBasis": "作者历史采购记录、成品板定价及补充的京东 TF 卡与读卡器报价；商品价格以下单时为准。",
+  "priceBasis": "作者历史采购记录、成品板与缝合怪版代打定价，以及补充的京东 TF 卡与读卡器报价；商品价格以下单时为准。",
   "items": [
     {
       "id": "part-01",
@@ -312,12 +312,6 @@
   "source": "https://github.com/kissqy/Microduck-kissqy/blob/main/DUCK-SHOPPING-LIST.md",
   "unpriced": [
     {
-      "id": "printing",
-      "name": "打印件或代打服务",
-      "spec": "完整结构件＋TPU 部件；自己打印填耗材费，代打填商家整套报价。",
-      "url": "https://github.com/kissqy/Microduck-kissqy/tree/main/hardware/3d-print-frankenduck"
-    },
-    {
       "id": "hub",
       "name": "HUB 与电池接入配件",
       "spec": "按选用电池仓补齐 HUB、接线与电池触点；向作者确认供货与价格。",
@@ -340,5 +334,37 @@
       "subtotalCents": 1200,
       "url": "https://item.taobao.com/item.htm?id=618009195719"
     }
-  ]
+  ],
+  "printServiceReferenceCents": 19900,
+  "printingEdition": {
+    "id": "printing",
+    "name": "缝合怪版整套打印件",
+    "url": "https://github.com/kissqy/Microduck-kissqy/blob/main/docs/assets/purchase-wechat-qr.jpg",
+    "features": [
+      {
+        "title": "打印方向优化",
+        "description": "优化打印方向，兼顾装配间隙、轴承承重与结构强度。"
+      },
+      {
+        "title": "电池仓优化",
+        "description": "电池仓扣板加厚。作者实测上百次电池拆装，卡扣未断；鸭子频繁摔倒仍保持供电。"
+      },
+      {
+        "title": "IMU 安装优化",
+        "description": "配套作者的 IMU 安装方案，标定可参考作者数据，再完成本机标定。"
+      },
+      {
+        "title": "滑轮快换",
+        "description": "无需拆装舵机即可替换滑轮套件，换装更方便。"
+      },
+      {
+        "title": "头部散热优化",
+        "description": "头部增加散热孔，改善内部散热。"
+      },
+      {
+        "title": "装配细节优化",
+        "description": "优化胯部旋转组件与腿部安装结构，配套飞特全套适配；改进易断螺丝孔和大小摄像头安装螺丝柱。"
+      }
+    ]
+  }
 }

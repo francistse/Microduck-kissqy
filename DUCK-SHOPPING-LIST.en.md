@@ -4,7 +4,7 @@
 
 [🏠 Project homepage](README.en.md)
 
-**Assembled-board reference subtotal: CNY 2787.80**, including the 32GB microSD card and card reader, before printing and unpriced items such as the HUB and battery connections; shipping is extra.
+**Assembled-board reference subtotal: CNY 2787.80**, including the 32GB microSD card and card reader, before printing. The complete FrankenDuck printing service is listed at CNY 199, making the assembled-board plus printing reference subtotal **CNY 2986.80**. Unpriced HUB / battery-connection parts and shipping are extra.
 
 **[Open the shopping checklist (Chinese) →](https://kissqy.github.io/Microduck-kissqy/build/shopping.html)** · [Compare budget totals (Chinese)](https://kissqy.github.io/Microduck-kissqy/build/budget.html)
 
@@ -21,7 +21,9 @@ The online pages show totals first, then specifications, quantities and purchase
 | 3D printer allowance | +¥3500 | +¥3500 |
 | **Total including a printer** | **¥6287.80** | **¥6964.02–7204.02** |
 
-- **All totals exclude printed parts, filament / printing costs, labor, a computer and unpriced items such as the HUB and battery connections; new-order shipping and losses are extra.** The body includes 15 HD1910 servos at ¥119 each; the microSD card and card reader are priced and included.
+**For the FrankenDuck printing service, add CNY 199: assembled boards CNY 2986.80; DIY boards with existing tools CNY 2863.02–2903.02; DIY boards with new tools CNY 3663.02–3903.02.** No printer purchase is needed. [Edition features and printing instructions](hardware/3d-print-frankenduck/README.en.md).
+
+- **The base table excludes printed parts or filament; the printing-service subtotals include CNY 199. Robot-assembly labor, a computer, unpriced HUB / battery-connection parts, new-order shipping and losses are extra.** The body includes 15 HD1910 servos at ¥119 each; the microSD card and card reader are priced and included.
 - The HUB includes the main-power buffer capacitor. Do not buy or budget for a separate capacitor.
 - DIY board materials use full component packs; the range covers free PCB coupons / no coupons. [Board cost breakdown](hardware/README.en.md#build-cost) · [Tool budget](docs/BUILD-TOOLS.en.md#budgeting-for-tools-from-scratch). Reuse existing tools; the assembled-board option assumes you have normal assembly hand tools.
 

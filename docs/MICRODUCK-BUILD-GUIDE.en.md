@@ -23,7 +23,7 @@ An assembled robot can start at step 4. For finding the robot's IP after imaging
 
 **The assembled-board option has a priced reference subtotal of CNY 2787.80**: CNY 2569.80 for the reference body purchases (including the EAGET 32GB microSD card at CNY 39.90 and SAMZHE dual-head high-speed card reader at CNY 22.90), HAT CNY 119 and IMU CNY 99. DIY board materials plus a basic tool allowance produce a reference range of CNY 3464.02–3704.02.
 
-A 32GB microSD card is sufficient. One [SAMZHE dual-head high-speed card reader with simultaneous SD / TF card reading](https://3.cn/393kj-8k?jkl=@I2cIJ7xKJzv@) is included at the author's reference price of CNY 22.90; reuse an existing reader if available. These are not final delivered totals: printing, HUB / battery-connection parts and other unpriced items still need quotes; shipping is extra. Historical quantities include spare stock. [Open the budget page to add your costs (Chinese) →](https://kissqy.github.io/Microduck-kissqy/build/budget.html)
+A 32GB microSD card is sufficient. One [SAMZHE dual-head high-speed card reader with simultaneous SD / TF card reading](https://3.cn/393kj-8k?jkl=@I2cIJ7xKJzv@) is included at the author's reference price of CNY 22.90; reuse an existing reader if available. The complete FrankenDuck printing service is listed at CNY 199; the assembled-board plus printing reference subtotal is **CNY 2986.80**, without buying a printer. HUB / battery-connection parts and other unpriced items still need quotes; shipping is extra. Historical quantities include spare stock. [Open the budget page to add your costs (Chinese) →](https://kissqy.github.io/Microduck-kissqy/build/budget.html)
 
 ## 2. What should I buy?
 
@@ -35,7 +35,7 @@ See the [tool list](BUILD-TOOLS.en.md) for soldering, reflow and flashing tools.
 
 **[Follow the assembly and wiring steps (Chinese) →](https://kissqy.github.io/Microduck-kissqy/build/assembly.html)** · **[Open the 3D assembly reference (Chinese) →](https://kissqy.github.io/Microduck-kissqy/assembly.html)** Rotate and zoom the model to inspect joint positions, IDs and orientation without connecting a robot. The model is a structural reference; use the printing and hardware guides for Feetech-specific parts, fasteners and wiring.
 
-The [FrankenDuck printing set](../hardware/3d-print-frankenduck/README.en.md) contains 36 STLs and one 3MF project with five plates. Adapt printer and material profiles, including TPU parts.
+The [FrankenDuck printing set](../hardware/3d-print-frankenduck/README.en.md) contains 36 STLs and one 3MF project with five plates. Adapt printer and material profiles, including TPU parts. The complete printing service is listed at **CNY 199**. That edition page explains the print-orientation, battery-holder, IMU-mount, roller-change, cooling, and assembly improvements.
 
 Choose the HUB battery-holder variant or the official-style holder with thicker latches; both IMU mounts fit this repository's IMU. The October 21 update adds leg support ramps, removes outer leg-shell counterbores and integrates interchangeable feet and roller assemblies without servo removal. Rollers use 623ZZ bearings.
 
