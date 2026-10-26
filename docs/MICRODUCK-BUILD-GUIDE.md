@@ -1,29 +1,37 @@
 **简体中文** | [English](MICRODUCK-BUILD-GUIDE.en.md)
 
-# Microduck 飞特版从零复刻教程：材料清单、3D 打印、刷机、标定与训练
+# Microduck 飞特版从零复刻：从预算到第一次行走
 
-Microduck-kissqy 是 kissqy 基于 Pollen Robotics Microduck 0.15.1、已完成实机复刻的个人项目，面向 **Radxa ZERO 3W + 15 个飞特 HD1910 舵机 + 本仓库 HAT / IMU**。这里提供系统镜像、中文机器人中控、独立强化学习训练中控、自制电路板工程，以及全套打印件和摆盘。
+Microduck-kissqy 是 kissqy 基于 Pollen Robotics Microduck 0.15.1、已完成实机复刻的个人项目，面向 **Radxa ZERO 3W + 15 个飞特 HD1910 舵机 + 本仓库 HAT / IMU**。这里提供系统镜像、中文机器人中控、配套现成动作模型、自制电路板工程，以及全套打印件和摆盘。**日常使用直接用发布包里的模型，无须自己训练。**
 
-**当前稳定公开版本：机器人中控 R17 V167 / 固件 control.43 / 训练中控 R1.5.27。** 本指南更新于 2026-10-23。版本及验证依据见[发布基线](../microduck-hd1910/docs/BASELINE.md)。源码可获取；作者原创部分采用个人非商业许可，官方和第三方部分保留各自许可，见[分项许可](../microduck-hd1910/LICENSE)。
+**当前稳定公开版本：机器人中控 R17 V167 / 固件 control.43。** 新手路线按预算、采购、装配和首次行走展开。版本及验证依据见[发布基线](../microduck-hd1910/docs/BASELINE.md)。源码可获取；作者原创部分采用个人非商业许可，官方和第三方部分保留各自许可，见[分项许可](../microduck-hd1910/LICENSE)。
 
-## 先选你的起点
+## 按这四个问题开始
 
-| 现在的情况 | 从哪里开始 |
+| 现在要解决的问题 | 直接入口 |
 | --- | --- |
-| 从视频看到机器鸭，想自己做一只 | 按下面的采购、打印、硬件、软件顺序开始 |
-| 机械和电路已经装好 | 从刷写镜像和标定开始 |
-| 已能控制鸭子，想训练自己的动作 | 直接看第 6 步训练 |
-| 断网、重启、IMU 或手柄出问题 | [Microduck 常见问题](MICRODUCK-FAQ.md) |
+| **我要花多少钱？** | [先看各种方案合计，再看费用明细](https://kissqy.github.io/Microduck-kissqy/build/budget.html) |
+| **我要买什么？** | [按型号、数量与购买链接备齐零件](https://kissqy.github.io/Microduck-kissqy/build/shopping.html) |
+| **我要怎么装？** | [按部位完成打印、装配与接线](https://kissqy.github.io/Microduck-kissqy/build/assembly.html) |
+| **我要让鸭子走起来** | [使用现成模型完成刷机、配网、标定与行走](https://kissqy.github.io/Microduck-kissqy/build/start.html) |
 
-## 1. 准备材料与工具
+已经装好可直接从第 4 步开始；刷好系统后不知道 IP，先看[配网与查 IP 图文教程](https://kissqy.github.io/Microduck-kissqy/console-guide.html#network)。
 
-先看[鸭子采购总清单](../DUCK-SHOPPING-LIST.md)，分别准备鸭子本体、PCB 与工具。参考硬件是 ZERO 3W、15 个 HD1910、摄像头、ToF、扬声器、电池、HAT 与独立躯干 IMU。价格是历史订单参考，预算范围和未计入项目以采购表说明为准。
+## 1. 我要花多少钱？
+
+**成品板路线已列价参考合计为 ¥2747.70**：本体参考采购 ¥2529.70＋HAT ¥119＋IMU ¥99。自焊并预留基础工具的已列价参考区间为 ¥3423.92～3663.92。
+
+这些金额尚未完整计入打印、TF 卡、HUB 与电池接入等待报价项目，运费另计；历史采购数量含备料。[打开预算页，先看总额并补充自己的费用 →](https://kissqy.github.io/Microduck-kissqy/build/budget.html)
+
+## 2. 我要买什么？
+
+先看[在线采购清单](https://kissqy.github.io/Microduck-kissqy/build/shopping.html)，按默认成品板路线准备物品；[历史采购明细](../DUCK-SHOPPING-LIST.md)保留原订单规格和价格依据。参考硬件是 ZERO 3W、15 个 HD1910、摄像头、ToF、扬声器、电池、HAT 与独立躯干 IMU。价格是历史订单参考，预算范围和未计入项目以采购表说明为准。
 
 焊接、回流和烧录工具见[工具清单](BUILD-TOOLS.md)。使用其他主控或舵机时，不要默认当前镜像和结构已经适配。
 
-## 2. 打印零件并装配机械结构
+## 3. 我要怎么装？
 
-**[打开 3D 装配参考 →](https://kissqy.github.io/Microduck-kissqy/assembly.html)** 旋转、放大模型，按部位查看关节位置、编号与安装朝向，无须连接机器人。模型用于结构参考；飞特改件与螺丝、走线细节以打印件及硬件说明为准。
+**[按步骤装配与接线 →](https://kissqy.github.io/Microduck-kissqy/build/assembly.html)** · **[打开 3D 装配参考 →](https://kissqy.github.io/Microduck-kissqy/assembly.html)** 旋转、放大模型，按部位查看关节位置、编号与安装朝向，无须连接机器人。模型用于结构参考；飞特改件与螺丝、走线细节以打印件及硬件说明为准。
 
 下载[全套打印件 · 缝合怪版](../hardware/3d-print-frankenduck/README.md)：36 个 STL、1 个 3MF 项目、5 盘参考摆盘。根据实际打印机与耗材调整配置，TPU 部件使用对应材料配置。
 
@@ -31,7 +39,7 @@ Microduck-kissqy 是 kissqy 基于 Pollen Robotics Microduck 0.15.1、已完成�
 
 本页是装配流程导航，零件说明见打印件页；不把文件数量当成实际装配数量。
 
-## 3. 准备 HAT、IMU 与供电
+### 板卡与供电装配
 
 [HAT / IMU 硬件页](../hardware/README.md)提供工程、采购表和两种接口版本。制作过程分别见[HAT 制作记录](../hardware/HAT-TIMELINE.md)和[IMU 制作记录及视频](../hardware/IMU-TIMELINE.md)。
 
@@ -39,7 +47,9 @@ Microduck-kissqy 是 kissqy 基于 Pollen Robotics Microduck 0.15.1、已完成�
 
 按[装机注意事项](ASSEMBLY-NOTES.md)配置 5 GHz Wi-Fi，并在总进电口并联 1000 µF 缓冲电容；电容极性、耐压和安装位置以该页说明为准。
 
-## 4. 刷写系统镜像并连接中文中控
+## 4. 我要让鸭子走起来
+
+**[打开首次行走六步路线 →](https://kissqy.github.io/Microduck-kissqy/build/start.html)** · [中控图文教程](https://kissqy.github.io/Microduck-kissqy/console-guide.html)
 
 1. 在[系统镜像 R1 页面](releases/public-image-r1.md)下载镜像，用 Armbian Imager 将压缩镜像直接刷入 TF 卡。
 2. ZERO 首次启动后，连接 `Microduck-kissqy` 热点，按提示配置家庭 Wi-Fi 和新的登录密码；未自动弹出页面时访问 `http://10.42.0.1:8088`。
@@ -48,15 +58,15 @@ Microduck-kissqy 是 kissqy 基于 Pollen Robotics Microduck 0.15.1、已完成�
 
 软件包安装、日志与按键说明见[V167 使用指南](../microduck-hd1910/firmware/console/README.zh-CN.md)。网页在线演示使用模拟数据，实际连接需要本地运行中控。
 
-## 5. 标定自己的机器人，再进行运动
+### 标定自己的机器人，再进行运动
 
 逐一核对 **15 个关节的零位、方向、限位，以及 IMU 安装姿态**。参考样机的标定不能直接替代你的机械装配标定。
 
 先检查中控的关节与姿态反馈，再按使用指南完成 HOME、保持和行走。实体手柄的模式切换、轮滑动作及条件，以[V167 按键说明](../microduck-hd1910/firmware/console/README.zh-CN.md)为准。遇到异常先确认发生在哪一环，见[标定与运行问题](MICRODUCK-FAQ.md)。
 
-## 6. 训练自己的动作并部署到实机
+## 进阶玩法：训练自己的动作
 
-普通使用可以直接使用发布包里的模型，训练中控按需安装。[训练中控 R1.5.27 指南](../microduck-hd1910/training-console/README.zh-CN.md)包含环境准备、训练队列、奖励曲线、仿真评估和模型导出，公开版本提供 14 类动作、35 种任务配方。
+完成现成模型的行走与日常操作后，想探索自己的动作时，再按需安装训练中控。[训练中控 R1.5.27 指南](../microduck-hd1910/training-console/README.zh-CN.md)包含环境准备、训练队列、奖励曲线、仿真评估和模型导出，公开版本提供 14 类动作、35 种任务配方。
 
 训练流程是：准备环境 → 选择任务与参数 → 加入队列并开始 → 仿真评估 → 导出模型 → 核对固件和策略合同后进行实机验证。训练中控和机器人中控是两个独立工具；仿真成功不等于所有装配都能获得相同实机结果。
 

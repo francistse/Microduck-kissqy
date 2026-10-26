@@ -2,11 +2,24 @@
 
 <div align="center">
 
-# 🦆 Microduck Feetech HD1910 Replica · Build, control and reinforcement learning
+# 🦆 Microduck Feetech HD1910 Replica · Build a walking robot duck
 
-From a collection of parts to a walking, forward-rolling robot duck—and then to training your own movements. This working Feetech HD1910 replica of [Pollen Robotics Microduck](https://github.com/pollen-robotics/microduck) brings together a **system image, two Chinese-language consoles, DIY HAT / IMU boards and complete 3D printing files**, covering parts, building, control and reinforcement learning.
+From a collection of parts to a walking, forward-rolling robot duck. This working Feetech HD1910 replica of [Pollen Robotics Microduck](https://github.com/pollen-robotics/microduck) includes a **system image, Chinese Robot Console, DIY HAT / IMU boards and complete 3D printing files**.
 
-[🚀 Complete build guide](docs/MICRODUCK-BUILD-GUIDE.en.md) · [🧩 3D assembly reference (中文)](https://kissqy.github.io/Microduck-kissqy/assembly.html) · [📥 Downloads](#downloads-and-versions) · [❓ FAQ](docs/MICRODUCK-FAQ.en.md) · [🌐 Online guides](https://kissqy.github.io/Microduck-kissqy/guides/en.html)
+**Use the supplied movement models. Assemble, flash and calibrate your robot; training your own model is optional.**
+
+<table>
+  <tr>
+    <td width="50%" align="left"><a href="https://kissqy.github.io/Microduck-kissqy/build/budget.html"><b>① How much will it cost?</b></a><br>Compare reference totals, then inspect the breakdown.</td>
+    <td width="50%" align="left"><a href="https://kissqy.github.io/Microduck-kissqy/build/shopping.html"><b>② What should I buy?</b></a><br>Specifications, quantities and purchasing links.</td>
+  </tr>
+  <tr>
+    <td align="left"><a href="https://kissqy.github.io/Microduck-kissqy/build/assembly.html"><b>③ How do I assemble it?</b></a><br>Parts, 3D structure and wiring.</td>
+    <td align="left"><a href="https://kissqy.github.io/Microduck-kissqy/build/start.html"><b>④ How do I make it walk?</b></a><br>Flash, connect, calibrate and use the supplied models.</td>
+  </tr>
+</table>
+
+The four guided pages above are in Chinese. [English build guide](docs/MICRODUCK-BUILD-GUIDE.en.md) · [🎮 Robot Console demo](https://kissqy.github.io/Microduck-kissqy/) · [📖 Console tutorial (中文)](https://kissqy.github.io/Microduck-kissqy/console-guide.html) · [❓ FAQ](docs/MICRODUCK-FAQ.en.md)
 
 ## 🏆 One-legged balance · A new training milestone
 
@@ -34,62 +47,31 @@ From a collection of parts to a walking, forward-rolling robot duck—and then t
 
 </div>
 
-## ✨ Walk, roll and train new movements
+## ✨ Walk, roll and explore more movements
 
-This little duck can **walk, sit, pick things up, kick a ball, and roll forward**. Add rollers to explore **swizzling, crouching, spinning, and standing up after a fall**. Use a physical gamepad to control it; an independent Training Studio is available when you want to train your own movements.
+This little duck can **walk, sit, pick things up, kick a ball, and roll forward**. Add rollers to explore **swizzling, crouching, spinning, and standing up after a fall**. Use a physical gamepad and the supplied models to explore the existing movements with the Chinese Robot Console.
 
 **System Image R1 has passed a fresh-card installation test.** It includes the official system, this project's robot services and motion models. Flash it onto a Radxa ZERO 3W, connect to Wi-Fi, and open the console without compiling firmware from source.
 
-## 🧭 Start with your goal
+## 🧭 One complete build route
 
-| Your goal | Go here |
-| --- | --- |
-| Build a Microduck with Feetech servos | [Parts to first walking](docs/MICRODUCK-BUILD-GUIDE.en.md) · [Parts and budget](DUCK-SHOPPING-LIST.en.md) |
-| Flash, calibrate and operate an assembled duck | [V167 user guide](microduck-hd1910/firmware/console/USER-GUIDE.en.md) |
-| Train walking, recovery or your own movements | [Training Studio R1.5.27](microduck-hd1910/training-console/USER-GUIDE.en.md) |
-| Build HAT and a separate IMU | [Hardware projects and build guides](hardware/README.en.md) |
-| Explore the source or full documentation | [Source](microduck-hd1910/README.en.md) · [All guides](docs/README.en.md) |
-| Troubleshoot network, reboot, IMU or calibration | [FAQ and troubleshooting links](docs/MICRODUCK-FAQ.en.md) |
+**[Budget](https://kissqy.github.io/Microduck-kissqy/build/budget.html) → [Shopping](https://kissqy.github.io/Microduck-kissqy/build/shopping.html) → [Assembly](https://kissqy.github.io/Microduck-kissqy/build/assembly.html) → [First walk](https://kissqy.github.io/Microduck-kissqy/build/start.html)** · Guided pages in Chinese.
 
-## 🚀 Start in three steps
-
-1. **Build the duck** — Follow the guide to buy parts, print the structure and assemble the robot.
-2. **Flash and connect** — Use the provided system image, follow the Wi-Fi setup wizard and connect with Robot Console.
-3. **Calibrate and explore** — Calibrate the robot and try its existing movements; use Training Studio when you want to train your own models.
-
-**[Follow the complete guide from parts to first walking →](docs/MICRODUCK-BUILD-GUIDE.en.md)**
-
-<div align="center">
-  <img src="docs/assets/wifi-setup-desktop.webp" width="760" alt="Microduck first-boot hotspot and Wi-Fi setup page" />
-  <p><sub>First-boot Wi-Fi setup preview. The actual screen is the one shipped with Public Image R1.</sub></p>
-</div>
+Each stage starts with the answer and then the details. Continue from your current progress.
 
 ## Downloads and versions
 
-| Package | Purpose | Download |
-| --- | --- | --- |
-| **System Image R1** | First installation; robot services and movement models included | [⬇️ .img.xz](https://github.com/kissqy/Microduck-kissqy/releases/download/public-image-r1/microduck-zero3w-0.15.1-R1.img.xz) |
-| **Robot Console R17 V167** | Connect, calibrate and control the robot; maintain its firmware | [⬇️ ZIP](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/release-assets/Microduck-Console-R17-V167.zip) |
-| **Training Studio R1.5.27** | Train, evaluate, and export your own models | [⬇️ ZIP](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/release-assets/Microduck-Training-Studio-R1.5.27.zip) |
-| **Robot firmware** | Upgrade an existing installation | [⬇️ .tar.gz](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/microduck-hd1910/firmware/console/updates/Microduck-Robotd-FT6-R17.tar.gz) |
-| **IMU firmware** | Flash a DIY IMU board | [⬇️ .bin](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/microduck-hd1910/firmware/console/updates/imu_to_feetech_ReVA_FT6_SYNC15_UART_IRQ_v1.bin) · [Flashing guide](hardware/IMU-FIRMWARE.en.md) |
-| **Complete printing set · FrankenDuck** | Complete structural models and reference plate layouts | [⬇️ RAR](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/hardware/3d-print-frankenduck/Microduck-Print-FrankenDuck-20261015.rar) · [Guide](hardware/3d-print-frankenduck/README.en.md) |
+Follow the [first-walk guide (中文)](https://kissqy.github.io/Microduck-kissqy/build/start.html); each stage provides its required download.
 
-**For a first build, download the system image and Robot Console; Training Studio is optional.** Installation, firmware upgrades and IMU flashing are covered in the linked guides.
+[📥 System Image R1](https://kissqy.github.io/Microduck-kissqy/build/start.html#flash) · [📥 Robot Console R17 V167](https://kissqy.github.io/Microduck-kissqy/build/start.html#connect) · [Firmware and IMU flashing](release-assets/README.en.md)
 
-[Firmware downloads and installation](release-assets/README.en.md) · [System image guide](docs/releases/public-image-r1.en.md) · [IMU flashing guide](hardware/IMU-FIRMWARE.en.md)
+## 🎮 Chinese Robot Console
 
-## 🎮 Two consoles, two jobs
+Connect and calibrate the robot, inspect live 3D pose, joint / IMU feedback and camera, operate with a physical gamepad or web controls, and maintain its firmware.
 
-| 🐣 Robot Console · R17 V167 · [Demo](https://kissqy.github.io/Microduck-kissqy/) · [📖 User guide (中文)](https://kissqy.github.io/Microduck-kissqy/console-guide.html) | 🧠 Training Studio · R1.5.27 · [Demo](https://kissqy.github.io/Microduck-kissqy/training/) |
-| --- | --- |
-| Live 3D pose, camera, joint / IMU data, servo calibration | Training tasks, recipes, queue, progress and reward curves |
-| Physical gamepad control, firmware maintenance, model status | Visual simulation, policy evaluation, ONNX export |
-| Prepared image and firmware to simplify setup | Start with existing movements and explore your own models |
+**[Live interface demo](https://kissqy.github.io/Microduck-kissqy/) · [Illustrated console tutorial (中文)](https://kissqy.github.io/Microduck-kissqy/console-guide.html)**
 
-Try the included motion models on the real robot, then explore reinforcement learning at your own pace. The videos above show recorded real-robot results.
-
-The released interfaces are Chinese. English guides above retain the original button labels where needed; see also the [source and build guides](microduck-hd1910/README.en.md).
+The online demo uses simulated data. Download and run Robot Console locally to connect to a real robot.
 
 ## 🖨️ Complete printing set · FrankenDuck
 
@@ -108,6 +90,12 @@ The DIY HAT and independent torso IMU have been used extensively on the author's
 This is an individual replica and development project based on the official Microduck, with AI-assisted programming. I hope these materials help you get your own duck moving sooner. Stars ⭐, discussion and feedback are welcome. [The author's learning journey](docs/AUTHOR-JOURNEY.en.md)
 
 Original work the author owns and can license is for personal learning, research and noncommercial use; commercial use requires written permission. Upstream and third-party content retain their own licenses. [Component licenses](microduck-hd1910/LICENSE) · [Personal noncommercial terms](microduck-hd1910/LICENSES/Personal-NonCommercial.txt) · [Third-party credits](microduck-hd1910/docs/THIRD-PARTY.en.md)
+
+## 🧠 Advanced play · Train your own movements
+
+After enjoying the supplied models, use the separate Training Studio to explore custom movements: choose tasks and recipes, inspect rewards, evaluate in simulation and export models for real-robot testing.
+
+[Training Studio R1.5.27 guide](microduck-hd1910/training-console/USER-GUIDE.en.md) · [Online demo](https://kissqy.github.io/Microduck-kissqy/training/) · [Download Training Studio](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/release-assets/Microduck-Training-Studio-R1.5.27.zip)
 
 <table align="center">
   <tr>

@@ -4,28 +4,24 @@
 
 [🏠 Project homepage](README.en.md)
 
-**Start here to buy parts for one complete duck.** This guide has three sections: **duck body, PCB boards, and build tools**. Product links, exact variants and costs can be viewed directly on GitHub.
+**Assembled-board reference subtotal: CNY 2747.70**, before printing and unpriced items such as the microSD card, HUB and battery connections; shipping is extra.
 
-> Parts selected and used by the author; choose the exact variants below. Prices are purchase references.
+**[Open the shopping checklist (Chinese) →](https://kissqy.github.io/Microduck-kissqy/build/shopping.html)** · [Compare budget totals (Chinese)](https://kissqy.github.io/Microduck-kissqy/build/budget.html)
 
-| Category | Contents | Entry |
-| --- | --- | --- |
-| **🦆 Duck body** | Controller, servos, NP-F batteries, camera, ToF, speaker, bearings, screws and wiring | [Body list below](#duck-body) |
-| **🔧 PCB** | DIY or assembled boards; BOMs and build records | [PCB summary below](#pcb) · [Detailed board procurement](hardware/README.en.md#shopping-list) |
-| **🧰 Tools** | Solder paste, tweezers, hotplate, soldering stations and debugging tools | [Separate tools list](docs/BUILD-TOOLS.en.md) |
+The online pages show totals first, then specifications, quantities and purchase links. The tables below preserve the author's historical purchase references. Normal use uses the released models and Robot Console.
 
 ## Total cost comparison
 
-| Item | DIY boards, including tools | Buy assembled boards |
+| Item | Buy assembled boards | DIY boards, including tools |
 | --- | ---: | ---: |
 | Duck body, including gamepad and reference spare stock | ¥2529.70 | ¥2529.70 |
-| HAT + IMU | ¥94.22–134.22 · first component purchase | [HAT ¥119 + IMU ¥99](https://item.taobao.com/item.htm?id=1095121548583) |
-| Soldering / programming tools and consumables | ¥800–1000 | Not required for board soldering |
-| **Total without a printer** | **About ¥3400–3700** | **¥2747.70** |
+| HAT + IMU | [HAT ¥119 + IMU ¥99](https://item.taobao.com/item.htm?id=1095121548583) | ¥94.22–134.22 · first component purchase |
+| Soldering / programming tools and consumables | Not required for board soldering | ¥800–1000 |
+| **Total without a printer** | **¥2747.70** | **¥3423.92–3663.92** |
 | 3D printer allowance | +¥3500 | +¥3500 |
-| **Total including a printer** | **About ¥6900–7200** | **¥6247.70** |
+| **Total including a printer** | **¥6247.70** | **¥6923.92–7163.92** |
 
-- **All totals exclude printed parts, filament / printing costs, labor, a computer and unpriced items such as the microSD card; new-order shipping and losses are extra.** The body includes 15 HD1910 servos at ¥119 each.
+- **All totals exclude printed parts, filament / printing costs, labor, a computer and unpriced items such as the microSD card, HUB and battery connections; new-order shipping and losses are extra.** The body includes 15 HD1910 servos at ¥119 each.
 - DIY board materials use full component packs; the range covers free PCB coupons / no coupons. [Board cost breakdown](hardware/README.en.md#build-cost) · [Tool budget](docs/BUILD-TOOLS.en.md#budgeting-for-tools-from-scratch). Reuse existing tools; the assembled-board option assumes you have normal assembly hand tools.
 
 ## Duck body

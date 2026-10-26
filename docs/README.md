@@ -4,6 +4,19 @@
 
 首页、使用指南、硬件记录与技术说明的中英文入口。当前软件界面仍为中文；英文指南保留必要的中文按钮名称。原始测试日志、源代码与正式许可保持原文。
 
+## 从预算到第一次行走
+
+日常使用直接采用发布包里的现成动作模型和机器人中控，无须自己训练。按当前进度进入：
+
+| 步骤 | 直接入口 |
+| --- | --- |
+| **01 · 我要花多少钱？** | [先看方案总额，再看费用明细](https://kissqy.github.io/Microduck-kissqy/build/budget.html) |
+| **02 · 我要买什么？** | [规格、数量、购买链接与采购勾选](https://kissqy.github.io/Microduck-kissqy/build/shopping.html) |
+| **03 · 我要怎么装？** | [分步装配、接线与 3D 参考](https://kissqy.github.io/Microduck-kissqy/build/assembly.html) |
+| **04 · 我要让鸭子走起来** | [刷机、配网、标定、HOME 与行走](https://kissqy.github.io/Microduck-kissqy/build/start.html) |
+
+[新手路线总入口](https://kissqy.github.io/Microduck-kissqy/build/) · [中控图文使用教程](https://kissqy.github.io/Microduck-kissqy/console-guide.html)
+
 ## Start here / 入门
 
 | 说明 | 中文 | English |
@@ -47,7 +60,9 @@
 | R17 中控参数来源 | [中文](../microduck-hd1910/firmware/console/docs/joint-scale-design148.md) | [English](../microduck-hd1910/firmware/console/docs/joint-scale-design148.en.md) |
 | R147 验证记录 | [中文](../microduck-hd1910/firmware/console/verification/README.md) | [English](../microduck-hd1910/firmware/console/verification/README.en.md) |
 
-## Training Studio / 训练中控
+## Advanced / 进阶：训练自己的动作
+
+已经能稳定行走后，再按需探索训练。普通操作使用现成模型和机器人中控。
 
 | 说明 | 中文 | English |
 | --- | --- | --- |

@@ -193,6 +193,9 @@ try{
   $('loading').hidden=true;
   document.querySelectorAll(modelControls).forEach(button=>button.disabled=false);
   view.update({});drawInspector();
+  const requested=new URLSearchParams(location.search);
+  if(COMPONENTS[requested.get('component')])selectComponent(requested.get('component'));
+  else if(groups[requested.get('part')])setScope(requested.get('part'));
 }catch(error){
   $('loading').hidden=true;$('model-error').hidden=false;
   $('error-detail').textContent='3D 需要支持 WebGL 的浏览器；下方仍可查看接线说明和板卡购买入口。'+(error?.message?'（'+error.message+'）':'');

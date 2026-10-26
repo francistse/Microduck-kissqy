@@ -4,6 +4,19 @@
 
 English editions of the homepage, user guides, hardware records, and technical notes. Current application interfaces remain Chinese; English guides include button labels for reference. Raw test logs, source code, and formal licenses retain their original text.
 
+## From budget to first walking
+
+Use the released motion models and Robot Console for everyday operation. The guided pages below are currently in **Chinese**.
+
+| Step | Direct entry |
+| --- | --- |
+| 01 · How much will it cost? | [Scheme totals and detailed costs](https://kissqy.github.io/Microduck-kissqy/build/budget.html) |
+| 02 · What should I buy? | [Specifications, quantities and purchase checklist](https://kissqy.github.io/Microduck-kissqy/build/shopping.html) |
+| 03 · How do I assemble it? | [Assembly steps, wiring and 3D reference](https://kissqy.github.io/Microduck-kissqy/build/assembly.html) |
+| 04 · How do I make it walk? | [Ready-made models: imaging, network, calibration and walking](https://kissqy.github.io/Microduck-kissqy/build/start.html) |
+
+[Build-route overview (Chinese)](https://kissqy.github.io/Microduck-kissqy/build/) · [Illustrated console guide (Chinese)](https://kissqy.github.io/Microduck-kissqy/console-guide.html)
+
 ## Start here / 入门
 
 | Guide | 中文 | English |
@@ -47,7 +60,9 @@ English editions of the homepage, user guides, hardware records, and technical n
 | R17 console parameter provenance — v148 design record | [中文](../microduck-hd1910/firmware/console/docs/joint-scale-design148.md) | [English](../microduck-hd1910/firmware/console/docs/joint-scale-design148.en.md) |
 | R147 verification records | [中文](../microduck-hd1910/firmware/console/verification/README.md) | [English](../microduck-hd1910/firmware/console/verification/README.en.md) |
 
-## Training Studio / 训练中控
+## Advanced / 进阶：训练自己的动作
+
+Training Studio is optional after first walking. Everyday operation uses the released models and Robot Console.
 
 | Guide | 中文 | English |
 | --- | --- | --- |

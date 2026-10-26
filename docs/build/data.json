@@ -1,0 +1,392 @@
+{
+  "currency": "CNY",
+  "reviewed": "2026-10-27",
+  "priceBasis": "作者历史采购记录与成品板定价；商品价格以下单时为准。",
+  "items": [
+    {
+      "id": "part-01",
+      "name": "飞特 HD1910 串口总线舵机",
+      "spec": "HD-1910-C001；HD-1910-C001",
+      "unit": "只",
+      "quantity": 15,
+      "unitQuote": "119.00",
+      "subtotalCents": 178500,
+      "group": "electronics",
+      "url": "https://item.taobao.com/item.htm?id=1078248851201",
+      "note": "装机 15 只。型号选 HD-1910-C001。"
+    },
+    {
+      "id": "part-02",
+      "name": "Radxa ZERO 3W",
+      "spec": "2GB RAM 无 eMMC 带排针[【Microduck 原版主板】]；2GB RAM / 无eMMC / 带排针",
+      "unit": "个",
+      "quantity": 1,
+      "unitQuote": "309.00",
+      "subtotalCents": 30900,
+      "group": "electronics",
+      "url": "https://item.taobao.com/item.htm?id=763812025816",
+      "note": "配套镜像对应 ZERO 3W；2GB、无 eMMC、带排针。"
+    },
+    {
+      "id": "part-03",
+      "name": "NP-F550 电池与双充套装",
+      "spec": "【NP-F550补光灯专用▲2200mAh】2电+标准双充套裝；沣标 NP-F550 / 2200mAh / 2块电池＋标准双充",
+      "unit": "套",
+      "quantity": 1,
+      "unitQuote": "84.59",
+      "subtotalCents": 8459,
+      "group": "electronics",
+      "url": "https://item.taobao.com/item.htm?id=585415365001",
+      "note": "历史订单是 2 块电池＋双充的套装。"
+    },
+    {
+      "id": "part-04",
+      "name": "IMX219 160度摄像头",
+      "spec": "SKU：IMX219 160度摄像头",
+      "unit": "个",
+      "quantity": 1,
+      "unitQuote": "64.35",
+      "subtotalCents": 6435,
+      "group": "electronics",
+      "url": "https://item.taobao.com/item.htm?id=1083291197130&skuId=6300750750661",
+      "note": "用于头部视野，选择指定 160° 款式。"
+    },
+    {
+      "id": "part-05",
+      "name": "8×8 ToF 测距模块",
+      "spec": "VL53L5X V2模块配盖片；VL53L5X V2模块配盖片（商品标题 VL53L5CX）",
+      "unit": "个",
+      "quantity": 1,
+      "unitQuote": "49.50",
+      "subtotalCents": 4950,
+      "group": "electronics",
+      "url": "https://item.taobao.com/item.htm?id=737603917521",
+      "note": "用于测距；采购的是模块，不是裸芯片。"
+    },
+    {
+      "id": "part-06",
+      "name": "扬声器",
+      "spec": "3525腔体-4Ω3W/喇叭；3525 腔体 / 4Ω 3W",
+      "unit": "个",
+      "quantity": 1,
+      "unitQuote": "3.08",
+      "subtotalCents": 308,
+      "group": "electronics",
+      "url": "https://item.taobao.com/item.htm?id=683920556900",
+      "note": "用于声音；接头需与所购 HAT 版本匹配。"
+    },
+    {
+      "id": "part-07",
+      "name": "盖世小鸡启明星2无线游戏手柄",
+      "spec": "启明星2；蓝牙 / Xbox 模式",
+      "unit": "个",
+      "quantity": 1,
+      "unitQuote": "89.91",
+      "subtotalCents": 8991,
+      "group": "electronics",
+      "url": "https://e.tb.cn/h.j3ZcczhbdezbYBk?tk=1u6dTxTGFkS",
+      "note": "用于实体操控，按配套中控说明配对。"
+    },
+    {
+      "id": "part-08",
+      "name": "6700 开式薄壁轴承",
+      "spec": "6700开式【轴承钢·精品级】10*15*3MM；6700开式 / 10×15×3mm / 轴承钢精品级",
+      "unit": "只",
+      "quantity": 5,
+      "unitQuote": "1.94",
+      "subtotalCents": 970,
+      "group": "bearings",
+      "url": "https://item.taobao.com/item.htm?id=625390659071",
+      "note": "采购包数包含参考备料；按打印件与装配位置使用。"
+    },
+    {
+      "id": "part-09",
+      "name": "ET2216 薄壁轴承",
+      "spec": "ET2216【精品级】16*22*4MM[轴承钢]；ET2216 / 16×22×4mm / 轴承钢精品级",
+      "unit": "只",
+      "quantity": 12,
+      "unitQuote": "2.91",
+      "subtotalCents": 3492,
+      "group": "bearings",
+      "url": "https://item.taobao.com/item.htm?id=733598659967",
+      "note": "采购包数包含参考备料；按打印件与装配位置使用。"
+    },
+    {
+      "id": "part-10",
+      "name": "M2×4 十字盘头平尾自攻螺丝",
+      "spec": "M2*4[200只]镀镍；铁镀镍 / 十字圆头 / 平尾自攻 / M2×4",
+      "unit": "包（200个）",
+      "quantity": 1,
+      "unitQuote": "3.03",
+      "subtotalCents": 303,
+      "group": "screws",
+      "url": "https://item.taobao.com/item.htm?id=534923831046",
+      "note": "采购包数包含参考备料；按打印件与装配位置使用。"
+    },
+    {
+      "id": "part-11",
+      "name": "M2×5 十字盘头平尾自攻螺丝",
+      "spec": "M2*5[200只]镀镍；铁镀镍 / 十字圆头 / 平尾自攻 / M2×5",
+      "unit": "包（200个）",
+      "quantity": 1,
+      "unitQuote": "0.00",
+      "subtotalCents": 0,
+      "group": "screws",
+      "url": "https://item.taobao.com/item.htm?id=534923831046",
+      "note": "0 元是历史订单优惠金额，下单时需补实际报价。"
+    },
+    {
+      "id": "part-12",
+      "name": "M2×6 十字盘头平尾自攻螺丝",
+      "spec": "M2*6[200只]镀镍；铁镀镍 / 十字圆头 / 平尾自攻 / M2×6",
+      "unit": "包（200个）",
+      "quantity": 1,
+      "unitQuote": "3.31",
+      "subtotalCents": 331,
+      "group": "screws",
+      "url": "https://item.taobao.com/item.htm?id=534923831046",
+      "note": "采购包数包含参考备料；按打印件与装配位置使用。"
+    },
+    {
+      "id": "part-13",
+      "name": "M2×8 十字盘头平尾自攻螺丝",
+      "spec": "M2*8[200只]镀镍；铁镀镍 / 十字圆头 / 平尾自攻 / M2×8",
+      "unit": "包（200个）",
+      "quantity": 1,
+      "unitQuote": "3.59",
+      "subtotalCents": 359,
+      "group": "screws",
+      "url": "https://item.taobao.com/item.htm?id=534923831046",
+      "note": "采购包数包含参考备料；按打印件与装配位置使用。"
+    },
+    {
+      "id": "part-14",
+      "name": "M2×12 十字盘头平尾自攻螺丝",
+      "spec": "M2*12[200只]镀镍；铁镀镍 / 十字圆头 / 平尾自攻 / M2×12",
+      "unit": "包（200个）",
+      "quantity": 1,
+      "unitQuote": "3.88",
+      "subtotalCents": 388,
+      "group": "screws",
+      "url": "https://item.taobao.com/item.htm?id=534923831046",
+      "note": "采购包数包含参考备料；按打印件与装配位置使用。"
+    },
+    {
+      "id": "part-15",
+      "name": "M2.6×8 十字盘头平尾自攻螺丝",
+      "spec": "M2.6*8[200只]镀镍；铁镀镍 / 十字圆头 / 平尾自攻 / M2.6×8",
+      "unit": "包（200个）",
+      "quantity": 1,
+      "unitQuote": "3.59",
+      "subtotalCents": 359,
+      "group": "screws",
+      "url": "https://item.taobao.com/item.htm?id=534923831046",
+      "note": "采购包数包含参考备料；按打印件与装配位置使用。"
+    },
+    {
+      "id": "part-16",
+      "name": "EH 2P 母壳",
+      "spec": "EH2.5MM 2P胶壳（50个）；EH 2P，配 HAT J1/J2/J9",
+      "unit": "包（50个）",
+      "quantity": 1,
+      "unitQuote": "2.20",
+      "subtotalCents": 220,
+      "group": "wiring",
+      "url": "https://item.taobao.com/item.htm?id=832569969546",
+      "note": "接口规格与板卡版本匹配后购买。"
+    },
+    {
+      "id": "part-17",
+      "name": "EH 3P 母壳",
+      "spec": "EH2.5MM 3P胶壳（50个）；EH 3P，配 HAT J13/J14、IMU J1",
+      "unit": "包（50个）",
+      "quantity": 1,
+      "unitQuote": "2.80",
+      "subtotalCents": 280,
+      "group": "wiring",
+      "url": "https://item.taobao.com/item.htm?id=832569969546",
+      "note": "接口规格与板卡版本匹配后购买。"
+    },
+    {
+      "id": "part-18",
+      "name": "EH 压接端子",
+      "spec": "EH2.5MM 端子（100个）；EH2.5MM 端子",
+      "unit": "包（100个）",
+      "quantity": 1,
+      "unitQuote": "3.50",
+      "subtotalCents": 350,
+      "group": "wiring",
+      "url": "https://item.taobao.com/item.htm?id=832569969546",
+      "note": "接口规格与板卡版本匹配后购买。"
+    },
+    {
+      "id": "part-19",
+      "name": "SH1.0 4P 转杜邦母线",
+      "spec": "0.2m;1.0-4P转杜邦母（5条）；SH1.0 4P / 20cm / 杜邦母",
+      "unit": "包（5个）",
+      "quantity": 1,
+      "unitQuote": "4.56",
+      "subtotalCents": 456,
+      "group": "wiring",
+      "url": "https://item.taobao.com/item.htm?id=895049863252",
+      "note": "转接线脚序按模块与实板核对。"
+    },
+    {
+      "id": "part-20",
+      "name": "AMP2.0 3P 舵机线 20cm",
+      "spec": "200mm;1007/24#;3P;AMP2.0；200mm / 1007 / 24AWG / 3P / AMP2.0",
+      "unit": "条",
+      "quantity": 30,
+      "unitQuote": "0.90",
+      "subtotalCents": 2700,
+      "group": "wiring",
+      "url": "https://item.taobao.com/item.htm?id=825340808235",
+      "note": "历史采购数量含备料，10 cm／20 cm 按走线长度使用。"
+    },
+    {
+      "id": "part-21",
+      "name": "AMP2.0 3P 舵机线 10cm",
+      "spec": "100mm;1007/24#;3P;AMP2.0；100mm / 1007 / 24AWG / 3P / AMP2.0",
+      "unit": "条",
+      "quantity": 30,
+      "unitQuote": "0.90",
+      "subtotalCents": 2700,
+      "group": "wiring",
+      "url": "https://item.taobao.com/item.htm?id=825340808235",
+      "note": "历史采购数量含备料，并非装机必须各用 30 条。"
+    },
+    {
+      "id": "part-22",
+      "name": "22AWG 三芯硅胶排线",
+      "spec": "黑色;3芯;22AWG;1m；黑色 / 3芯 / 22AWG / 1m",
+      "unit": "米",
+      "quantity": 3,
+      "unitQuote": "3.5933",
+      "subtotalCents": 1078,
+      "group": "wiring",
+      "url": "https://item.taobao.com/item.htm?id=781764816472",
+      "note": "接口规格与板卡版本匹配后购买。"
+    },
+    {
+      "id": "part-23",
+      "name": "22AWG 单芯硅胶线",
+      "spec": "22AWG(0.33平方)黑色 2米；黑色 / 22AWG / 0.33mm² / 2m",
+      "unit": "个",
+      "quantity": 1,
+      "unitQuote": "3.42",
+      "subtotalCents": 342,
+      "group": "wiring",
+      "url": "https://item.taobao.com/item.htm?id=736162720327",
+      "note": "接口规格与板卡版本匹配后购买。"
+    },
+    {
+      "id": "part-24",
+      "name": "彩色热缩管套装",
+      "spec": "袋装 164片 彩色 【2倍收缩】；164片 / 彩色 / 2倍收缩",
+      "unit": "个",
+      "quantity": 1,
+      "unitQuote": "0.99",
+      "subtotalCents": 99,
+      "group": "wiring",
+      "url": "https://item.taobao.com/item.htm?id=945215173380",
+      "note": "接口规格与板卡版本匹配后购买。"
+    }
+  ],
+  "boards": [
+    {
+      "id": "hat",
+      "name": "HAT 成品板",
+      "spec": "作者同款成品板；下单确认舵机总线、喇叭与麦克风接头版本。",
+      "unit": "块",
+      "quantity": 1,
+      "unitQuote": "119.00",
+      "subtotalCents": 11900,
+      "group": "boards",
+      "url": "https://item.taobao.com/item.htm?id=1095121548583",
+      "note": "与 ZERO 配对，连接舵机总线和外围。"
+    },
+    {
+      "id": "imu",
+      "name": "IMU 成品板",
+      "spec": "本仓库独立躯干 IMU；下单确认固件及接头版本。",
+      "unit": "块",
+      "quantity": 1,
+      "unitQuote": "99.00",
+      "subtotalCents": 9900,
+      "group": "boards",
+      "url": "https://item.taobao.com/item.htm?id=1095121548583",
+      "note": "固定在电池仓背面，端子朝上，提供姿态反馈。"
+    }
+  ],
+  "groups": [
+    {
+      "id": "boards",
+      "name": "HAT 与 IMU 成品板"
+    },
+    {
+      "id": "electronics",
+      "name": "主控、舵机与配套功能"
+    },
+    {
+      "id": "bearings",
+      "name": "结构轴承"
+    },
+    {
+      "id": "screws",
+      "name": "螺丝与备料"
+    },
+    {
+      "id": "wiring",
+      "name": "线材与接插件"
+    }
+  ],
+  "diyMaterialsMinCents": 9422,
+  "diyMaterialsMaxCents": 13422,
+  "diyToolsMinCents": 80000,
+  "diyToolsMaxCents": 100000,
+  "printerReferenceCents": 350000,
+  "source": "https://github.com/kissqy/Microduck-kissqy/blob/main/DUCK-SHOPPING-LIST.md",
+  "unpriced": [
+    {
+      "id": "printing",
+      "name": "打印件或代打服务",
+      "spec": "完整结构件＋TPU 部件；自己打印填耗材费，代打填商家整套报价。",
+      "url": "https://github.com/kissqy/Microduck-kissqy/tree/main/hardware/3d-print-frankenduck"
+    },
+    {
+      "id": "hub",
+      "name": "HUB 与电池接入配件",
+      "spec": "按选用电池仓补齐 HUB、接线与电池触点；向作者确认供货与价格。",
+      "url": "https://github.com/kissqy/Microduck-kissqy/blob/main/docs/assets/purchase-wechat-qr.jpg"
+    },
+    {
+      "id": "card",
+      "name": "TF 卡与读卡器",
+      "spec": "刷写 ZERO 3W 的配套系统镜像；已有可复用，容量按镜像说明确认。",
+      "url": "https://github.com/kissqy/Microduck-kissqy/blob/main/docs/releases/public-image-r1.md"
+    },
+    {
+      "id": "capacitor",
+      "name": "总电源缓冲电容",
+      "spec": "1000 µF / 16 V；HUB 已装同规格电容时不重复购买，按实板确认。",
+      "url": "https://github.com/kissqy/Microduck-kissqy/blob/main/docs/ASSEMBLY-NOTES.md"
+    },
+    {
+      "id": "hand-tools",
+      "name": "常规装配手工具",
+      "spec": "与螺丝匹配的工具、剪线与绝缘用品、测量工具；已有可复用。",
+      "url": "https://github.com/kissqy/Microduck-kissqy/blob/main/docs/BUILD-TOOLS.md"
+    }
+  ],
+  "optional": [
+    {
+      "id": "rollers",
+      "name": "滑轮选配轴承 623ZZ",
+      "spec": "623 内 3 外 10 厚 4，参考采购 8 只；普通脚掌首次行走不需要。",
+      "quantity": 8,
+      "unit": "只",
+      "subtotalCents": 1200,
+      "url": "https://item.taobao.com/item.htm?id=618009195719"
+    }
+  ]
+}
