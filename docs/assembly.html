@@ -7,7 +7,7 @@
   <title>3D 装配参考 · Microduck 飞特版</title>
   <meta name="description" content="Microduck 3D 装配与接线参考：打开头盖，查看 HAT、IMU、HUB 和 ZERO 3W，核对接口及购买入口。">
   <link rel="canonical" href="https://kissqy.github.io/Microduck-kissqy/assembly.html">
-  <link rel="stylesheet" href="assembly.css?v=20261026-wiring">
+  <link rel="stylesheet" href="assembly.css?v=20261026-layout2">
 </head>
 <body>
   <header class="site-header">
@@ -30,12 +30,13 @@
         </div>
         <div class="electronics-tools" aria-label="内部结构显示">
           <label><input id="open-cover" type="checkbox"> 打开头盖</label>
+          <label><input id="show-battery" type="checkbox" checked> 显示电池仓</label>
           <label><input id="show-components" type="checkbox" checked> 显示板卡</label>
           <label><input id="show-wires" type="checkbox" checked> 显示接线</label>
           <a href="#wiring-guide">接口与线序 ↓</a>
         </div>
         <div class="board-shortcuts" role="group" aria-label="查看内部板卡">
-          <button type="button" data-component="zero">ZERO 3W</button><button type="button" data-component="hat">HAT</button><button type="button" data-component="imu">IMU</button><button type="button" data-component="hub">HUB</button>
+          <button type="button" data-component="zero">ZERO 3W</button><button type="button" data-component="hat">HAT</button><button type="button" data-component="imu">IMU</button><button type="button" data-component="hub">HUB</button><button type="button" id="focus-battery">电池仓</button>
         </div>
         <div class="stage">
           <div id="assembly-canvas" aria-label="可旋转的 Microduck 三维模型"></div>
@@ -48,7 +49,7 @@
           <button type="button" data-view="front">正面</button><button type="button" data-view="back">背面</button><button type="button" data-view="left">左侧</button><button type="button" data-view="side">右侧</button><button type="button" data-view="top">俯视</button><button type="button" id="reset-view">↺ 恢复全景</button>
         </div>
         <p class="side-note">左右以鸭子自身为准：左腿 20–24，右腿 10–14。正面看时与屏幕左右相反。</p>
-        <p class="layout-note">板卡外形、内部位置和线束路径为示意；实际接口按下方说明核对。</p>
+        <p class="layout-note">HUB 在 10 / 20 舵机之间，IMU 在电池仓背面，HAT / ZERO 在鸭脸内部。电池仓采用原始 STL；线束曲线与元件外观为装配参考。</p>
       </section>
       <aside class="inspector" aria-labelledby="part-title">
         <div class="inspector-tabs" role="group" aria-label="选择说明内容"><button type="button" data-inspect="joints" aria-pressed="true">关节结构</button><button type="button" data-inspect="electronics" aria-pressed="false">板卡与接线</button></div>
@@ -77,16 +78,24 @@
     </div>
     <section id="wiring-guide" class="wiring-guide" aria-labelledby="wiring-title">
       <div class="wiring-heading"><div><p class="eyebrow">把每条线的两端对上</p><h2 id="wiring-title">先看连接关系，再核对脚序。</h2></div><p id="wiring-note"></p></div>
-      <div class="connection-map" aria-label="主要板卡连接关系">
+      <div class="connection-map" aria-label="点击查看板卡接口">
         <button type="button" data-component="zero"><span class="map-chip">主控</span><strong>ZERO 3W</strong><small>40 针排针</small></button>
-        <span class="map-link power">供电 / 信号 ↔</span>
+        <span class="map-link">·</span>
         <button type="button" data-component="hat"><span class="map-chip">扩展板</span><strong>HAT</strong><small>舵机总线接口</small></button>
-        <span class="map-link bus">总线 ↔</span>
+        <span class="map-link">·</span>
         <button type="button" data-component="hub"><span class="map-chip">分线与供电接入</span><strong>HUB</strong><small>CN1 接电池</small></button>
-        <span class="map-link bus">总线 ↔</span>
+        <span class="map-link">·</span>
         <button type="button" data-component="imu"><span class="map-chip">姿态反馈</span><strong>IMU</strong><small>与舵机共用总线</small></button>
       </div>
-      <p class="map-caption">电池从 HUB 的 CN1 接入，三线总线还连接 15 个舵机。上图表示电气连接关系，不代表线束的物理排列顺序。</p>
+      <p class="map-caption">点击板卡查看接口与购买入口。电池从 HUB 的 CN1 接入；当前样机的舵机菊链如下。</p>
+      <div class="chain-map" role="img" aria-label="接线参考：HAT 经 34、33、32、31、30 到 HUB，由 HUB 分到左右腿及电池仓背面 IMU；电池在 HUB 接入">
+        <div class="chain-row"><span class="chain-label">鸭脸 → 头颈 → 躯干</span><b>HAT</b><i>→</i><b>34</b><i>→</i><b>33</b><i>→</i><b>32</b><i>→</i><b>31</b><i>→</i><b>30</b><i>→</i><b class="chain-branch">HUB</b></div>
+        <div class="chain-row"><span class="chain-label">HUB → 左腿</span><b>20</b><i>→</i><b>21</b><i>→</i><b>22</b><i>→</i><b>23</b><i>→</i><b>24</b></div>
+        <div class="chain-row"><span class="chain-label">HUB → 右腿</span><b>10</b><i>→</i><b>11</b><i>→</i><b>12</b><i>→</i><b>13</b><i>→</i><b>14</b></div>
+        <div class="chain-row"><span class="chain-label">HUB → 电池仓背面</span><b>IMU · 200</b><span class="chain-extra">姿态反馈，共用三线总线</span></div>
+        <div class="chain-row"><span class="chain-label">供电接入</span><b>电池</b><i>→</i><b>HUB · CN1</b><i>→</i><b>舵机总线</b><span class="chain-extra">HUB 位于 10 / 20 舵机之间</span></div>
+      </div>
+      <p class="map-caption">HUB 的四个三线口在电气上共网，此处不指定各支路必须使用哪个口。图中线束弯曲为装配参考，不表示舵机上有额外接口。</p>
       <div id="connection-list" class="connection-list"></div>
       <div class="hub-note"><button type="button" data-component="hub">查看 HUB 分线板 →</button><p>HUB 与 HAT / IMU 的工程针号方向可能不同。针号不代表照片左右或现成线束顺序，应按 GND、VIN、DATA 信号名及实板丝印核对，不因编号不同就交叉线束。</p></div>
     </section>
@@ -97,6 +106,6 @@
     </section>
     <footer><p>沿用中控的官方结构模型；新增板卡与线束是装配示意，飞特改件、走线和螺丝规格以打印件与硬件说明为准。34 号嘴部为固定外观。断电后接线，按接口编号与信号名核对，不按线色猜脚序。</p><a href="https://github.com/kissqy/Microduck-kissqy/blob/main/docs/assets/duck-visual.json">模型来源与版本 ↗</a></footer>
   </main>
-  <script type="module" src="assembly.js?v=20261026-wiring"></script>
+  <script type="module" src="assembly.js?v=20261026-layout2"></script>
 </body>
 </html>
