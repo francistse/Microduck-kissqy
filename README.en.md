@@ -8,6 +8,10 @@ From a collection of parts to a walking, forward-rolling robot duck—and then t
 
 [🚀 Complete build guide](docs/MICRODUCK-BUILD-GUIDE.en.md) · [📥 Downloads](#downloads-and-versions) · [❓ FAQ](docs/MICRODUCK-FAQ.en.md) · [🌐 Online guides](https://kissqy.github.io/Microduck-kissqy/guides/en.html)
 
+## 🎬 Meet the duck
+
+<video src="https://github.com/user-attachments/assets/593b5171-17fe-4af5-bf60-d0da9a5eddb0" controls width="900"></video>
+
 ## 🏆 One-legged balance · A new training milestone
 
 <a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html"><img width="900" alt="Custom-trained one-legged balance on the real robot — click to play" src="docs/assets/one-leg-balance-cover.webp" /></a>

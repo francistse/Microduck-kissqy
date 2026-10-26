@@ -8,6 +8,10 @@
 
 [🚀 从零复刻教程](docs/MICRODUCK-BUILD-GUIDE.md) · [📥 下载](#下载与版本) · [❓ 常见问题](docs/MICRODUCK-FAQ.md) · [🌐 在线教程](https://kissqy.github.io/Microduck-kissqy/guides/)
 
+## 🎬 看看这只小鸭
+
+<video src="https://github.com/user-attachments/assets/593b5171-17fe-4af5-bf60-d0da9a5eddb0" controls width="900"></video>
+
 ## 🏆 单脚独立 · 自训新突破
 
 <a href="https://kissqy.github.io/Microduck-kissqy/one-leg-balance.html"><img width="900" alt="作者自训单脚独立实机视频，点击封面播放" src="docs/assets/one-leg-balance-cover.webp" /></a>
