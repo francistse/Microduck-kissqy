@@ -1,0 +1,38 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>V167 原始界面 · calibration</title><link rel="stylesheet" href="../styles.css"><link rel="stylesheet" href="../control.css"><link rel="stylesheet" href="../service.css"><link rel="stylesheet" href="../r17-0151.css"><link rel="stylesheet" href="../advanced-parameters.css"><link rel="stylesheet" href="../calibration-view.css"><style>html{scroll-behavior:auto}body{padding:14px;min-width:0;margin:0}.heading-actions{margin:0}.ssh-form{width:100%;margin:0}.service-editor{margin:0}.official-pad{max-width:390px;margin:auto}.panel{margin:0}#service-editor{width:100%}input,button,select{pointer-events:none}#service-job{display:none}.service-workbench-bottom{display:none}</style></head><body class="service-mode"><div inert><section class="panel service-editor" id="service-editor">
+          <div class="panel-head"><div><h2>关节工作台</h2></div><span id="service-count" class="muted tiny">0 / 15 已标定</span></div>
+          <div class="service-editor-body">
+            <div class="service-selection">
+              <label class="field">选择关节<select id="service-joint-select"></select></label>
+              <div class="service-value"><span>当前位置 / counts</span><strong id="service-raw">—</strong></div>
+              <div class="service-value"><span>已标定角度 / °</span><strong id="service-angle">—</strong></div>
+            </div>
+            <div id="service-feedback-values" class="service-feedback-values"></div>
+            <div class="service-movement">
+              <div class="service-target-row">
+                <label class="field">目标 / counts<input id="service-position" type="number" min="0" max="4095" step="1" placeholder="等待反馈"></label>
+                <input id="service-slider" aria-label="所选关节目标位置" type="range" min="0" max="4095" step="1" value="2048">
+                <label class="field">移动时长<select id="service-duration"><option value="2000">2 秒</option><option value="4000">4 秒</option><option value="1000">1 秒</option></select></label>
+              </div>
+              <div class="service-action-row"><button class="button" id="service-minus" title="当前位置减 57 counts，约 5°">−57 counts</button><button class="button accent" id="service-move">移动到目标</button><button class="button" id="service-plus" title="当前位置加 57 counts，约 5°">+57 counts</button></div>
+            </div>
+            <div class="service-calibration">
+              <h3>实际关节标定</h3>
+              <p id="service-calibration-mode" class="tiny muted" role="status"></p>
+              <div class="service-fields">
+                <label class="field">已知角度 / °<input id="service-known-angle" type="number" step="0.1" value="0"></label>
+                <label class="field">编码器递增时<select id="service-direction"><option value="1">关节角度增加（+1）</option><option value="-1">关节角度减少（−1）</option></select></label>
+                <label class="field">实际最小角 / °<input id="service-min" type="number" step="0.1" placeholder="实物限位"><small class="service-limit-reference" id="service-model-min" title="官方模型参考，不是实物机械限位">模型参考 —</small></label>
+                <label class="field">实际最大角 / °<input id="service-max" type="number" step="0.1" placeholder="实物限位"><small class="service-limit-reference" id="service-model-max" title="官方模型参考，不是实物机械限位">模型参考 —</small></label>
+              </div>
+              <p class="service-calibration-reference">先看 3D「0 → +10°」正向示范。实物沿同方向摆动时，counts 增加选 +1，counts 减少选 −1。「已知角度」填实物当前关节角度；零位与 HOME 站姿分别核对。</p>
+              <div class="service-confirm-row"><label class="service-check"><input id="service-known" type="checkbox">已核对实际角度、方向与机械限位</label><button class="button accent" id="service-capture">保存当前关节</button></div>
+              <p id="service-calibration-detail" class="tiny muted"></p>
+            </div>
+            <div class="service-center">
+              <div class="service-confirm-row"><h3>未装配居中</h3><label class="service-check"><input id="service-unassembled" type="checkbox">15 颗舵机未装到骨架，空间无遮挡</label><button class="button" id="service-center">全部顺序回到 2048</button></div>
+              <p id="service-center-progress" class="tiny muted" role="status"></p>
+              <p class="tiny muted">2048 是编码器中心，不是装配零位。</p>
+            </div>
+          </div>
+          <div class="panel-note service-job" id="service-job" role="status" aria-live="polite"></div>
+        </section></div></body></html>

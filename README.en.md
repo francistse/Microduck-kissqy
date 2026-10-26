@@ -89,7 +89,7 @@ This little duck can **walk, sit, pick things up, kick a ball, and roll forward*
 
 ## 🎮 Two consoles, two jobs
 
-| 🐣 Robot Console · R17 V167 · [Demo](https://kissqy.github.io/Microduck-kissqy/) | 🧠 Training Studio · R1.5.27 · [Demo](https://kissqy.github.io/Microduck-kissqy/training/) |
+| 🐣 Robot Console · R17 V167 · [Demo](https://kissqy.github.io/Microduck-kissqy/) · [📖 User guide (中文)](https://kissqy.github.io/Microduck-kissqy/console-guide.html) | 🧠 Training Studio · R1.5.27 · [Demo](https://kissqy.github.io/Microduck-kissqy/training/) |
 | --- | --- |
 | Live 3D pose, camera, joint / IMU data, servo calibration | Training tasks, recipes, queue, progress and reward curves |
 | Physical gamepad control, firmware maintenance, model status | Visual simulation, policy evaluation, ONNX export |

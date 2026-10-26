@@ -4,7 +4,7 @@
 <link rel="canonical" href="https://kissqy.github.io/Microduck-kissqy/guides/"><link rel="alternate" hreflang="zh-CN" href="https://kissqy.github.io/Microduck-kissqy/guides/"><link rel="alternate" hreflang="en" href="https://kissqy.github.io/Microduck-kissqy/guides/en.html">
 <meta property="og:title" content="Microduck 复刻教程：飞特 HD1910、材料清单与中文中控 | kissqy"><meta property="og:description" content="Microduck 飞特版实机复刻教程：材料清单、复刻成本、3D 打印、HAT 与 IMU 制作、ZERO 3W 刷机、V167 中文中控、舵机标定与强化学习训练。"><meta property="og:type" content="website"><meta property="og:url" content="https://kissqy.github.io/Microduck-kissqy/guides/">
 <style>body{margin:0;background:#f5f7f3;color:#1c2923;font:17px/1.8 system-ui,sans-serif}main,header,footer{max-width:940px;margin:auto;padding:24px}header{border-bottom:1px solid #d6dfd5}nav{display:flex;gap:18px;flex-wrap:wrap}a{color:#216040;text-underline-offset:3px}h1{font-size:clamp(28px,5vw,42px);line-height:1.3}h2{font-size:27px;line-height:1.4;margin-top:42px}h3{font-size:22px;line-height:1.5;margin-top:30px}p,li{overflow-wrap:anywhere}code{background:#e7eee5;padding:2px 5px;border-radius:4px}table{border-collapse:collapse;width:100%;background:white}td{border:1px solid #d6dfd5;padding:12px}tr:first-child{font-weight:bold}.table{overflow:auto}.intro{background:#e8f0df;padding:18px;border-radius:12px}footer{border-top:1px solid #d6dfd5;font-size:14px}section{scroll-margin-top:20px}</style></head>
-<body><header><nav><a href="https://github.com/kissqy/Microduck-kissqy">🦆 Microduck-kissqy · GitHub</a><a href="en.html">English</a><a href="../assembly.html">3D 装配参考</a><a href="../">机器人中控演示</a><a href="../training/">训练中控演示</a></nav>
+<body><header><nav><a href="https://github.com/kissqy/Microduck-kissqy">🦆 Microduck-kissqy · GitHub</a><a href="en.html">English</a><a href="../assembly.html">3D 装配参考</a><a href="../">机器人中控演示</a><a href="../console-guide.html">📖 中控使用教程</a><a href="../training/">训练中控演示</a></nav>
 <h1>从零复刻你的 Microduck 飞特版</h1><p class="intro">Microduck 飞特版实机复刻教程：材料清单、复刻成本、3D 打印、HAT 与 IMU 制作、ZERO 3W 刷机、V167 中文中控、舵机标定与强化学习训练。</p><nav><a href="#build">从零搭建</a><a href="#faq">常见问题</a><a href="https://github.com/kissqy/Microduck-kissqy#下载与版本">下载稳定版 V167</a></nav></header>
 <main><section id="build"><p><strong>简体中文</strong> | <a href="https://github.com/kissqy/Microduck-kissqy/blob/main/docs/MICRODUCK-BUILD-GUIDE.en.md">English</a></p>
 <h2>Microduck 飞特版从零复刻教程：材料清单、3D 打印、刷机、标定与训练</h2>
@@ -35,7 +35,7 @@
 <li>在<a href="https://github.com/kissqy/Microduck-kissqy/blob/main/docs/releases/public-image-r1.md">系统镜像 R1 页面</a>下载镜像，用 Armbian Imager 将压缩镜像直接刷入 TF 卡。</li>
 <li>ZERO 首次启动后，连接 <code>Microduck-kissqy</code> 热点，按提示配置家庭 Wi-Fi 和新的登录密码；未自动弹出页面时访问 <code>http://10.42.0.1:8088</code>。</li>
 <li>从<a href="https://github.com/kissqy/Microduck-kissqy/blob/main/README.md#下载与版本">下载区</a>取得机器人中控 V167，完整解压后运行 <code>start.cmd</code>；macOS 使用 <code>start.command</code>。</li>
-<li>填入本机 ZERO 的 SSH 地址和登录信息。<strong>R1 镜像预装 control.40；通过 V167 中控安装随包固件，更新到 control.43。</strong></li>
+<li>先到路由器 App / 后台的在线设备列表查机器人 IP（<a href="../console-guide.html#network">刷机后配网与查 IP 的图文步骤</a>），再在本地中控填写 <code>radxa@实际IP</code> 和配网时设置的系统登录密码。<strong>R1 镜像预装 control.40；通过 V167 中控安装随包固件，更新到 control.43。</strong></li>
 </ol>
 <p>软件包安装、日志与按键说明见<a href="https://github.com/kissqy/Microduck-kissqy/blob/main/microduck-hd1910/firmware/console/README.zh-CN.md">V167 使用指南</a>。网页在线演示使用模拟数据，实际连接需要本地运行中控。</p>
 <h3>5. 标定自己的机器人，再进行运动</h3>

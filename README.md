@@ -53,7 +53,7 @@
 | 你的目标 | 直接入口 |
 | --- | --- |
 | 想自己做一只 Microduck 飞特版 | [从采购到第一次行走](docs/MICRODUCK-BUILD-GUIDE.md) · [材料与预算](DUCK-SHOPPING-LIST.md) |
-| 已经装好，准备刷机、标定和操作 | [V167 使用指南](microduck-hd1910/firmware/console/README.zh-CN.md) |
+| 已经装好，准备刷机、标定和操作 | [中控图文教程 · 配网、查 IP 与操作](https://kissqy.github.io/Microduck-kissqy/console-guide.html) |
 | 想训练行走、起身或自己的动作 | [训练中控 R1.5.27](microduck-hd1910/training-console/README.zh-CN.md) |
 | 想制作 HAT 或独立 IMU | [硬件工程与制作说明](hardware/README.md) |
 | 想看源码或查完整文档 | [源码入口](microduck-hd1910/README.md) · [全部文档](docs/README.md) |
@@ -89,7 +89,7 @@
 
 ## 🎮 两个中控，各做各的事
 
-| 🐣 机器人中控 · R17 V167 · [在线演示](https://kissqy.github.io/Microduck-kissqy/) | 🧠 训练中控 · R1.5.27 · [在线演示](https://kissqy.github.io/Microduck-kissqy/training/) |
+| 🐣 机器人中控 · R17 V167 · [在线演示](https://kissqy.github.io/Microduck-kissqy/) · [📖 使用教程](https://kissqy.github.io/Microduck-kissqy/console-guide.html) | 🧠 训练中控 · R1.5.27 · [在线演示](https://kissqy.github.io/Microduck-kissqy/training/) |
 | --- | --- |
 | 实时 3D 姿态、摄像头、关节/IMU 数据、舵机标定 | 独立训练任务、配方选择、训练队列、进度与奖励曲线 |
 | 实体手柄直接操控、固件维护、模型状态 | 可视化仿真、模型评估、ONNX 导出 |
