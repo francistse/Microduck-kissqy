@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f6f6ee">
+  <meta name="theme-color" content="#0d1113">
   <title>3D 装配参考 · Microduck 飞特版</title>
-  <meta name="description" content="旋转查看 Microduck 结构、关节位置与左右朝向。独立的 3D 装配参考，无须连接机器人。">
+  <meta name="description" content="Microduck 3D 装配与接线参考：打开头盖，查看 HAT、IMU、HUB 和 ZERO 3W，核对接口及购买入口。">
   <link rel="canonical" href="https://kissqy.github.io/Microduck-kissqy/assembly.html">
-  <link rel="stylesheet" href="assembly.css">
+  <link rel="stylesheet" href="assembly.css?v=20261026-wiring">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="https://github.com/kissqy/Microduck-kissqy"><span aria-hidden="true">🦆</span> Microduck</a>
+    <a class="brand" href="https://github.com/kissqy/Microduck-kissqy" aria-label="Microduck 项目首页"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="12"/><path d="M9 23h9V11h12v11h-7v9H9z"/></svg>microduck <span class="header-caption">装配与接线参考</span></a>
     <a class="back-link" href="https://github.com/kissqy/Microduck-kissqy">返回项目 <span aria-hidden="true">↗</span></a>
   </header>
   <main>
     <div class="page-heading">
-      <div><p class="eyebrow">先看清结构，再动手装配</p><h1>把小鸭转过来，看看。</h1></div>
-      <p class="intro">旋转、放大、点选舵机，核对每个部位的位置与朝向。<br>直接打开即可查看，无须连接机器人。</p>
+      <div><p class="eyebrow">ASSEMBLY &amp; WIRING</p><h1>先看清结构，再动手接线<span style="color:var(--green)">.</span></h1></div>
+      <p class="intro">旋转看结构，打开头盖看板卡，再核对接线。<br>直接打开即可查看，无须连接机器人。</p>
     </div>
     <div class="workspace">
       <section class="viewer-card" aria-label="3D 装配模型">
@@ -28,18 +28,31 @@
           <button type="button" data-group="right" aria-pressed="false">右腿 <small>10–14</small></button>
           <button type="button" data-group="head" aria-pressed="false">头颈 <small>30–34</small></button>
         </div>
+        <div class="electronics-tools" aria-label="内部结构显示">
+          <label><input id="open-cover" type="checkbox"> 打开头盖</label>
+          <label><input id="show-components" type="checkbox" checked> 显示板卡</label>
+          <label><input id="show-wires" type="checkbox" checked> 显示接线</label>
+          <a href="#wiring-guide">接口与线序 ↓</a>
+        </div>
+        <div class="board-shortcuts" role="group" aria-label="查看内部板卡">
+          <button type="button" data-component="zero">ZERO 3W</button><button type="button" data-component="hat">HAT</button><button type="button" data-component="imu">IMU</button><button type="button" data-component="hub">HUB</button>
+        </div>
         <div class="stage">
           <div id="assembly-canvas" aria-label="可旋转的 Microduck 三维模型"></div>
+          <div id="component-quick" class="component-quick" hidden><strong id="component-quick-name"></strong><a id="component-quick-buy" target="_blank" rel="noopener noreferrer">购买 ↗</a></div>
           <div id="loading" class="loading" role="status"><span class="loading-dot" aria-hidden="true"></span><strong>正在展开小鸭的 3D 结构…</strong><span>首次需加载约 12 MB 模型，请稍候。</span></div>
           <div id="model-error" class="model-error" role="alert" hidden><strong>3D 模型暂未打开</strong><p id="error-detail"></p><button type="button" id="retry">重新加载</button><a href="https://github.com/kissqy/Microduck-kissqy/tree/main/hardware/3d-print-frankenduck">先看打印件与结构说明 ↗</a></div>
-          <span class="stage-hint">拖动旋转 · 双指缩放 · 点选舵机</span>
+          <span class="stage-hint">拖动旋转 · 双指缩放 · 点选舵机或板卡</span>
         </div>
         <div class="view-toolbar" role="group" aria-label="模型观察方向">
           <button type="button" data-view="front">正面</button><button type="button" data-view="back">背面</button><button type="button" data-view="left">左侧</button><button type="button" data-view="side">右侧</button><button type="button" data-view="top">俯视</button><button type="button" id="reset-view">↺ 恢复全景</button>
         </div>
         <p class="side-note">左右以鸭子自身为准：左腿 20–24，右腿 10–14。正面看时与屏幕左右相反。</p>
+        <p class="layout-note">板卡外形、内部位置和线束路径为示意；实际接口按下方说明核对。</p>
       </section>
       <aside class="inspector" aria-labelledby="part-title">
+        <div class="inspector-tabs" role="group" aria-label="选择说明内容"><button type="button" data-inspect="joints" aria-pressed="true">关节结构</button><button type="button" data-inspect="electronics" aria-pressed="false">板卡与接线</button></div>
+        <div id="joints-panel">
         <div class="inspector-heading"><span class="eyebrow">看哪里，就选哪里</span><h2 id="part-title">整只小鸭</h2><p id="part-description">先看整体连接关系，再选择腿部或头颈放大查看。</p></div>
         <label class="fade-option"><input type="checkbox" id="fade-others" checked> 淡化其他部位</label>
         <div id="joint-list" class="joint-list" role="group" aria-label="关节位置"></div>
@@ -50,15 +63,40 @@
           <p>只改变页面中的模型；实际零位与方向请在中控逐轴标定。</p>
         </div>
         <div class="guide-link"><span aria-hidden="true">↗</span><div><a href="https://github.com/kissqy/Microduck-kissqy/blob/main/hardware/3d-print-frankenduck/README.md">飞特版打印件与装配说明</a><p>查改件、结构版本和打印文件。</p></div></div>
+        </div>
+        <div id="electronics-panel" hidden>
+          <div class="inspector-heading"><span class="eyebrow">选中板卡，看清接法</span><h2 id="component-title">HAT</h2><p id="component-description"></p></div>
+          <p id="component-location" class="component-location"></p>
+          <ul id="component-facts" class="component-facts"></ul>
+          <div id="component-wires" class="component-wires"></div>
+          <div class="component-actions"><a id="component-purchase" class="purchase-link" target="_blank" rel="noopener noreferrer"></a><a id="component-source" class="source-link" target="_blank" rel="noopener noreferrer">接线与工程说明 ↗</a></div>
+          <div id="component-sources" class="component-sources"></div>
+          <p class="purchase-note">按商品页选择对应板卡与接口版本；价格以店铺当前标价为准。</p>
+        </div>
       </aside>
     </div>
+    <section id="wiring-guide" class="wiring-guide" aria-labelledby="wiring-title">
+      <div class="wiring-heading"><div><p class="eyebrow">把每条线的两端对上</p><h2 id="wiring-title">先看连接关系，再核对脚序。</h2></div><p id="wiring-note"></p></div>
+      <div class="connection-map" aria-label="主要板卡连接关系">
+        <button type="button" data-component="zero"><span class="map-chip">主控</span><strong>ZERO 3W</strong><small>40 针排针</small></button>
+        <span class="map-link power">供电 / 信号 ↔</span>
+        <button type="button" data-component="hat"><span class="map-chip">扩展板</span><strong>HAT</strong><small>舵机总线接口</small></button>
+        <span class="map-link bus">总线 ↔</span>
+        <button type="button" data-component="hub"><span class="map-chip">分线与供电接入</span><strong>HUB</strong><small>CN1 接电池</small></button>
+        <span class="map-link bus">总线 ↔</span>
+        <button type="button" data-component="imu"><span class="map-chip">姿态反馈</span><strong>IMU</strong><small>与舵机共用总线</small></button>
+      </div>
+      <p class="map-caption">电池从 HUB 的 CN1 接入，三线总线还连接 15 个舵机。上图表示电气连接关系，不代表线束的物理排列顺序。</p>
+      <div id="connection-list" class="connection-list"></div>
+      <div class="hub-note"><button type="button" data-component="hub">查看 HUB 分线板 →</button><p>HUB 与 HAT / IMU 的工程针号方向可能不同。针号不代表照片左右或现成线束顺序，应按 GND、VIN、DATA 信号名及实板丝印核对，不因编号不同就交叉线束。</p></div>
+    </section>
     <section class="build-notes" aria-label="动手前的参考入口">
       <a class="note-card" href="https://github.com/kissqy/Microduck-kissqy/blob/main/docs/MICRODUCK-BUILD-GUIDE.md"><span class="note-number">01</span><div><h2>从零复刻流程</h2><p>材料、打印、机械、电路、刷机与标定。</p></div><span aria-hidden="true">↗</span></a>
       <a class="note-card" href="https://github.com/kissqy/Microduck-kissqy/blob/main/docs/ASSEMBLY-NOTES.md"><span class="note-number">02</span><div><h2>装机注意事项</h2><p>总电源缓冲电容与 5 GHz Wi-Fi 配置。</p></div><span aria-hidden="true">↗</span></a>
       <a class="note-card" href="https://github.com/kissqy/Microduck-kissqy/blob/main/hardware/README.md"><span class="note-number">03</span><div><h2>HAT 与 IMU 硬件</h2><p>核对电路、接口、供电与 IMU 固件。</p></div><span aria-hidden="true">↗</span></a>
     </section>
-    <footer><p>沿用中控的官方结构模型，用于辨认结构与安装朝向；飞特改件、走线和螺丝规格以打印件与硬件说明为准。模型未展示隐藏电子器件，34 号嘴部为固定外观。</p><a href="https://github.com/kissqy/Microduck-kissqy/blob/main/docs/assets/duck-visual.json">模型来源与版本 ↗</a></footer>
+    <footer><p>沿用中控的官方结构模型；新增板卡与线束是装配示意，飞特改件、走线和螺丝规格以打印件与硬件说明为准。34 号嘴部为固定外观。断电后接线，按接口编号与信号名核对，不按线色猜脚序。</p><a href="https://github.com/kissqy/Microduck-kissqy/blob/main/docs/assets/duck-visual.json">模型来源与版本 ↗</a></footer>
   </main>
-  <script type="module" src="assembly.js"></script>
+  <script type="module" src="assembly.js?v=20261026-wiring"></script>
 </body>
 </html>
