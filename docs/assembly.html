@@ -7,7 +7,7 @@
   <title>3D 装配参考 · Microduck 飞特版</title>
   <meta name="description" content="Microduck 3D 装配与接线参考：打开头盖，查看 HAT、IMU、HUB 和 ZERO 3W，核对接口及购买入口。">
   <link rel="canonical" href="https://kissqy.github.io/Microduck-kissqy/assembly.html">
-  <link rel="stylesheet" href="assembly.css?v=20261026-terminals">
+  <link rel="stylesheet" href="assembly.css?v=20261027-mounts">
 </head>
 <body>
   <header class="site-header">
@@ -51,7 +51,7 @@
           <button type="button" data-view="front">正面</button><button type="button" data-view="back">背面</button><button type="button" data-view="left">左侧</button><button type="button" data-view="side">右侧</button><button type="button" data-view="top">俯视</button><button type="button" id="reset-view">↺ 恢复全景</button>
         </div>
         <p class="side-note">左右以鸭子自身为准：左腿 20–24，右腿 10–14。正面看时与屏幕左右相反。</p>
-        <p class="layout-note">HUB 横跨 10 / 20 舵机上方；IMU 贴合电池仓背面、总线端子朝上；HAT / ZERO 在鸭脸内部。线束接入模型端子，路径与外形为装配参考。</p>
+        <p class="layout-note">HUB 平放在 10 / 20 舵机上方、长边沿机身前后方向；IMU 贴合电池仓背板、总线端子朝上；HAT / ZERO 在鸭脸内部。线束接入模型端子，路径与外形为装配参考。</p>
         <div class="wire-legend" aria-label="示意线颜色"><span><i class="wire-ground"></i>GND</span><span><i class="wire-power"></i>电源</span><span><i class="wire-data"></i>DATA</span><small>三芯线按信号名对应；图示颜色不替代实物针序。</small></div>
       </section>
       <aside class="inspector" aria-labelledby="part-title">
@@ -96,7 +96,7 @@
         <div class="chain-row"><span class="chain-label">HUB → 左腿</span><b>20</b><i>→</i><b>21</b><i>→</i><b>22</b><i>→</i><b>23</b><i>→</i><b>24</b></div>
         <div class="chain-row"><span class="chain-label">HUB → 右腿</span><b>10</b><i>→</i><b>11</b><i>→</i><b>12</b><i>→</i><b>13</b><i>→</i><b>14</b></div>
         <div class="chain-row"><span class="chain-label">HUB → 电池仓背面</span><b>IMU · 200</b><span class="chain-extra">姿态反馈，共用三线总线</span></div>
-        <div class="chain-row"><span class="chain-label">供电接入</span><b>电池</b><i>→</i><b>HUB · CN1</b><i>→</i><b>舵机总线</b><span class="chain-extra">HUB 横跨 10 / 20 舵机上方</span></div>
+        <div class="chain-row"><span class="chain-label">供电接入</span><b>电池</b><i>→</i><b>HUB · CN1</b><i>→</i><b>舵机总线</b><span class="chain-extra">HUB 平放，长边沿机身前后方向</span></div>
       </div>
       <p class="map-caption">HUB 的四个三线口在电气上共网，此处不指定各支路必须使用哪个口。图中线束弯曲为装配参考，不表示舵机上有额外接口。</p>
       <div id="connection-list" class="connection-list"></div>
@@ -109,6 +109,6 @@
     </section>
     <footer><p>沿用中控的官方结构模型；新增板卡与线束是装配示意，飞特改件、走线和螺丝规格以打印件与硬件说明为准。34 号嘴部为固定外观。断电后接线，按接口编号与信号名核对，不按线色猜脚序。</p><a href="https://github.com/kissqy/Microduck-kissqy/blob/main/docs/assets/duck-visual.json">模型来源与版本 ↗</a></footer>
   </main>
-  <script type="module" src="assembly.js?v=20261026-terminals"></script>
+  <script type="module" src="assembly.js?v=20261027-mounts"></script>
 </body>
 </html>

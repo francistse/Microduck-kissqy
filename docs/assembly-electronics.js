@@ -1,6 +1,7 @@
 import * as T from './vendor/three.module.min.js?demo=20261013';
 import {createBoardModel} from './assembly-board-models.js?v=20261026-terminals';
 import {attachPrintExplosion} from './assembly-explosion.js?v=20261026-terminals';
+import {prepareServoModels,attachServoModel} from './assembly-servo-models.js?v=20261027-mounts';
 
 // Board footprints are documented; mounting offsets are assembly-reference
 // placements, not a mechanical clearance or connector pin-direction drawing.
@@ -67,36 +68,6 @@ function makeTerminal(parent,name,{count=3,pitch=.002,position=vector(0,0,0),qua
   const outward=new T.Object3D();outward.position.set(0,-depth/2-.0045,-.00035);root.add(outward);
   return{root,pins,ordered,mouth,outward,kind,pinCount:count};
 }
-function idTexture(id){
-  const canvas=document.createElement('canvas');canvas.width=128;canvas.height=96;
-  const ctx=canvas.getContext('2d');if(!ctx)return null;
-  ctx.clearRect(0,0,128,96);ctx.fillStyle='#172122';ctx.fillRect(6,8,116,80);
-  ctx.strokeStyle='#c1f577';ctx.lineWidth=3;ctx.strokeRect(7,9,114,78);
-  ctx.fillStyle='#d5f9a8';ctx.font='700 66px system-ui,sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(String(id),64,52);
-  const texture=new T.CanvasTexture(canvas);texture.colorSpace=T.SRGBColorSpace;return texture;
-}
-function servoAttachments(servo,id){
-  const group=new T.Group();group.name='servo-'+id+'-identification-and-ports';servo.add(group);
-  const b=servo.geometry.boundingBox||servo.geometry.computeBoundingBox()||servo.geometry.boundingBox;
-  const center=b.getCenter(new T.Vector3()),texture=idTexture(id);
-  const material=new T.MeshBasicMaterial({map:texture,color:texture?0xffffff:0xc1f577,transparent:!!texture,depthWrite:false,polygonOffset:true,polygonOffsetFactor:-2,side:T.DoubleSide});
-  const decals=[];
-  // Flush decals sit on the housing faces, share the servo transform and do not
-  // float or rotate independently of its case when the model moves.
-  for(const sign of[-1,1]){
-    const decal=new T.Mesh(new T.PlaneGeometry(.013,.0095),material);decal.name=`servo-id-${id}-${sign>0?'left':'right'}`;
-    decal.rotation.x=sign>0?-Math.PI/2:Math.PI/2;decal.position.set(center.x,sign>0?b.max.y+.00012:b.min.y-.00012,center.z+.004);group.add(decal);decals.push(decal);
-  }
-  // HD1910 CAD has two sockets on the -X side, spaced across Y, with
-  // 2 mm contacts along Z. The frozen viewer uses a reference case, so bring
-  // the mouths to its outside face rather than burying them in that solid.
-  // These are assembly-position proxies, not an unverified electrical pinout.
-  const connectorOrientation=basisQuaternion(vector(0,0,1),vector(1,0,0),vector(0,1,0));
-  const frames=[-1,1].map(sign=>makeTerminal(group,`servo-${id}-${sign<0?'IN':'OUT'}`,{
-    position:vector(b.min.x-.00235,sign*.0067,-.00875),quaternion:connectorOrientation,
-  }));
-  return{group,ports:{in:frames[0],out:frames[1]},decals,texture};
-}
 function createHubModel(spec){
   const group=new T.Group(),pcb=new T.Mesh(new T.BoxGeometry(spec.width,spec.height,.0016),new T.MeshStandardMaterial({color:0x286a5b,roughness:.65,metalness:.08}));group.add(pcb);
   const ports={};
@@ -105,7 +76,7 @@ function createHubModel(spec){
   ports.CN3=makeTerminal(group,'HUB-CN3',{position:vector(.008,.005,.0033)});
   ports.CN4=makeTerminal(group,'HUB-CN4',{position:vector(-.008,-.004,.0033)});
   ports.CN5=makeTerminal(group,'HUB-CN5',{position:vector(.008,-.004,.0033)});
-  const cap=new T.Mesh(new T.CylinderGeometry(.004,.004,.012,20),new T.MeshStandardMaterial({color:0x283f46,roughness:.45,metalness:.15}));cap.rotation.x=Math.PI/2;cap.position.set(0,-.008,.0076);group.add(cap);
+  const cap=new T.Mesh(new T.CylinderGeometry(.004,.004,.012,20),new T.MeshStandardMaterial({color:0x283f46,roughness:.45,metalness:.15}));cap.name='HUB-C1-bottom';cap.rotation.x=Math.PI/2;cap.position.set(0,-.008,-.0067);group.add(cap);
   for(const x of[-.0095,.0095])for(const y of[-.015,.015]){
     const ring=new T.Mesh(new T.RingGeometry(.0012,.0019,16),new T.MeshStandardMaterial({color:0xc8b575,metalness:.6,roughness:.4,side:T.DoubleSide}));ring.position.set(x,y,.00085);group.add(ring);
   }
@@ -118,6 +89,24 @@ function boundsInFrame(mesh,frame){
   return result;
 }
 
+// Find the supporting backplate in the actual STL around the IMU's four-hole
+// mounting region. The global minimum Y is a retaining-bar tip, not this face.
+export function batteryBackMountPlane(geometry,{centerX=0,centerZ=.0264,halfWidth=.013,halfHeight=.015}={}){
+  const positions=geometry?.getAttribute('position');if(!positions)return null;
+  const planes=new Map();
+  for(let i=0;i+2<positions.count;i+=3){
+    const x0=positions.getX(i),y0=positions.getY(i),z0=positions.getZ(i),x1=positions.getX(i+1),y1=positions.getY(i+1),z1=positions.getZ(i+1),x2=positions.getX(i+2),y2=positions.getY(i+2),z2=positions.getZ(i+2);
+    if(Math.max(y0,y1,y2)-Math.min(y0,y1,y2)>1e-7)continue;
+    const cx=(x0+x1+x2)/3,cz=(z0+z1+z2)/3;
+    if(Math.abs(cx-centerX)>halfWidth||Math.abs(cz-centerZ)>halfHeight)continue;
+    const crossY=(z1-z0)*(x2-x0)-(x1-x0)*(z2-z0);
+    if(crossY>=-1e-12)continue; // supporting face points towards raw -Y
+    const key=Math.round((y0+y1+y2)/3*1e6),plane=planes.get(key)||{y:key/1e6,area:0,triangles:0};
+    plane.area-=crossY/2;plane.triangles++;planes.set(key,plane);
+  }
+  return [...planes.values()].sort((a,b)=>b.area-a.area)[0]||null;
+}
+
 /** Add read-only electronics in their described assembly regions. No robot I/O. */
 export async function attachElectronics(view,onSelect=()=>{}){
   if(!view?.actual?.parts||!view?.model?.parts)throw Error('装配结构模型尚未加载');
@@ -125,6 +114,9 @@ export async function attachElectronics(view,onSelect=()=>{}){
   const coverIndex=view.model.parts.findIndex(p=>p.mesh===COVER_MESH_INDEX),faceIndex=view.model.parts.findIndex(p=>p.mesh===FACE_MESH_INDEX);
   const cover=view.actual.parts[coverIndex],face=view.actual.parts[faceIndex];
   if(!cover||!face||view.model.parts[coverIndex].body!==9||view.model.parts[faceIndex].body!==9)throw Error('头盖或鸭脸定位与冻结模型不一致');
+  await prepareServoModels();
+  const servoDetails=new Map();
+  for(const[id,index]of Object.entries(SERVO_INDEX))servoDetails.set(Number(id),attachServoModel(view.actual.servos[index],Number(id)));
   root.updateMatrixWorld(true);
   const headParent=face.parent,coverRest=cover.position.clone(),coverOpacity=cover.material.opacity;
   const coverWorldBox=new T.Box3().setFromObject(cover),headSize=coverWorldBox.getSize(new T.Vector3()),faceBox=new T.Box3().setFromObject(face),faceCenter=faceBox.getCenter(new T.Vector3());
@@ -153,8 +145,7 @@ export async function attachElectronics(view,onSelect=()=>{}){
     zero:vector(faceBox.min.x-.006,faceCenter.y,faceCenter.z),
     hat:vector(faceBox.min.x-.017,faceCenter.y,faceCenter.z),
   };
-  const components=new Map(),boardTargets=[],servoDetails=new Map();
-  for(const[id,index]of Object.entries(SERVO_INDEX))servoDetails.set(Number(id),servoAttachments(view.actual.servos[index],Number(id)));
+  const components=new Map(),boardTargets=[];
   const originalUpdate=view.update,originalAdvanceFocus=view.advanceFocus,originalPose=view.pose;
   let disposed=false,selected=null,wiringVisible=false,batteryVisible=true,coverOpen=false,coverAmount=0,coverFrom=0,coverTo=0,coverStarted=0;
   let coverBaseOpacity=coverOpacity,coverBaseTransparent=cover.material.transparent,coverBaseDepthWrite=cover.material.depthWrite;
@@ -173,7 +164,9 @@ export async function attachElectronics(view,onSelect=()=>{}){
       component.group.quaternion.copy(parent.getWorldQuaternion(new T.Quaternion()).invert()).multiply(faceOrientation);
     }else if(id==='hub'){
       component.group.position.copy(parent.worldToLocal(hubCenter.clone()));
-      component.group.quaternion.copy(parent.getWorldQuaternion(new T.Quaternion()).invert());
+      // Keep the PCB horizontal; turn its long axis into the front/back
+      // direction, rather than across the two hip servos.
+      component.group.quaternion.copy(parent.getWorldQuaternion(new T.Quaternion()).invert()).multiply(new T.Quaternion().setFromAxisAngle(vector(0,0,1),Math.PI/2));
     }else{
       // Lower backplate has the IMU's four through-hole region (raw Z16.6/36.2).
       component.group.position.set(0,0,.0264);
@@ -183,8 +176,12 @@ export async function attachElectronics(view,onSelect=()=>{}){
       if(port.root.getWorldPosition(new T.Vector3()).z<component.group.getWorldPosition(new T.Vector3()).z)component.group.rotateZ(Math.PI);
       component.group.updateWorldMatrix(true,true);
       const pcbBounds=boundsInFrame(component.pcb,batteryMount);
-      const flatBackY=batteryMesh?.geometry.boundingBox?.min.y??.018;
+      const mountSurface=batteryBackMountPlane(batteryMesh?.geometry,{centerZ:.0264,halfWidth:component.width/2+.0015,halfHeight:component.height/2+.0015});
+      // The current source STL's measured backplate is raw Y=25 mm. Preserve
+      // that source-backed fallback if its asset cannot be loaded.
+      const flatBackY=mountSurface?.y??.025;
       component.group.position.y=flatBackY-.00005-pcbBounds.max.y;
+      component.mountSurface={...mountSurface,y:flatBackY,gap:.00005,method:'dominant-local-negative-Y-face'};
     }
     component.group.traverse(object=>{if(object.isMesh){object.userData.component=id;boardTargets.push(object);}});
     const label=document.createElement('button');label.type='button';label.className='electronics-label';label.textContent=spec.name;label.setAttribute('aria-label',`查看 ${id==='zero'?'Radxa ZERO 3W':spec.name}`);
@@ -279,7 +276,7 @@ export async function attachElectronics(view,onSelect=()=>{}){
     cover.position.copy(coverRest).addScaledVector(coverUp,coverLift*coverAmount);cover.material.transparent=coverBaseTransparent||coverAmount>.001;cover.material.opacity=coverBaseOpacity*T.MathUtils.lerp(1,.25,coverAmount);cover.material.depthWrite=coverBaseDepthWrite&&coverAmount<.01;cover.updateMatrixWorld(true);
   }
   function highlight(){components.forEach(c=>{c.pcb.material.emissive.setHex(c.id===selected?0xc1f577:0);c.pcb.material.emissiveIntensity=c.id===selected?.45:0;});}
-  function frame(now=performance.now()){if(disposed)return;updateCover(now);explosion.apply({basePositions:new Map([[cover,cover.position.clone()]])});applyCutaway();updateWires();updateLabels();}
+  function frame(now=performance.now()){if(disposed)return;updateCover(now);explosion.apply({basePositions:new Map([[cover,cover.position.clone()]])});applyCutaway();servoDetails.forEach(detail=>detail.sync());updateWires();updateLabels();}
   if(originalPose)view.pose=function(instance,...args){
     if(instance!==view.actual)return originalPose.call(this,instance,...args);
     const expanded=explosion.expanded;explosion.setExpanded(false);explosion.apply();
@@ -338,7 +335,7 @@ export async function attachElectronics(view,onSelect=()=>{}){
       if(disposed)return;selected=null;applyCutaway();explosion.dispose();disposed=true;view.update=originalUpdate;view.advanceFocus=originalAdvanceFocus;if(originalPose)view.pose=originalPose;cover.position.copy(coverRest);cover.material.opacity=coverOpacity;cover.material.transparent=false;cover.material.depthWrite=true;
       canvas.removeEventListener('pointerdown',down,{capture:true});canvas.removeEventListener('pointercancel',cancel,{capture:true});canvas.removeEventListener('pointerup',up,{capture:true});
       const geometries=new Set(),materials=new Set();const release=object=>object.traverse(o=>{if(o.isMesh){geometries.add(o.geometry);if(Array.isArray(o.material))o.material.forEach(m=>materials.add(m));else materials.add(o.material);}});
-      components.forEach(c=>{c.label.remove();c.group.removeFromParent();release(c.group);});wires.forEach(w=>release(w.group));servoDetails.forEach(s=>{release(s.group);s.group.removeFromParent();});release(batteryMount);geometries.forEach(g=>g.dispose());materials.forEach(m=>{m.map?.dispose();m.dispose();});wireRoot.removeFromParent();batteryMount.removeFromParent();notice.remove();batteryLabel.remove();
+      components.forEach(c=>{c.label.remove();c.group.removeFromParent();release(c.group);});wires.forEach(w=>release(w.group));servoDetails.forEach(detail=>detail.dispose());release(batteryMount);geometries.forEach(g=>g.dispose());materials.forEach(m=>{m.map?.dispose();m.dispose();});wireRoot.removeFromParent();batteryMount.removeFromParent();notice.remove();batteryLabel.remove();
     },
   };
   frame();return api;

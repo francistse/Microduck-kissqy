@@ -1,0 +1,102 @@
+{
+  "format": "hd1910-visible-v1",
+  "source": "https://ftservo.github.io/ftservo-wiki/en/products/models/hd-1910-c001/images/HD-1910-C001-20260902.stp",
+  "mapping": "frozen_meters=(native_step_Z+8,native_step_X,native_step_Y)/1000; shaft axis remains X through Y=Z=0; annulus end planes align at X=+/-14.5 mm; screw heads omitted",
+  "native_case_dimensions_mm": [
+    20,
+    34,
+    25.5
+  ],
+  "source_dimension_note": "Official STEP shell thickness 25.5mm differs from 23mm drawing; rigid shaft alignment used without scaling. This is visible reference geometry only.",
+  "meshes": [
+    {
+      "name": "case",
+      "position": {
+        "offset": 0,
+        "count": 32229
+      },
+      "normal": {
+        "offset": 128916,
+        "count": 32229
+      },
+      "index": {
+        "offset": 257832,
+        "count": 29970
+      }
+    },
+    {
+      "name": "connector-2",
+      "position": {
+        "offset": 377712,
+        "count": 4353
+      },
+      "normal": {
+        "offset": 395124,
+        "count": 4353
+      },
+      "index": {
+        "offset": 412536,
+        "count": 5394
+      }
+    },
+    {
+      "name": "connector-3",
+      "position": {
+        "offset": 434112,
+        "count": 4374
+      },
+      "normal": {
+        "offset": 451608,
+        "count": 4374
+      },
+      "index": {
+        "offset": 469104,
+        "count": 5394
+      }
+    }
+  ],
+  "ports": {
+    "in": {
+      "mouth": [
+        -0.00895,
+        -0.0067,
+        -0.00875
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "contact_pitch_m": 0.002,
+      "contact_rows_z": [
+        -0.01075,
+        -0.00875,
+        -0.00675
+      ],
+      "contact_depth_m": 0.0006,
+      "exit_clearance_m": 0.009,
+      "signal_order_note": "Black/red/white conductor colours follow official interface image; physical order is for route visualisation, not an electrical pinout instruction."
+    },
+    "out": {
+      "mouth": [
+        -0.00895,
+        0.0067,
+        -0.00875
+      ],
+      "normal": [
+        -1,
+        0,
+        0
+      ],
+      "contact_pitch_m": 0.002,
+      "contact_rows_z": [
+        -0.01075,
+        -0.00875,
+        -0.00675
+      ],
+      "contact_depth_m": 0.0006,
+      "exit_clearance_m": 0.009,
+      "signal_order_note": "Black/red/white conductor colours follow official interface image; physical order is for route visualisation, not an electrical pinout instruction."
+    }
+  }
+}
