@@ -22,6 +22,7 @@ The online pages show totals first, then specifications, quantities and purchase
 | **Total including a printer** | **¥6287.80** | **¥6964.02–7204.02** |
 
 - **All totals exclude printed parts, filament / printing costs, labor, a computer and unpriced items such as the HUB and battery connections; new-order shipping and losses are extra.** The body includes 15 HD1910 servos at ¥119 each; the microSD card and card reader are priced and included.
+- The HUB includes the main-power buffer capacitor. Do not buy or budget for a separate capacitor.
 - DIY board materials use full component packs; the range covers free PCB coupons / no coupons. [Board cost breakdown](hardware/README.en.md#build-cost) · [Tool budget](docs/BUILD-TOOLS.en.md#budgeting-for-tools-from-scratch). Reuse existing tools; the assembled-board option assumes you have normal assembly hand tools.
 
 The author supplied reference prices for the EAGET 32GB monitoring / dashcam microSD card (CNY 39.90) and one SAMZHE dual-head high-speed card reader, supporting simultaneous SD / TF card reading (CNY 22.90). Both are included in the body and whole-duck subtotals; 32GB is sufficient, and an existing card reader may be reused.

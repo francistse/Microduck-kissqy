@@ -47,7 +47,7 @@ The [hardware guide](../hardware/README.en.md) contains PCB projects, parts tabl
 
 **A newly built STM32 IMU needs its separate FT6 firmware.** Imaging ZERO or upgrading robot services does not flash the IMU. Use the [IMU flashing guide](../hardware/IMU-FIRMWARE.en.md) for downloads, SWD wiring and checks.
 
-Follow the [assembly notes](ASSEMBLY-NOTES.en.md) for 5 GHz Wi-Fi and a 1000 µF capacitor across the main power input, including polarity, voltage rating and placement.
+Follow the [assembly notes](ASSEMBLY-NOTES.en.md) for 5 GHz Wi-Fi and power connections. The HUB already includes the 1000 µF main-power buffer capacitor; no separate purchase is needed. Check its polarity, voltage rating and placement during assembly.
 
 ## 4. How do I make it walk?
 

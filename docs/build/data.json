@@ -324,12 +324,6 @@
       "url": "https://github.com/kissqy/Microduck-kissqy/blob/main/docs/assets/purchase-wechat-qr.jpg"
     },
     {
-      "id": "capacitor",
-      "name": "总电源缓冲电容",
-      "spec": "1000 µF / 16 V；HUB 已装同规格电容时不重复购买，按实板确认。",
-      "url": "https://github.com/kissqy/Microduck-kissqy/blob/main/docs/ASSEMBLY-NOTES.md"
-    },
-    {
       "id": "hand-tools",
       "name": "常规装配手工具",
       "spec": "与螺丝匹配的工具、剪线与绝缘用品、测量工具；已有可复用。",

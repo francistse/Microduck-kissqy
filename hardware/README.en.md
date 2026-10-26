@@ -6,7 +6,7 @@
 >
 > **Please note: these boards are fabricated at JLCPCB (嘉立创) and populated by the author. Ready to use on arrival, they are the same boards the author uses, validated through extended real-robot operation, with no jumper bridging required and no packet loss. Feetech AMP2.0 connectors make them convenient and easy to use.**
 
-**[🔧 Assembly notes: 5 GHz Wi-Fi for ZERO and a 1000 µF capacitor across the main power input; wiring and precautions](../docs/ASSEMBLY-NOTES.en.md)**
+**[🔧 Assembly notes: 5 GHz Wi-Fi for ZERO; the HUB includes the 1000 µF main-power buffer capacitor, with no separate purchase needed; wiring and precautions](../docs/ASSEMBLY-NOTES.en.md)**
 
 **The original HAT and independent torso IMU have passed extended real-robot use and operate normally. An AMP2.0 connector variant is also available.**
 
