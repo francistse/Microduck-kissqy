@@ -71,6 +71,56 @@ function whiteConnector(batch,c,count,pitch=2,w=null,h=4.4,height=5.3){
   localBox(batch,c,w*.44,.8,1.0,'white',0,-h/2+.4,THICK/2+1.25);
   for(let p=0;p<count;p++)localBox(batch,c,.5,.65,height*.62,'gold',(p-(count-1)/2)*pitch,.45,THICK/2+height*.34);
 }
+// Contact anchors use the same connector-local coordinates as the visible
+// merged package geometry above. The wire renderer must use these Objects,
+// never the PCB centre. Object positions are metres, package inputs are mm.
+function portObject(parent,name,x=0,y=0,z=0){
+  const object=new T.Object3D();object.name=name;object.position.set(x*MM,y*MM,z*MM);parent.add(object);return object;
+}
+function addBusPort(parent,c,{name=c.ref,pitch=2,height=5.3,h=4.4}={}){
+  const root=portObject(parent,`${name}-connector`,c.x,c.y,0);root.rotation.z=c.angle*Math.PI/180;
+  root.userData.connector=name;root.userData.role='three-wire-bus';
+  // The contact boxes are centred at local Y=.45 mm and .65 mm deep.
+  // Their front faces are therefore Y=.125, inside the open connector mouth.
+  const z=THICK/2+height*.34;
+  const pins={
+    gnd:portObject(root,`${name}-GND`,-pitch,.125,z),
+    power:portObject(root,`${name}-POWER`,0,.125,z),
+    data:portObject(root,`${name}-DATA`,pitch,.125,z),
+  };
+  for(const [signal,pin]of Object.entries(pins))pin.userData.signal=signal;
+  const mouth=portObject(root,`${name}-mouth`,0,-h/2,z);
+  const outward=portObject(root,`${name}-outward`,0,-h/2-4,z);
+  return{kind:'bus3',pinCount:3,root,pins,mouth,outward,sourceRef:c.ref};
+}
+function addHeaderPort(parent,c,{name=c.ref,count=40,rows=2,pitch=2.54,female=false,bottom=false}={}){
+  const root=portObject(parent,`${name}-connector`,c.x,c.y,0);root.rotation.z=c.angle*Math.PI/180;
+  root.userData.connector=name;root.userData.role='header';
+  const n=Math.ceil(count/rows),side=bottom?-1:1;
+  // Female holes at the open face; male anchors at the free metal pin tips.
+  const z=side*(THICK/2+(female?5.1:2.4+5.8/2));
+  const ordered=[];
+  for(let row=0;row<rows;row++)for(let col=0;col<n;col++){
+    const pin=portObject(root,`${name}-contact-${row}-${col}`,(col-(n-1)/2)*pitch,(row-(rows-1)/2)*pitch,z);
+    pin.userData.displayContact=ordered.length;ordered.push(pin);
+  }
+  const mouth=portObject(root,`${name}-mouth`,0,0,z);
+  const outward=portObject(root,`${name}-outward`,0,0,z+side*4);
+  // This is geometric row-major contact order, deliberately NOT GPIO numbers
+  // or the HAT footprint's paired / mirrored electrical numbering.
+  return{kind:'header40',pinCount:count,root,pins:{ordered},ordered,mouth,outward,sourceRef:c.ref,numbering:'display-contact-order'};
+}
+function pcbPorts(parent,layout,id){
+  const ports={};
+  for(const c of layout.components){
+    if(id==='hat'&&['J13','J14'].includes(c.ref))ports[c.ref]=addBusPort(parent,c);
+    else if(id==='imu'&&c.ref==='J1')ports.J1=addBusPort(parent,c);
+    else if(id==='hat'&&c.ref==='J4')ports.J4=addHeaderPort(parent,c,{female:true,bottom:true});
+  }
+  if(id==='hat'){ports.bus=ports.J13;ports.header=ports.J4;}
+  if(id==='imu')ports.bus=ports.J1;
+  return ports;
+}
 function icBody(batch,c,w,h,height=1,metal=false){
   const side=c.bottom?-1:1;
   localBox(batch,c,w,h,height,metal?'metal':'chip',0,0,side*(THICK/2+height/2+.07));
@@ -127,7 +177,8 @@ function zeroModel(){
   const width=65,height=30,group=new T.Group();
   const holes=[[-29,-11.4,1.4],[29,-11.4,1.4],[29,11.4,1.4],[-29,11.4,1.4]],pcb=pcbMesh(width,height,3,holes);group.add(pcb);
   const batch=new DetailBatch();rings(batch,holes);
-  pinHeader(batch,{x:0,y:11.8,angle:0},40,2);
+  const gpio={ref:'gpio40',x:0,y:11.8,angle:0};pinHeader(batch,gpio,40,2);
+  const gpio40=addHeaderPort(group,gpio),ports={gpio40,header:gpio40};
   // Official front photograph: RAM above RK3566, USB-C pair at opposite long
   // edge from GPIO, shielded radio towards HDMI / onboard antenna end.
   const chip=(x,y,w,h,d)=>icBody(batch,{x,y,angle:0,pads:[]},w,h,d);
@@ -157,7 +208,7 @@ function zeroModel(){
     }
   }
   group.userData.detailSource='Radxa ZERO 3W Product Brief Rev1.8; package heights / small passives simplified';
-  return{group,pcb,width:width*MM,height:height*MM};
+  return{group,pcb,width:width*MM,height:height*MM,ports};
 }
 
 export function createBoardModel(id,spec={}){
@@ -165,11 +216,12 @@ export function createBoardModel(id,spec={}){
   const layout=PCB_LAYOUTS[id];if(!layout)return null;
   const group=new T.Group(),pcb=pcbMesh(layout.width,layout.height,Math.min(layout.radius,2.54),layout.holes);group.add(pcb);
   const batch=new DetailBatch();rings(batch,layout.holes);renderPCBParts(batch,layout);batch.finish(group);texturedSurface(group,layout,id);
+  const ports=pcbPorts(group,layout,id);
   group.userData.detailSource=`Published ${id.toUpperCase()} PCB 2026-10-15; component XY / rotation and copper traces source-backed; heights simplified`;
   // IMU board is presented portrait to match its mount and the existing viewer.
   if(id==='imu'){
     const wrapper=new T.Group();wrapper.add(group);group.rotation.z=Math.PI/2;
-    return{group:wrapper,pcb,width:layout.height*MM,height:layout.width*MM};
+    return{group:wrapper,pcb,width:layout.height*MM,height:layout.width*MM,ports};
   }
-  return{group,pcb,width:layout.width*MM,height:layout.height*MM};
+  return{group,pcb,width:layout.width*MM,height:layout.height*MM,ports};
 }

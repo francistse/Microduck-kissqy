@@ -9,7 +9,7 @@ export const COMPONENTS=Object.freeze({
     id:'hub',label:'HUB 分线板',shortLabel:'HUB',
     description:'将电池电源与三线舵机总线集中分配，并在总电源网络上并联缓冲电容。',
     dimensionsMm:[23,34],
-    locationNote:'安装位置按作者实机修正：HUB 在躯干内，位于 10、20 舵机之间。板卡外形按工程尺寸，接口朝向与线束弯曲仍需结合实物核对。',
+    locationNote:'安装位置按作者实机修正：HUB 横放，跨在 10、20 舵机上方，不竖放在它们之间。板卡外形按工程尺寸，端子和线束跟随这一安装朝向。',
     purchase:{label:'联系作者确认 HUB',url:repository+'docs/assets/purchase-wechat-qr.jpg'},
     source:{label:'配套 HUB 电池仓说明',url:hardware+'3d-print-frankenduck/README.md'},
     sourceNote:'HUB 电气与尺寸依据用户提供的 DXL_HUB_notch_14-22_symmetric.epro2 当前 PCB 网络；原工程未在此公开。资料链接为配套机械说明。',
@@ -27,7 +27,7 @@ export const COMPONENTS=Object.freeze({
     id:'imu',label:'独立躯干 IMU',shortLabel:'IMU',
     description:'读取躯干姿态，通过与舵机共用的总线向 ZERO 提供反馈。',
     dimensionsMm:[22.225,25.654],
-    locationNote:'安装位置按作者实机修正：IMU 固定在电池仓背面。页面使用打印包里的原始电池仓模型；安装后仍需在中控核对姿态与方向。',
+    locationNote:'安装位置按作者实机修正：IMU 贴合电池仓背面的安装面，总线端子 J1 朝上。三根线接入该端子的对应位置，安装后仍需在中控核对姿态与方向。',
     purchase:{label:'购买作者同款 IMU',url:authorBoards},
     source:{label:'IMU 接口与 FT6 固件说明',url:hardware+'IMU-FIRMWARE.md'},
     facts:[
@@ -103,4 +103,4 @@ export const CONNECTIONS=Object.freeze([
   },
 ]);
 
-export const WIRING_NOTE='安装区域按作者实机修正，电池仓采用原始打印模型；元件外观与线束弯曲作装配参考。下方信号表说明电气对应关系，实际菊链顺序见上图。接线时断电，按信号名与实板丝印核对，不因两端工程编号不同就交叉线束。';
+export const WIRING_NOTE='线束以独立芯线接入模型端子：黑色 GND、红色电源、白色 DATA；HAT / ZERO 之间单独显示排针连接。颜色仅用于辨认信号，下方表格仍按信号名核对；不能仅凭示意颜色或两端工程编号交叉接线。';

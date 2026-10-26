@@ -2,8 +2,8 @@ import * as T from './vendor/three.module.min.js?demo=20261013';
 import {DuckView} from './duck.js?demo=20261013';
 import {REFERENCE_IDS,REFERENCE_LABELS} from './calibration-reference.js?demo=20261013';
 import {officialStandingDegrees,referenceAngle} from './joint-reference.js?demo=20261013';
-import {attachElectronics} from './assembly-electronics.js?v=20261026-layout2';
-import {COMPONENTS,CONNECTIONS,WIRING_NOTE} from './assembly-components.js?v=20261026-layout2';
+import {attachElectronics} from './assembly-electronics.js?v=20261026-terminals';
+import {COMPONENTS,CONNECTIONS,WIRING_NOTE} from './assembly-components.js?v=20261026-terminals';
 
 const groups={
   all:{title:'整只小鸭',description:'先看整体连接关系，再选择腿部或头颈放大查看。',indexes:REFERENCE_IDS.map((_,i)=>i)},
@@ -12,7 +12,7 @@ const groups={
   head:{title:'头颈 · 30–34',description:'颈部俯仰、头部俯仰、转向、侧摆与嘴部。转到侧面查看各层关节的连接关系。',indexes:[5,6,7,8,9]},
 };
 const $=id=>document.getElementById(id);
-let scope='all',selected=null,pose='zero',view,electronics,componentId='hat',activeComponent=null;
+let scope='all',selected=null,pose='zero',view,electronics,componentId='hat',activeComponent=null,exploded=false;
 
 class AssemblyView extends DuckView{
   async init(container,onSelect){
@@ -155,6 +155,16 @@ $('show-components').addEventListener('change',()=>{Object.keys(COMPONENTS).forE
 $('show-wires').addEventListener('change',()=>electronics?.setWiringVisible($('show-wires').checked));
 $('show-battery').addEventListener('change',()=>electronics?.setBatteryVisible($('show-battery').checked));
 $('focus-battery').addEventListener('click',()=>{if(!electronics)return;$('show-battery').checked=true;electronics.setBatteryVisible(true);electronics.focus('battery');});
+$('show-servo-ids').addEventListener('change',()=>electronics?.setServoIdsVisible($('show-servo-ids').checked));
+$('toggle-explosion').addEventListener('click',()=>{
+  if(!electronics)return;
+  exploded=!exploded;
+  if(exploded)setScope('all');
+  electronics.setExploded(exploded);
+  $('toggle-explosion').setAttribute('aria-pressed',String(exploded));
+  $('toggle-explosion').textContent=exploded?'收起复原':'爆炸展开';
+  $('explosion-status').textContent=exploded?'打印件已逐件展开，舵机和轴承保持原位；再点“收起复原”返回装配状态。':'已收起复原，可继续查看端子与接线。';
+});
 $('wiring-note').textContent=WIRING_NOTE;
 $('connection-list').replaceChildren(...CONNECTIONS.map(item=>{
   const card=document.createElement('article');card.className='connection-card';
@@ -175,11 +185,11 @@ $('connection-list').replaceChildren(...CONNECTIONS.map(item=>{
 }));
 drawComponent();
 drawInspector();
-const modelControls='[data-group],[data-view],[data-pose],#reset-view,#fade-others,#open-cover,#show-components,#show-wires,#show-battery,#focus-battery';
+const modelControls='[data-group],[data-view],[data-pose],#reset-view,#fade-others,#open-cover,#show-components,#show-wires,#show-battery,#focus-battery,#show-servo-ids,#toggle-explosion';
 document.querySelectorAll(modelControls).forEach(button=>button.disabled=true);
 try{
   const loaded=await new AssemblyView().init($('assembly-canvas'),selectJoint);view=loaded;
-  electronics=await attachElectronics(view,selectComponent);electronics.setWiringVisible($('show-wires').checked);
+  electronics=await attachElectronics(view,selectComponent);electronics.setWiringVisible($('show-wires').checked);electronics.setServoIdsVisible($('show-servo-ids').checked);
   $('loading').hidden=true;
   document.querySelectorAll(modelControls).forEach(button=>button.disabled=false);
   view.update({});drawInspector();
