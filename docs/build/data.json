@@ -1,7 +1,7 @@
 {
   "currency": "CNY",
   "reviewed": "2026-10-27",
-  "priceBasis": "作者历史采购记录与成品板定价；商品价格以下单时为准。",
+  "priceBasis": "作者历史采购记录、成品板定价及补充的京东 TF 卡报价；商品价格以下单时为准。",
   "items": [
     {
       "id": "part-01",
@@ -26,6 +26,18 @@
       "group": "electronics",
       "url": "https://item.taobao.com/item.htm?id=763812025816",
       "note": "配套镜像对应 ZERO 3W；2GB、无 eMMC、带排针。"
+    },
+    {
+      "id": "tf32g",
+      "name": "忆捷 32GB TF 存储卡",
+      "spec": "32GB，监控／记录仪款；作者确认 32GB 即可。",
+      "unit": "张",
+      "quantity": 1,
+      "unitQuote": "39.90",
+      "subtotalCents": 3990,
+      "group": "electronics",
+      "url": "https://3.cn/392wR-H7?jkl=@D1sNrEalQdG@",
+      "note": "作者补充的京东购买入口与参考价格；刷入配套系统镜像，读卡器另备。"
     },
     {
       "id": "part-03",
@@ -361,8 +373,8 @@
     },
     {
       "id": "card",
-      "name": "TF 卡与读卡器",
-      "spec": "刷写 ZERO 3W 的配套系统镜像；已有可复用，容量按镜像说明确认。",
+      "name": "TF 读卡器",
+      "spec": "用于把镜像写入 TF 卡；32GB TF 卡已在上方按 ¥39.90 列价，已有读卡器可复用。",
       "url": "https://github.com/kissqy/Microduck-kissqy/blob/main/docs/releases/public-image-r1.md"
     },
     {

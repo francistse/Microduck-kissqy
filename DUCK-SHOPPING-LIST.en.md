@@ -4,7 +4,7 @@
 
 [🏠 Project homepage](README.en.md)
 
-**Assembled-board reference subtotal: CNY 2747.70**, before printing and unpriced items such as the microSD card, HUB and battery connections; shipping is extra.
+**Assembled-board reference subtotal: CNY 2787.60**, before printing and unpriced items such as the card reader, HUB and battery connections; shipping is extra.
 
 **[Open the shopping checklist (Chinese) →](https://kissqy.github.io/Microduck-kissqy/build/shopping.html)** · [Compare budget totals (Chinese)](https://kissqy.github.io/Microduck-kissqy/build/budget.html)
 
@@ -14,15 +14,17 @@ The online pages show totals first, then specifications, quantities and purchase
 
 | Item | Buy assembled boards | DIY boards, including tools |
 | --- | ---: | ---: |
-| Duck body, including gamepad and reference spare stock | ¥2529.70 | ¥2529.70 |
+| Duck body, including gamepad and reference spare stock | ¥2569.60 | ¥2569.60 |
 | HAT + IMU | [HAT ¥119 + IMU ¥99](https://item.taobao.com/item.htm?id=1095121548583) | ¥94.22–134.22 · first component purchase |
 | Soldering / programming tools and consumables | Not required for board soldering | ¥800–1000 |
-| **Total without a printer** | **¥2747.70** | **¥3423.92–3663.92** |
+| **Total without a printer** | **¥2787.60** | **¥3463.82–3703.82** |
 | 3D printer allowance | +¥3500 | +¥3500 |
-| **Total including a printer** | **¥6247.70** | **¥6923.92–7163.92** |
+| **Total including a printer** | **¥6287.60** | **¥6963.82–7203.82** |
 
-- **All totals exclude printed parts, filament / printing costs, labor, a computer and unpriced items such as the microSD card, HUB and battery connections; new-order shipping and losses are extra.** The body includes 15 HD1910 servos at ¥119 each.
+- **All totals exclude printed parts, filament / printing costs, labor, a computer and unpriced items such as the card reader, HUB and battery connections; new-order shipping and losses are extra.** The body includes 15 HD1910 servos at ¥119 each.
 - DIY board materials use full component packs; the range covers free PCB coupons / no coupons. [Board cost breakdown](hardware/README.en.md#build-cost) · [Tool budget](docs/BUILD-TOOLS.en.md#budgeting-for-tools-from-scratch). Reuse existing tools; the assembled-board option assumes you have normal assembly hand tools.
+
+The author added the EAGET 32GB monitoring / dashcam microSD card at CNY 39.90. It is included in the body and assembled-board subtotals; 32GB is sufficient. A card reader remains unpriced and may be reused.
 
 ## Duck body
 
@@ -34,6 +36,7 @@ The online pages show totals first, then specifications, quantities and purchase
 | --- | --- | ---: | ---: | ---: | --- |
 | **飞特 HD1910 串口总线舵机**<br>HD-1910-C001；HD-1910-C001 | 只 | 15 | ¥119.00 | ¥1785.00 | 深圳飞特舵机工厂店<br>[Product](https://item.taobao.com/item.htm?id=1078248851201) |
 | **Radxa ZERO 3W**<br>2GB RAM 无 eMMC 带排针[【Microduck 原版主板】]；2GB RAM / 无eMMC / 带排针 | 个 | 1 | ¥309.00 | ¥309.00 | 瑞莎计算机(深圳)有限公司<br>[Product](https://item.taobao.com/item.htm?id=763812025816) |
+| **EAGET 32GB microSD / TF card**<br>Monitoring / dashcam variant; 32GB is sufficient; reference price supplied by the author | card | 1 | ¥39.90 | ¥39.90 | JD.com<br>[Product](https://3.cn/392wR-H7?jkl=@D1sNrEalQdG@) |
 | **NP-F550 电池与双充套装**<br>【NP-F550补光灯专用▲2200mAh】2电+标准双充套裝；沣标 NP-F550 / 2200mAh / 2块电池＋标准双充 | 套 | 1 | ¥84.59 | ¥84.59 | fb数码旗舰店<br>[Product](https://item.taobao.com/item.htm?id=585415365001) |
 | **IMX219 160° camera**<br>SKU: **IMX219 160度摄像头** | 个 | 1 | ¥64.35 | ¥64.35 | 树莓派零售商<br>[Product](https://item.taobao.com/item.htm?id=1083291197130&skuId=6300750750661) |
 | **8×8 ToF 测距模块**<br>VL53L5X V2模块配盖片；VL53L5X V2模块配盖片（商品标题 VL53L5CX） | 个 | 1 | ¥49.50 | ¥49.50 | 都会明武电子<br>[Product](https://item.taobao.com/item.htm?id=737603917521) |
