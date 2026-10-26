@@ -23,6 +23,8 @@ Microduck-kissqy 是 kissqy 基于 Pollen Robotics Microduck 0.15.1、已完成�
 
 ## 2. 打印零件并装配机械结构
 
+**[打开 3D 装配参考 →](https://kissqy.github.io/Microduck-kissqy/assembly.html)** 旋转、放大模型，按部位查看关节位置、编号与安装朝向，无须连接机器人。模型用于结构参考；飞特改件与螺丝、走线细节以打印件及硬件说明为准。
+
 下载[全套打印件 · 缝合怪版](../hardware/3d-print-frankenduck/README.md)：36 个 STL、1 个 3MF 项目、5 盘参考摆盘。根据实际打印机与耗材调整配置，TPU 部件使用对应材料配置。
 
 电池仓有 HUB 组合版和官方式加厚卡扣版；IMU 安装位适配本仓库 IMU。2026-10-21 版增加腿部支撑斜面、去除腿外壳外侧沉孔，并整合无需拆舵机即可换装的脚掌与滑轮结构。滑轮使用 623ZZ 轴承。

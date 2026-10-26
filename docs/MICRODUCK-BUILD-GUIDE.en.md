@@ -23,6 +23,8 @@ See the [tool list](BUILD-TOOLS.en.md) for soldering, reflow and flashing tools.
 
 ## 2. Print and assemble the mechanical parts
 
+**[Open the 3D assembly reference (Chinese) →](https://kissqy.github.io/Microduck-kissqy/assembly.html)** Rotate and zoom the model to inspect joint positions, IDs and orientation without connecting a robot. The model is a structural reference; use the printing and hardware guides for Feetech-specific parts, fasteners and wiring.
+
 The [FrankenDuck printing set](../hardware/3d-print-frankenduck/README.en.md) contains 36 STLs and one 3MF project with five plates. Adapt printer and material profiles, including TPU parts.
 
 Choose the HUB battery-holder variant or the official-style holder with thicker latches; both IMU mounts fit this repository's IMU. The October 21 update adds leg support ramps, removes outer leg-shell counterbores and integrates interchangeable feet and roller assemblies without servo removal. Rollers use 623ZZ bearings.

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f6ee">
+  <title>3D 装配参考 · Microduck 飞特版</title>
+  <meta name="description" content="旋转查看 Microduck 结构、关节位置与左右朝向。独立的 3D 装配参考，无须连接机器人。">
+  <link rel="canonical" href="https://kissqy.github.io/Microduck-kissqy/assembly.html">
+  <link rel="stylesheet" href="assembly.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="https://github.com/kissqy/Microduck-kissqy"><span aria-hidden="true">🦆</span> Microduck</a>
+    <a class="back-link" href="https://github.com/kissqy/Microduck-kissqy">返回项目 <span aria-hidden="true">↗</span></a>
+  </header>
+  <main>
+    <div class="page-heading">
+      <div><p class="eyebrow">先看清结构，再动手装配</p><h1>把小鸭转过来，看看。</h1></div>
+      <p class="intro">旋转、放大、点选舵机，核对每个部位的位置与朝向。<br>直接打开即可查看，无须连接机器人。</p>
+    </div>
+    <div class="workspace">
+      <section class="viewer-card" aria-label="3D 装配模型">
+        <div class="viewer-topline"><span class="viewer-title">3D 装配参考</span><span id="pose-label">模型零位 · 0°</span></div>
+        <div class="group-tabs" role="group" aria-label="选择要查看的部位">
+          <button type="button" data-group="all" aria-pressed="true">整只小鸭</button>
+          <button type="button" data-group="left" aria-pressed="false">左腿 <small>20–24</small></button>
+          <button type="button" data-group="right" aria-pressed="false">右腿 <small>10–14</small></button>
+          <button type="button" data-group="head" aria-pressed="false">头颈 <small>30–34</small></button>
+        </div>
+        <div class="stage">
+          <div id="assembly-canvas" aria-label="可旋转的 Microduck 三维模型"></div>
+          <div id="loading" class="loading" role="status"><span class="loading-dot" aria-hidden="true"></span><strong>正在展开小鸭的 3D 结构…</strong><span>首次需加载约 12 MB 模型，请稍候。</span></div>
+          <div id="model-error" class="model-error" role="alert" hidden><strong>3D 模型暂未打开</strong><p id="error-detail"></p><button type="button" id="retry">重新加载</button><a href="https://github.com/kissqy/Microduck-kissqy/tree/main/hardware/3d-print-frankenduck">先看打印件与结构说明 ↗</a></div>
+          <span class="stage-hint">拖动旋转 · 双指缩放 · 点选舵机</span>
+        </div>
+        <div class="view-toolbar" role="group" aria-label="模型观察方向">
+          <button type="button" data-view="front">正面</button><button type="button" data-view="back">背面</button><button type="button" data-view="left">左侧</button><button type="button" data-view="side">右侧</button><button type="button" data-view="top">俯视</button><button type="button" id="reset-view">↺ 恢复全景</button>
+        </div>
+        <p class="side-note">左右以鸭子自身为准：左腿 20–24，右腿 10–14。正面看时与屏幕左右相反。</p>
+      </section>
+      <aside class="inspector" aria-labelledby="part-title">
+        <div class="inspector-heading"><span class="eyebrow">看哪里，就选哪里</span><h2 id="part-title">整只小鸭</h2><p id="part-description">先看整体连接关系，再选择腿部或头颈放大查看。</p></div>
+        <label class="fade-option"><input type="checkbox" id="fade-others" checked> 淡化其他部位</label>
+        <div id="joint-list" class="joint-list" role="group" aria-label="关节位置"></div>
+        <div id="joint-detail" class="joint-detail" aria-live="polite"><span>点选舵机外壳或上方关节，查看对应 ID。</span></div>
+        <div class="reference-section">
+          <h3>参考姿态</h3>
+          <div class="pose-buttons" role="group" aria-label="模型参考姿态"><button type="button" data-pose="zero" aria-pressed="true">零位 0°</button><button type="button" data-pose="home" aria-pressed="false">HOME 站姿</button></div>
+          <p>只改变页面中的模型；实际零位与方向请在中控逐轴标定。</p>
+        </div>
+        <div class="guide-link"><span aria-hidden="true">↗</span><div><a href="https://github.com/kissqy/Microduck-kissqy/blob/main/hardware/3d-print-frankenduck/README.md">飞特版打印件与装配说明</a><p>查改件、结构版本和打印文件。</p></div></div>
+      </aside>
+    </div>
+    <section class="build-notes" aria-label="动手前的参考入口">
+      <a class="note-card" href="https://github.com/kissqy/Microduck-kissqy/blob/main/docs/MICRODUCK-BUILD-GUIDE.md"><span class="note-number">01</span><div><h2>从零复刻流程</h2><p>材料、打印、机械、电路、刷机与标定。</p></div><span aria-hidden="true">↗</span></a>
+      <a class="note-card" href="https://github.com/kissqy/Microduck-kissqy/blob/main/docs/ASSEMBLY-NOTES.md"><span class="note-number">02</span><div><h2>装机注意事项</h2><p>总电源缓冲电容与 5 GHz Wi-Fi 配置。</p></div><span aria-hidden="true">↗</span></a>
+      <a class="note-card" href="https://github.com/kissqy/Microduck-kissqy/blob/main/hardware/README.md"><span class="note-number">03</span><div><h2>HAT 与 IMU 硬件</h2><p>核对电路、接口、供电与 IMU 固件。</p></div><span aria-hidden="true">↗</span></a>
+    </section>
+    <footer><p>沿用中控的官方结构模型，用于辨认结构与安装朝向；飞特改件、走线和螺丝规格以打印件与硬件说明为准。模型未展示隐藏电子器件，34 号嘴部为固定外观。</p><a href="https://github.com/kissqy/Microduck-kissqy/blob/main/docs/assets/duck-visual.json">模型来源与版本 ↗</a></footer>
+  </main>
+  <script type="module" src="assembly.js"></script>
+</body>
+</html>

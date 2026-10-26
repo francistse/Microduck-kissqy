@@ -6,7 +6,7 @@
 
 从零件到一只会走路、会翻跟头的小鸭，再到训练属于自己的动作。基于 [Pollen Robotics Microduck](https://github.com/pollen-robotics/microduck) 完成飞特 HD1910 实机复刻，提供**系统镜像、两套中文中控、自制 HAT／IMU 和全套 3D 打印件**，把采购、制作、操作与强化学习训练串成一套完整流程。
 
-[🚀 从零复刻教程](docs/MICRODUCK-BUILD-GUIDE.md) · [📥 下载](#下载与版本) · [❓ 常见问题](docs/MICRODUCK-FAQ.md) · [🌐 在线教程](https://kissqy.github.io/Microduck-kissqy/guides/)
+[🚀 从零复刻教程](docs/MICRODUCK-BUILD-GUIDE.md) · [🧩 3D 装配参考](https://kissqy.github.io/Microduck-kissqy/assembly.html) · [📥 下载](#下载与版本) · [❓ 常见问题](docs/MICRODUCK-FAQ.md) · [🌐 在线教程](https://kissqy.github.io/Microduck-kissqy/guides/)
 
 ## 🏆 单脚独立 · 自训新突破
 

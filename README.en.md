@@ -6,7 +6,7 @@
 
 From a collection of parts to a walking, forward-rolling robot duck—and then to training your own movements. This working Feetech HD1910 replica of [Pollen Robotics Microduck](https://github.com/pollen-robotics/microduck) brings together a **system image, two Chinese-language consoles, DIY HAT / IMU boards and complete 3D printing files**, covering parts, building, control and reinforcement learning.
 
-[🚀 Complete build guide](docs/MICRODUCK-BUILD-GUIDE.en.md) · [📥 Downloads](#downloads-and-versions) · [❓ FAQ](docs/MICRODUCK-FAQ.en.md) · [🌐 Online guides](https://kissqy.github.io/Microduck-kissqy/guides/en.html)
+[🚀 Complete build guide](docs/MICRODUCK-BUILD-GUIDE.en.md) · [🧩 3D assembly reference (中文)](https://kissqy.github.io/Microduck-kissqy/assembly.html) · [📥 Downloads](#downloads-and-versions) · [❓ FAQ](docs/MICRODUCK-FAQ.en.md) · [🌐 Online guides](https://kissqy.github.io/Microduck-kissqy/guides/en.html)
 
 ## 🏆 One-legged balance · A new training milestone
 
