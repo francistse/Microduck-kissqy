@@ -59,7 +59,7 @@ function separation(meshIndex,center,partIndex){
  * pass basePositions: new Map([[coverMesh, coverMesh.position.clone()]]) after
  * computing that lid position. Other parts use their exact captured local rest.
  */
-export function attachPrintExplosion(view,{extraMeshes=[]}={}){
+export function attachPrintExplosion(view,{extraMeshes=[],followers=new Map()}={}){
   if(!view?.actual?.parts||!view?.model?.parts)throw Error('打印件结构模型尚未加载');
   const root=view.actual.root,entries=[];
   root.updateMatrixWorld(true);
@@ -71,9 +71,10 @@ export function attachPrintExplosion(view,{extraMeshes=[]}={}){
     // in the assembled reference pose. No world-space mesh reparenting occurs.
     const origin=root.localToWorld(v(0,0,0));
     const end=root.localToWorld(deltaRoot.clone());
-    const offset=parent.worldToLocal(end).sub(parent.worldToLocal(origin));
+    const offset=parent.worldToLocal(end.clone()).sub(parent.worldToLocal(origin.clone()));
     if(!offset.toArray().every(Number.isFinite)||offset.length()<.0001)throw Error('打印件爆炸方向无效');
-    entries.push({mesh,index,name,rest:mesh.position.clone(),offset});
+    const following=(followers.get(mesh)||[]).map(object=>({object,rest:object.position.clone(),offset:object.parent.worldToLocal(end.clone()).sub(object.parent.worldToLocal(origin.clone()))}));
+    entries.push({mesh,index,name,rest:mesh.position.clone(),offset,following});
   }
 
   view.model.parts.forEach((part,index)=>{
@@ -95,6 +96,9 @@ export function attachPrintExplosion(view,{extraMeshes=[]}={}){
       if(expanded)position.add(entry.offset);
       entry.mesh.position.copy(position);
       entry.mesh.updateMatrix();
+      // Mounted boards, their actual connector objects and power terminal move
+      // with the holder. They remain separately selectable/visible components.
+      for(const follower of entry.following){follower.object.position.copy(follower.rest);if(expanded)follower.object.position.add(follower.offset);follower.object.updateMatrix();}
     }
     root.updateMatrixWorld(true);
   }

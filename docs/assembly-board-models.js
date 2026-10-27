@@ -80,17 +80,18 @@ function portObject(parent,name,x=0,y=0,z=0){
 function addBusPort(parent,c,{name=c.ref,pitch=2,height=5.3,h=4.4}={}){
   const root=portObject(parent,`${name}-connector`,c.x,c.y,0);root.rotation.z=c.angle*Math.PI/180;
   root.userData.connector=name;root.userData.role='three-wire-bus';
-  // The contact boxes are centred at local Y=.45 mm and .65 mm deep.
-  // Their front faces are therefore Y=.125, inside the open connector mouth.
-  const z=THICK/2+height*.34;
+  // CJT A2007WV is a vertical header (cjt.com/upload/A2007.pdf). The
+  // mating opening is above the PCB, not towards its edge. These anchors sit
+  // at the actual visible pin tips and follow the IMU's mounted board group.
+  const z=THICK/2+height*.65;
   const pins={
-    gnd:portObject(root,`${name}-GND`,-pitch,.125,z),
-    power:portObject(root,`${name}-POWER`,0,.125,z),
-    data:portObject(root,`${name}-DATA`,pitch,.125,z),
+    gnd:portObject(root,`${name}-GND`,-pitch,.45,z),
+    power:portObject(root,`${name}-POWER`,0,.45,z),
+    data:portObject(root,`${name}-DATA`,pitch,.45,z),
   };
   for(const [signal,pin]of Object.entries(pins))pin.userData.signal=signal;
-  const mouth=portObject(root,`${name}-mouth`,0,-h/2,z);
-  const outward=portObject(root,`${name}-outward`,0,-h/2-4,z);
+  const mouth=portObject(root,`${name}-mouth`,0,.45,THICK/2+height);
+  const outward=portObject(root,`${name}-outward`,0,.45,THICK/2+height+4);
   return{kind:'bus3',pinCount:3,root,pins,mouth,outward,sourceRef:c.ref};
 }
 function addHeaderPort(parent,c,{name=c.ref,count=40,rows=2,pitch=2.54,female=false,bottom=false}={}){

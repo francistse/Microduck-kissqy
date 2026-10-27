@@ -1,8 +1,8 @@
 import * as T from './vendor/three.module.min.js?demo=20261013';
-import {createBoardModel} from './assembly-board-models.js?v=20261026-terminals';
-import {attachPrintExplosion} from './assembly-explosion.js?v=20261026-terminals';
+import {createBoardModel} from './assembly-board-models.js?v=20261027-printed-clearance';
+import {attachPrintExplosion,PRINTED_MESH_NAMES} from './assembly-explosion.js?v=20261027-printed-clearance';
 import {prepareServoModels,attachServoModel} from './assembly-servo-models.js?v=20261027-mounts';
-import {createWireRouter} from './assembly-wire-routing.js?v=20261027-wire-clearance';
+import {createWireRouter} from './assembly-wire-routing.js?v=20261027-printed-clearance';
 
 // Board footprints are documented; mounting offsets are assembly-reference
 // placements, not a mechanical clearance or connector pin-direction drawing.
@@ -63,10 +63,10 @@ function makeTerminal(parent,name,{count=3,pitch=.002,position=vector(0,0,0),qua
   signalNames.forEach((signal,i)=>{
     const x=(i-(count-1)/2)*pitch;
     add(.00055,.0008,.0027,x,.00045,-.00035,metalMaterial);
-    const pin=new T.Object3D();pin.name=name+'-'+signal;pin.position.set(x,.00005,-.00035);pin.userData.signal=signal;root.add(pin);pins[signal]=pin;ordered.push(pin);
+    const pin=new T.Object3D();pin.name=name+'-'+signal;pin.position.set(x,.00045,.001);pin.userData.signal=signal;root.add(pin);pins[signal]=pin;ordered.push(pin);
   });
-  const mouth=new T.Object3D();mouth.position.set(0,-depth/2,-.00035);root.add(mouth);
-  const outward=new T.Object3D();outward.position.set(0,-depth/2-.0045,-.00035);root.add(outward);
+  const mouth=new T.Object3D();mouth.position.set(0,.00045,height/2);root.add(mouth);
+  const outward=new T.Object3D();outward.position.set(0,.00045,height/2+.0045);root.add(outward);
   return{root,pins,ordered,mouth,outward,kind,pinCount:count};
 }
 function createHubModel(spec){
@@ -193,7 +193,9 @@ export async function attachElectronics(view,onSelect=()=>{}){
   const batteryPort=makeTerminal(batteryMount,'BATTERY-POWER',{count:2,position:vector(0,.034,.011),quaternion:new T.Quaternion().setFromAxisAngle(vector(1,0,0),Math.PI/2)});
   batteryPort.root.visible=false;
   const wireRoot=new T.Group();wireRoot.name='assembly-wiring-route-reference';root.add(wireRoot);wireRoot.visible=false;
-  const wireRouter=createWireRouter(root,[...servoDetails.values()].map(detail=>detail.group.parent));
+  const printedMeshes=view.model.parts.flatMap((part,index)=>PRINTED_MESH_NAMES[part.mesh]?[view.actual.parts[index]]:[]);
+  if(batteryMesh)printedMeshes.push(batteryMesh);
+  const wireRouter=createWireRouter(root,[...servoDetails.values()].map(detail=>detail.group.parent),printedMeshes);
   const portPairs=spec=>{
     if(spec.id==='hat-zero')return[components.get('hat').ports.J4,components.get('zero').ports.gpio40];
     if(spec.id==='hat-34')return[components.get('hat').ports.J13,servoDetails.get(34).ports.in];
@@ -219,7 +221,7 @@ export async function attachElectronics(view,onSelect=()=>{}){
     });
     return{...spec,group,mesh:group,fromPort,toPort,conductors,header,last:null};
   });
-  const explosion=attachPrintExplosion(view,{extraMeshes:batteryMesh?[batteryMesh]:[]});
+  const explosion=attachPrintExplosion(view,{extraMeshes:batteryMesh?[batteryMesh]:[],followers:new Map(batteryMesh?[[batteryMesh,[components.get('imu').group,batteryPort.root]]]:[])});
   const notice=document.createElement('span');notice.className='electronics-scene-note';notice.textContent=batteryError?'电池仓暂未加载；板卡位置按装配区显示':'端子接入 · 线束走向为装配示意';container.append(notice);
   const batteryLabel=document.createElement('button');batteryLabel.type='button';batteryLabel.className='electronics-label';batteryLabel.textContent='电池仓';batteryLabel.setAttribute('aria-label','查看电池仓');Object.assign(batteryLabel.style,{position:'absolute',zIndex:'3',transform:'translate(-50%,-50%)',font:'650 10px system-ui,sans-serif',whiteSpace:'nowrap',cursor:'pointer'});batteryLabel.addEventListener('click',()=>api.focus('battery'));container.append(batteryLabel);
 
@@ -227,7 +229,10 @@ export async function attachElectronics(view,onSelect=()=>{}){
   function portLead(port,pin){
     const mouth=port.mouth.getWorldPosition(new T.Vector3()),out=port.outward.getWorldPosition(new T.Vector3()),point=pin.getWorldPosition(new T.Vector3());
     // Preserve each contact's sideways position all the way out of the socket.
-    return root.worldToLocal(out.add(point.sub(mouth)));
+    // Leave the physical mouth briefly, then bend before nearby printed
+    // brackets. A fixed 9 mm straight extension cut through 2 mm support plates.
+    const direction=out.sub(mouth).normalize(),distance=Math.max(.00185,mouth.clone().sub(point).dot(direction)+.00065);
+    return root.worldToLocal(point.addScaledVector(direction,distance));
   }
   function updateWires(){
     if(!wiringVisible)return;root.updateMatrixWorld(true);
@@ -250,9 +255,10 @@ export async function attachElectronics(view,onSelect=()=>{}){
           curve=new T.LineCurve3(start,end);
         }else{
           const owner=id=>id.startsWith('servo')?servoDetails.get(Number(id.slice(5))).group.parent:null;
-          routing=wireRouter.route({start,leadA,leadB,end,fromServo:owner(item.from),toServo:owner(item.to),lane:index-(item.conductors.length-1)/2});
+          routing=wireRouter.route({start,leadA,leadB,end,fromServo:owner(item.from),toServo:owner(item.to),lane:index-(item.conductors.length-1)/2,previous:c.routePoints});
           if(!routing){c.mesh.visible=false;c.mesh.userData.routingError=wireRouter.lastFailure;return;}
           curve=routing.curve;
+          c.routePoints=routing.points;
         }
         const segments=item.header?12:Math.max(32,Math.min(384,Math.ceil(curve.getLength()/.0008))),geometry=new T.TubeGeometry(curve,segments,item.header?.000105:.00034,6,false);
         c.mesh.visible=true;c.mesh.geometry.dispose();c.mesh.geometry=geometry;
@@ -269,7 +275,7 @@ export async function attachElectronics(view,onSelect=()=>{}){
   function updateLabels(){
     view.camera.updateMatrixWorld(true);
     components.forEach(component=>{positionLabel(component.label,component.group.localToWorld(vector(0,component.height*.55,.007)),component.visible&&(component.spec.location!=='face'||coverAmount>.5));component.label.setAttribute('aria-pressed',String(component.id===selected));});
-    positionLabel(batteryLabel,batteryMount.localToWorld(vector(.026,.025,.050)),batteryVisible&&!!batteryMesh);
+    positionLabel(batteryLabel,(batteryMesh||batteryMount).localToWorld(vector(.026,.025,.050)),batteryVisible&&!!batteryMesh);
     notice.hidden=![...components.values()].some(c=>c.visible)&&!coverOpen&&!wiringVisible&&!batteryVisible;
   }
   function updateCover(now=performance.now()){

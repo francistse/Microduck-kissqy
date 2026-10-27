@@ -1,21 +1,10 @@
 import * as T from './vendor/three.module.min.js?demo=20261013';
+import {meshCollider,segmentBox} from './assembly-mesh-clearance.js?v=20261027-printed-clearance';
 
-// Display-only cable routing. The actual case geometry and joint transforms are
-// untouched. Each case is conservatively enclosed in its own oriented box.
-const CLEARANCE=.0009,EPS=1e-9,SAMPLE_STEP=.0004;
+// Display-only routing against actual servo AND printed-part surfaces. BVHs
+// retain cavities and openings that a solid box would incorrectly close.
+const CLEARANCE=.00055,SAMPLE_STEP=.0004;
 const p0=new T.Vector3(),p1=new T.Vector3();
-const coordinates=['x','y','z'];
-function slab(a,b,box){
- let near=0,far=1;
- for(const key of coordinates){
-  const delta=b[key]-a[key],low=box.min[key]+EPS,high=box.max[key]-EPS;
-  if(Math.abs(delta)<1e-14){if(a[key]<low||a[key]>high)return false;continue;}
-  let enter=(low-a[key])/delta,exit=(high-a[key])/delta;
-  if(enter>exit)[enter,exit]=[exit,enter];
-  near=Math.max(near,enter);far=Math.min(far,exit);if(near>far)return false;
- }
- return far>=0&&near<=1;
-}
 function corners(box,matrix){
  const result=[];
  for(const x of[box.min.x,box.max.x])for(const y of[box.min.y,box.max.y])for(const z of[box.min.z,box.max.z])result.push(new T.Vector3(x,y,z).applyMatrix4(matrix));
@@ -41,27 +30,30 @@ function roundedPath(points,radius){
  addLine(points.at(-1));curve.arcLengthDivisions=Math.max(200,Math.ceil(curve.getLength()/SAMPLE_STEP));return curve;
 }
 
-export function createWireRouter(root,servoMeshes){
- const meshes=[...servoMeshes],graphs=new Map();let signature='',obstacles=[],lastFailure=null;
+export function createWireRouter(root,servoMeshes,printedMeshes=[]){
+ const meshes=[...new Set([...servoMeshes,...printedMeshes])],graphs=new Map(),passages=[];let signature='',obstacles=[],lastFailure=null;
  function segmentHits(a,b,ignore=null){
   for(const obstacle of obstacles){
-   if(obstacle.mesh===ignore||!slab(a,b,obstacle.broad))continue;
+   if(obstacle.mesh===ignore||!segmentBox(a,b,obstacle.broad))continue;
    p0.copy(a).applyMatrix4(obstacle.toLocal);p1.copy(b).applyMatrix4(obstacle.toLocal);
-   if(slab(p0,p1,obstacle.box))return obstacle;
+   if(obstacle.collider.hit(p0,p1,obstacle.localClearance))return obstacle;
   }
   return null;
  }
  const clear=(a,b)=>!segmentHits(a,b);
+ // CAD surfaces can contain seams/open ends; ray parity would falsely close
+ // a connector cavity. Every complete cable is instead checked continuously
+ // against surface distance, including its fixed physical contact segments.
  function outside(point){return !segmentHits(point,point);}
  function update(){
   root.updateWorldMatrix(true,true);const inverse=root.matrixWorld.clone().invert();
   const frames=meshes.map(mesh=>({mesh,matrix:new T.Matrix4().multiplyMatrices(inverse,mesh.matrixWorld)}));
   const next=frames.map(({matrix})=>matrix.elements.map(value=>value.toFixed(7)).join(',')).join(';');
-  if(next===signature)return false;signature=next;graphs.clear();
+  if(next===signature)return false;signature=next;graphs.clear();passages.length=0;
   obstacles=frames.map(({mesh,matrix})=>{
    if(!mesh.geometry.boundingBox)mesh.geometry.computeBoundingBox();
-   const box=mesh.geometry.boundingBox.clone().expandByScalar(CLEARANCE),vertices=corners(box,matrix),broad=new T.Box3().setFromPoints(vertices);
-   return{mesh,box,broad,toRoot:matrix,toLocal:matrix.clone().invert()};
+   const box=mesh.geometry.boundingBox.clone(),vertices=corners(box,matrix),broad=new T.Box3().setFromPoints(vertices).expandByScalar(CLEARANCE),toLocal=matrix.clone().invert();
+   return{mesh,box,broad,toRoot:matrix,toLocal,collider:meshCollider(mesh.geometry),localClearance:CLEARANCE*toLocal.getMaxScaleOnAxis()};
   });
   return true;
  }
@@ -76,14 +68,54 @@ export function createWireRouter(root,servoMeshes){
   const outer=new T.Box3();obstacles.forEach(obstacle=>outer.union(obstacle.broad));outer.expandByScalar(.012+(key+1)*.001);
   for(const point of corners(outer,new T.Matrix4()))if(outside(point))points.push(point);
   const edges=points.map(()=>[]);
-  for(let i=0;i<points.length;i++)for(let j=i+1;j<points.length;j++)if(clear(points[i],points[j])){
-   const distance=points[i].distanceTo(points[j]);edges[i].push([j,distance]);edges[j].push([i,distance]);
+  const tested=new Set();
+  for(let i=0;i<points.length;i++){
+   const nearest=points.map((point,j)=>({j,distance:points[i].distanceTo(point)})).filter(p=>p.j!==i).sort((a,b)=>a.distance-b.distance).slice(0,28);
+   for(const{j,distance}of nearest){const pair=Math.min(i,j)*points.length+Math.max(i,j);if(tested.has(pair))continue;tested.add(pair);
+    if(clear(points[i],points[j])){edges[i].push([j,distance]);edges[j].push([i,distance]);}
+   }
   }
   const graph={points,edges};graphs.set(key,graph);return graph;
+ }
+ function compactPath(path){
+  const compact=[path[0]];let at=0;
+  while(at<path.length-1){let next=path.length-1;while(next>at+1&&!clear(path[at],path[next]))next--;compact.push(path[next]);at=next;}
+  return compact;
+ }
+ // Visibility corners cover open runs. A small, lazy grid resolves the narrow
+ // passages inside hollow brackets/head shells without filling those cavities
+ // with solid bounding boxes. Every edge still uses exact mesh clearance.
+ function passagePath(start,end,budget=18000){
+  const step=.002,limit=new T.Box3().setFromPoints([start,end]).expandByScalar(.032),heap=[],nodes=new Map();
+  const moves=[];for(let x=-1;x<=1;x++)for(let y=-1;y<=1;y++)for(let z=-1;z<=1;z++)if(x||y||z)moves.push([x,y,z,Math.hypot(x,y,z)*step]);
+  function push(node){let i=heap.length;heap.push(node);while(i){const p=(i-1)>>1;if(heap[p].score<=node.score)break;heap[i]=heap[p];i=p;}heap[i]=node;}
+  function pop(){const first=heap[0],last=heap.pop();if(heap.length){let i=0;while(i*2+1<heap.length){let j=i*2+1;if(j+1<heap.length&&heap[j+1].score<heap[j].score)j++;if(heap[j].score>=last.score)break;heap[i]=heap[j];i=j;}heap[i]=last;}return first;}
+  const initial={x:0,y:0,z:0,point:start.clone(),cost:0,score:start.distanceTo(end),previous:null};nodes.set('0,0,0',initial);push(initial);
+  for(let visits=0;heap.length&&visits<budget;visits++){
+   const node=pop();if(node.done||nodes.get(node.x+','+node.y+','+node.z)!==node)continue;node.done=true;
+   if(clear(node.point,end)){
+    const path=[end.clone()];for(let at=node;at;at=at.previous)path.push(at.point);return compactPath(path.reverse());
+   }
+   for(const[dx,dy,dz,length]of moves){
+    const x=node.x+dx,y=node.y+dy,z=node.z+dz,key=x+','+y+','+z,existing=nodes.get(key);if(existing?.done||existing?.blocked)continue;
+    const point=existing?.point||start.clone().add(new T.Vector3(x*step,y*step,z*step));
+    if(!limit.containsPoint(point)){nodes.set(key,{blocked:true});continue;}
+    if(!clear(node.point,point))continue;
+    const cost=node.cost+length;if(existing&&existing.cost<=cost)continue;
+    const next={x,y,z,point,cost,score:cost+point.distanceTo(end)*1.18,previous:node};nodes.set(key,next);push(next);
+   }
+  }
+  return null;
  }
  function middlePath(start,end,lane){
   if(!outside(start)||!outside(end))return null;
   if(clear(start,end))return[start.clone(),end.clone()];
+  for(const path of passages){
+   if(path[0].distanceTo(start)>.005||path.at(-1).distanceTo(end)>.005)continue;
+   const da=start.clone().sub(path[0]),db=end.clone().sub(path.at(-1));
+   const candidate=path.map((point,i)=>point.clone().addScaledVector(da,1-i/(path.length-1)).addScaledVector(db,i/(path.length-1)));
+   if(candidate.slice(1).every((point,i)=>clear(candidate[i],point)))return candidate;
+  }
   const graph=graphFor(lane),count=graph.points.length,startIndex=count,endIndex=count+1;
   const points=[...graph.points,start,end],edges=[...graph.edges.map(row=>[...row]),[],[]];
   for(let i=0;i<count;i++)for(const index of[startIndex,endIndex])if(clear(points[index],points[i])){
@@ -97,12 +129,13 @@ export function createWireRouter(root,servoMeshes){
    if(index<0)break;if(index===endIndex)break;done[index]=1;
    for(const[next,distance]of edges[index])if(!done[next]&&best+distance<distances[next]){distances[next]=best+distance;previous[next]=index;}
   }
-  if(!Number.isFinite(distances[endIndex]))return null;
+  if(!Number.isFinite(distances[endIndex])){const path=passagePath(start,end);if(path)passages.push(path);return path;}
   const path=[];for(let at=endIndex;at!==-1;at=previous[at])path.push(points[at].clone());path.reverse();
   // Remove graph detours that became redundant after the shortest-path search.
-  const compact=[path[0]];let at=0;
-  while(at<path.length-1){let next=path.length-1;while(next>at+1&&!clear(path[at],path[next]))next--;compact.push(path[next]);at=next;}
-  return compact;
+  let compact=compactPath(path);
+  const length=points=>points.slice(1).reduce((sum,point,i)=>sum+point.distanceTo(points[i]),0);
+  if(length(compact)>start.distanceTo(end)*1.8+.012){const shorter=passagePath(start,end,6000);if(shorter&&length(shorter)<length(compact))compact=shorter;}
+  passages.push(compact);return compact;
  }
  function validate(curve,{start,leadA,leadB,end,fromServo,toServo}){
   for(const segment of curve.curves){
@@ -112,9 +145,9 @@ export function createWireRouter(root,servoMeshes){
     for(const obstacle of obstacles){
      if(obstacle.mesh===fromServo&&onLead(a,start,leadA)&&onLead(b,start,leadA))continue;
      if(obstacle.mesh===toServo&&onLead(a,end,leadB)&&onLead(b,end,leadB))continue;
-     if(!slab(a,b,obstacle.broad))continue;
+     if(!segmentBox(a,b,obstacle.broad))continue;
      p0.copy(a).applyMatrix4(obstacle.toLocal);p1.copy(b).applyMatrix4(obstacle.toLocal);
-     if(slab(p0,p1,obstacle.box))return obstacle;
+     if(obstacle.collider.hit(p0,p1,obstacle.localClearance))return obstacle;
     }
     a=b;
    }
@@ -150,6 +183,12 @@ export function createWireRouter(root,servoMeshes){
  function route(spec){
   if(!signature)update();lastFailure=null;
   const{start,leadA,leadB,end,lane=0}=spec;
+  if(spec.previous?.length>3){
+   const old=spec.previous,da=start.clone().sub(old[0]),db=end.clone().sub(old.at(-1));
+   const points=old.map((point,i)=>point.clone().addScaledVector(da,1-i/(old.length-1)).addScaledVector(db,i/(old.length-1)));
+   points[0]=start.clone();points[1]=leadA.clone();points[points.length-2]=leadB.clone();points[points.length-1]=end.clone();
+   for(const radius of[.0015,.0003,0]){const curve=roundedPath(points,radius);if(!validate(curve,spec))return{curve,points,clearance:CLEARANCE,bendRadius:radius,length:curve.getLength(),signature};}
+  }
   const middle=middlePath(leadA,leadB,lane);
   if(!middle){lastFailure={reason:'no-clear-external-path'};return null;}
   const separated=middle.length===2?separatedDirectPaths(spec):null;
@@ -159,7 +198,7 @@ export function createWireRouter(root,servoMeshes){
    for(const radius of[.0015,.00075,.0003,0]){
     const curve=roundedPath(points,radius),hit=validate(curve,spec);
     if(!hit)return{curve,points,clearance:CLEARANCE,bendRadius:radius,length:curve.getLength(),signature,laneSeparated:!!separated};
-    lastFailure={reason:'terminal-or-bend-clearance',servo:hit.mesh.userData?.hd1910Assembly?.id??hit.mesh.name};
+    lastFailure={reason:'terminal-or-bend-clearance',obstacle:hit.mesh.userData?.hd1910Assembly?.id??hit.mesh.name};
    }
   }
   return null;
