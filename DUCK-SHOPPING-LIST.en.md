@@ -10,13 +10,15 @@
 
 The online pages show totals first, then specifications, quantities and purchase links. The tables below use the author's purchase references, filtered for the default assembled-board route. Normal use uses the released models and Robot Console.
 
+**The assembled IMU is preflashed with FT6 and needs no initial flashing; calibrate it for your robot after installation.** The author's assembled HAT / IMU boards are SMT assembled by JLCPCB and validated through extended real-robot use. See the [board guide](hardware/README.en.md) for original-design noncommercial use and commercial-permission terms.
+
 ## Total cost comparison
 
 | Item | Buy assembled boards | DIY boards, including tools |
 | --- | ---: | ---: |
 | Duck body, including gamepad and reference spare stock | ¥2569.80 | ¥2569.80 |
 | HAT + IMU | [HAT ¥119 + IMU ¥99](https://item.taobao.com/item.htm?id=1095121548583) | ¥94.22–134.22 · first component purchase |
-| Soldering / programming tools and consumables | Not required for board soldering | ¥800–1000 |
+| Soldering / programming tools and consumables | No board-soldering tools; assembled IMU has FT6 preflashed | ¥800–1000 |
 | **Total without a printer** | **¥2787.80** | **¥3464.02–3704.02** |
 | 3D printer allowance | +¥3500 | +¥3500 |
 | **Total including a printer** | **¥6287.80** | **¥6964.02–7204.02** |

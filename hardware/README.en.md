@@ -4,13 +4,19 @@
 
 > 🛒 **[Buy HAT / IMU boards from the author](https://item.taobao.com/item.htm?id=1095121548583)**
 >
-> **Please note: these boards are fabricated at JLCPCB (嘉立创) and populated by the author. Ready to use on arrival, they are the same boards the author uses, validated through extended real-robot operation, with no jumper bridging required and no packet loss. Feetech AMP2.0 connectors make them convenient and easy to use.**
+> **The author's assembled HAT / IMU boards are designed and laid out by the author, refined through extended real-robot use, and SMT assembled by JLCPCB, with a focus on stability and easier replication.**
+>
+> They combine power, communication, audio and orientation-feedback requirements to reduce separate purchases and DIY fabrication costs.
+>
+> **The assembled IMU comes preflashed with FT6 firmware; no initial flashing is needed.** Each robot still requires its own servo and IMU calibration after installation.
+>
+> Original designs and project files that the author has the right to license are provided for personal learning and noncommercial replication. Commercial use, mass production or reproduction for sale requires the author's prior written permission. Third-party material retains its original license; see the [board design license](LICENSE) · [component licenses](../LICENSE).
 
 **[🔧 Assembly notes: 5 GHz Wi-Fi for ZERO; the HUB includes the 1000 µF main-power buffer capacitor, with no separate purchase needed; wiring and precautions](../docs/ASSEMBLY-NOTES.en.md)**
 
 **The original HAT and independent torso IMU have passed extended real-robot use and operate normally. An AMP2.0 connector variant is also available.**
 
-**A newly built IMU also needs firmware:** [current FT6 download, J2 wiring, flashing, and checks](IMU-FIRMWARE.en.md). STM32 IMU firmware and ZERO control.43 services are installed separately.
+**Use the [IMU FT6 download and flashing guide](IMU-FIRMWARE.en.md) for a self-soldered board, replacement MCU, maintenance or upgrades. The author's assembled IMU already has FT6 and needs no reflashing for initial assembly.** STM32 IMU firmware and ZERO control.43 services are installed separately.
 
 🖨️ The [complete FrankenDuck printing set and plate project](3d-print-frankenduck/README.en.md) is available separately, with two battery holders and a foot kit that accepts rollers without removing servos.
 
@@ -62,7 +68,7 @@ Minimum pack counts below apply to each row for one set. Rows with the same prod
 | Board | DIY materials · free PCB coupons | DIY materials · no coupons | Assembled board |
 | --- | ---: | ---: | ---: |
 | HAT | ¥16.72 | ¥20.72 | [¥119](https://item.taobao.com/item.htm?id=1095121548583) |
-| IMU | ¥20.38 | ¥24.38 | [¥99](https://item.taobao.com/item.htm?id=1095121548583) |
+| IMU (assembled: FT6 preflashed) | ¥20.38 | ¥24.38 | [¥99](https://item.taobao.com/item.htm?id=1095121548583) |
 | **Both boards** | **¥37.11** | **¥45.11** | **¥218** |
 
 DIY amounts above cover parts fitted to the boards, excluding tools and labor. For the first purchase, use full-pack amounts below and add **¥800–1000** for [tools and consumables](../docs/BUILD-TOOLS.en.md#budgeting-for-tools-from-scratch); assembled boards are ready to use.

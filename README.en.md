@@ -63,7 +63,7 @@ Each stage starts with the answer and then the details. Continue from your curre
 
 Follow the [first-walk guide (中文)](https://kissqy.github.io/Microduck-kissqy/build/start.html); each stage provides its required download.
 
-[📥 System Image R1](https://kissqy.github.io/Microduck-kissqy/build/start.html#flash) · [📥 Robot Console R17 V167](https://kissqy.github.io/Microduck-kissqy/build/start.html#connect) · [Firmware and IMU flashing](release-assets/README.en.md)
+[📥 System Image R1](https://kissqy.github.io/Microduck-kissqy/build/start.html#flash) · [📥 Robot Console R17 V167](https://kissqy.github.io/Microduck-kissqy/build/start.html#connect) · [Firmware and DIY IMU flashing](release-assets/README.en.md)
 
 ## 🎮 Chinese Robot Console
 
@@ -81,7 +81,9 @@ Community improvements and the author's real-robot modifications are collected i
 
 ## 🔧 DIY HAT and IMU
 
-The DIY HAT and independent torso IMU have been used extensively on the author's robot. **PCB projects, parts lists and complete build records** let you make your own boards or choose the author's assembled version.
+The author designs and lays out the HAT and independent torso IMU, with extended real-robot use and iterative validation. Assembled boards are **SMT-manufactured by JLCPCB**, integrating the functions needed for replication to reduce separate sourcing and DIY fabrication costs. PCB projects, parts lists and build records are provided for DIY assembly or the author's assembled boards.
+
+**The assembled IMU comes with FT6 firmware pre-flashed; no additional flashing is needed on arrival. Calibrate it for your robot after installation.** The author's separately licensable original design material is for personal noncommercial replication; commercial reproduction, manufacture, sale or integration requires prior written permission. [Board design license](hardware/LICENSE)
 
 [Hardware projects and build guides](hardware/README.en.md) · [IMU build video](https://www.bilibili.com/video/BV1qapz6PERs/) · [Buy assembled boards](https://item.taobao.com/item.htm?id=1095121548583)
 
@@ -89,7 +91,7 @@ The DIY HAT and independent torso IMU have been used extensively on the author's
 
 This is an individual replica and development project based on the official Microduck, with AI-assisted programming. I hope these materials help you get your own duck moving sooner. Stars ⭐, discussion and feedback are welcome. [The author's learning journey](docs/AUTHOR-JOURNEY.en.md)
 
-Original work the author owns and can license is for personal learning, research and noncommercial use; commercial use requires written permission. Upstream and third-party content retain their own licenses. [Component licenses](microduck-hd1910/LICENSE) · [Personal noncommercial terms](microduck-hd1910/LICENSES/Personal-NonCommercial.txt) · [Third-party credits](microduck-hd1910/docs/THIRD-PARTY.en.md)
+Original work the author owns and can license is for personal learning, research and noncommercial use; commercial use requires written permission. Upstream and third-party content retain their own licenses. [Component licenses](LICENSE) · [Personal noncommercial terms](microduck-hd1910/LICENSES/Personal-NonCommercial.txt) · [Third-party credits](microduck-hd1910/docs/THIRD-PARTY.en.md)
 
 ## 🧠 Advanced play · Train your own movements
 

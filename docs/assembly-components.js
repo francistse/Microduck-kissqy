@@ -25,16 +25,17 @@ export const COMPONENTS=Object.freeze({
   },
   imu:{
     id:'imu',label:'独立躯干 IMU',shortLabel:'IMU',
-    description:'读取躯干姿态，通过与舵机共用的总线向 ZERO 提供反馈。',
+    description:'读取躯干姿态，通过总线向 ZERO 提供反馈；作者成品已预烧录 FT6，到手无需另行烧录。',
     dimensionsMm:[22.225,25.654],
     locationNote:'IMU 贴合电池仓背部的主安装板面，总线端子 J1 朝上。接线接入 J1 的三针触点，安装后在中控核对姿态与方向。',
     purchase:{label:'购买作者同款 IMU',url:authorBoards},
     source:{label:'IMU 接口与 FT6 固件说明',url:hardware+'IMU-FIRMWARE.md'},
     facts:[
       '模型按公开 IMU PCB 板框建模，竖向显示约 22.2 × 25.7 mm；主要芯片、插座与焊盘位置来自工程。',
+      '作者成品 IMU 已预烧录 FT6；安装后仍需完成本机 IMU 标定。',
       '当前飞特 FT6 固件：1 Mbps、固定 ID 200，与 15 个 HD1910 共用总线。',
       'AMP2.0 版 J1：1=GND，2=DXL_VDD，3=DXL_DATA；按焊盘针号识别方向。',
-      'J2 是 SWD 烧录口，不是舵机总线口；J2 的 3V3 不能接 5V。',
+      'J2 是供自焊新板、换芯片或维护升级使用的 SWD 烧录口；不是舵机总线口，3V3 不能接 5V。',
     ],
     extraSources:[{label:'AMP2.0 针序',url:hardware+'AMP2.0-VERSION.md'},{label:'IMU 尺寸记录',url:hardware+'IMU-TIMELINE.md'}],
   },
@@ -46,6 +47,7 @@ export const COMPONENTS=Object.freeze({
     purchase:{label:'购买作者同款 HAT',url:authorBoards},
     source:{label:'HAT 与 IMU 硬件说明',url:hardware+'README.md'},
     facts:[
+      '作者自行设计绘制，成品由嘉立创 SMT 贴片生产，经长期真机使用与迭代验证。',
       '公开 HAT-V5 记录尺寸约 65 × 30.9 mm。',
       '三维外观按公开 PCB 的元件位置细化排针、插座、芯片和焊盘；封装高度为显示简化。',
       'J4 是底面的 40 针 ZERO 配对座，承载电源与通信；按板上 1 脚标记与实际朝向对齐。',

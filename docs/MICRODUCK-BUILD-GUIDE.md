@@ -27,7 +27,7 @@ TF 卡 32GB 即可；[山泽双头高速读卡器（SD／TF 卡同读）](https:
 
 先看[在线采购清单](https://kissqy.github.io/Microduck-kissqy/build/shopping.html)，按默认成品板路线准备物品；[历史采购明细](../DUCK-SHOPPING-LIST.md)保留原订单规格和价格依据。参考硬件是 ZERO 3W、15 个 HD1910、摄像头、ToF、扬声器、电池、HAT 与独立躯干 IMU。价格是历史订单参考，预算范围和未计入项目以采购表说明为准。
 
-焊接、回流和烧录工具见[工具清单](BUILD-TOOLS.md)。使用其他主控或舵机时，不要默认当前镜像和结构已经适配。
+购买成品 IMU 时不需要准备烧录工具；自己焊板所需的焊接、回流和烧录工具见[工具清单](BUILD-TOOLS.md)。使用其他主控或舵机时，不要默认当前镜像和结构已经适配。
 
 ## 3. 我要怎么装？
 
@@ -43,7 +43,7 @@ TF 卡 32GB 即可；[山泽双头高速读卡器（SD／TF 卡同读）](https:
 
 [HAT / IMU 硬件页](../hardware/README.md)提供工程、采购表和两种接口版本。制作过程分别见[HAT 制作记录](../hardware/HAT-TIMELINE.md)和[IMU 制作记录及视频](../hardware/IMU-TIMELINE.md)。
 
-**自制 IMU 需要单独烧录 STM32 FT6 固件。** 给 ZERO 刷系统镜像或升级机器人服务不会烧录 IMU；接线、固件下载与步骤统一见[IMU 烧录指南](../hardware/IMU-FIRMWARE.md)。
+**作者提供的成品 IMU 已烧录 FT6 固件，到手无需另行烧录；装配后仍需完成本机标定。** 只有自己焊制新板、换芯片或维护升级时，才按[IMU 烧录指南](../hardware/IMU-FIRMWARE.md)操作。给 ZERO 刷系统镜像或升级机器人服务不会烧录外置 IMU。
 
 按[装机注意事项](ASSEMBLY-NOTES.md)配置 5 GHz Wi-Fi，并核对供电连接。HUB 已带 1000 µF 总电源缓冲电容，无需另购；装配时核对电容极性、耐压和安装位置。
 

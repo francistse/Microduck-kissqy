@@ -1,0 +1,63 @@
+HAT／IMU 原创设计资料许可范围 / Original HAT/IMU Design Scope
+
+1. 适用范围
+
+   本文件仅适用于本目录中由本项目作者拥有并有权单独授权的原创 HAT／IMU
+   电路设计、PCB 布局，以及作者原创的配套制作说明、图示和设计资料。
+   这些部分采用本项目现有《个人非商业使用许可》：
+
+   ../microduck-hd1910/LICENSES/Personal-NonCommercial.txt
+
+   本文件明确硬件资料的适用范围，不修改上述许可正文。
+
+2. 个人复刻与商业使用
+
+   自然人可依上述条款，为个人非商业学习、研究和复刻目的使用、修改及
+   免费分享本范围内的设计资料。分享时须保留许可、作者署名、第三方声明
+   和修改说明。
+
+   使用本范围内设计资料进行商业复制、生产、销售、产品集成，或提供
+   收费服务、随收费产品分发，以及公司或其他组织用途，须事先取得相关
+   权利人的书面许可。维护者只能许可其依法拥有并有权单独许可的权利。
+
+   购买作者成品板用于个人安装、复刻与日常使用，无需另行申请授权。
+   本设计资料许可不改变合法购买者依法享有的成品使用权。
+
+3. 排除与既有权利
+
+   本文件不将 hardware/ 的全部内容统一改为个人非商业许可。官方参考
+   设计、第三方原理图或元件库、驱动与固件、官方模型、社区改件及
+   3d-print-frankenduck/ 等三维文件，仍按其具体来源和原许可分别处理。
+   原创 HAT／IMU 设计中如包含已有明确许可的第三方部分，该部分仍遵循
+   原许可；不能仅因组合、修改或同目录分发而取消既有授权。
+
+   文件内版权头、第三方说明和原许可优先适用于相应第三方内容。本文件
+   不缩减或撤销此前已有效授予的许可，不授予第三方商标或官方背书，
+   也不创造超出作者依法享有权利范围的排他权。
+
+   相关索引：
+   ../LICENSE
+   ../microduck-hd1910/docs/THIRD-PARTY.md
+
+English
+
+This scope applies only to the author's separately licensable original HAT/IMU
+circuit designs, PCB layouts, and original supporting design and build material.
+Those parts use the existing Personal Non-Commercial License at:
+../microduck-hd1910/LICENSES/Personal-NonCommercial.txt
+
+Natural persons may use, modify and share the covered material without charge
+for personal non-commercial learning, research and replication, subject to that
+license's notice and attribution requirements. Commercial reproduction,
+manufacturing, sale, product integration, paid services, distribution with paid
+products, and organizational use require prior written permission from the
+relevant rights holders. Personal installation and use of a purchased assembled
+board require no additional authorization; this design-material license does
+not change a lawful purchaser's statutory rights to use the product.
+
+This is not a blanket license for hardware/, its third-party components, or
+3d-print-frankenduck/. Upstream and other third-party designs, libraries,
+firmware, models and community modifications retain their original licenses.
+No previously validly granted rights are restricted or revoked. The author can
+grant only rights they legally hold and are entitled to license separately;
+this notice creates no exclusive rights beyond that legal scope.

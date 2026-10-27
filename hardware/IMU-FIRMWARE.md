@@ -2,7 +2,7 @@
 
 # IMU 固件 FT6：下载、烧录与检查
 
-**自制躯干 IMU 板需要单独烧录 STM32 固件。当前飞特 HD1910 方案使用 FT6；成品已烧好且工作正常的 IMU 无需重复烧录。** 固件读取 LSM6DSV16X 的真实角速度与融合姿态，通过飞特总线供 ZERO 上的控制服务读取。
+**作者提供的成品躯干 IMU 已预烧录飞特 FT6 固件，到手无需另行烧录。** 本页用于自己焊制的新板、更换 STM32 芯片，以及维护或升级固件；成品首次装机可直接跳到[运行检查](#烧好后怎么确认)。无论成品还是自焊板，安装后仍需完成本机 IMU 标定。 固件读取 LSM6DSV16X 的真实角速度与融合姿态，通过飞特总线供 ZERO 上的控制服务读取。
 
 **IMU 工程有 EH2.5 与 AMP2.0 两种接口版本。** [查看两版工程](README.md) · [AMP2.0 版](AMP2.0-VERSION.md)。两版 J2 的 SWD 针序相同。
 
@@ -96,6 +96,7 @@ FT6 的 LED 行为以当前 [`main.c`](../microduck-hd1910/firmware/firmware/imu
 
 ## 当前源码与编译
 
-普通制作直接刷上面的 `.bin`，无需自己编译。开发入口为 [`Makefile.feetech`](../microduck-hd1910/firmware/firmware/imu-source/Makefile.feetech)；工具链和固定依赖见 [IMU 源码编译](../microduck-hd1910/docs/BUILD.md#imu-stm32)，协议细节见 [FT6 协议与兼容](../microduck-hd1910/firmware/firmware/imu-source/README_FT6_SYNC15.md)。快速读区为地址 56、15 字节，ID 200 在 Sync Read 列表首位；地址 124 的诊断区保留 20 字节。
+自焊或维护时可直接刷上面的 `.bin`，无需自己编译；购买作者成品 IMU 不需要为首次装机执行此步骤。开发入口为 [`Makefile.feetech`](../microduck-hd1910/firmware/firmware/imu-source/Makefile.feetech)；工具链和固定依赖见 [IMU 源码编译](../microduck-hd1910/docs/BUILD.md#imu-stm32)，协议细节见 [FT6 协议与兼容](../microduck-hd1910/firmware/firmware/imu-source/README_FT6_SYNC15.md)。快速读区为地址 56、15 字节，ID 200 在 Sync Read 列表首位；地址 124 的诊断区保留 20 字节。
 
 [IMU 制作视频与时间线](IMU-TIMELINE.md) · [硬件与采购](README.md) · [项目首页](../README.md)
+

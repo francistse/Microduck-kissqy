@@ -2,7 +2,7 @@
 
 # IMU firmware FT6: download, flash, and check
 
-**A newly built torso IMU needs its own STM32 firmware. The current Feetech HD1910 setup uses FT6. An already programmed IMU that works correctly does not need reflashing.** This firmware reads real angular velocity and fused orientation from the LSM6DSV16X and supplies them to the ZERO control service over the Feetech bus.
+**The author's assembled torso IMU comes preflashed with Feetech FT6 firmware; no initial flashing is needed.** This page covers self-soldered boards, replacement STM32 chips, maintenance and firmware upgrades. For a newly purchased assembled IMU, go straight to the [runtime checks](#confirm-it-works). Both assembled and DIY boards still need calibration for their installation on the individual robot. This firmware reads real angular velocity and fused orientation from the LSM6DSV16X and supplies them to the ZERO control service over the Feetech bus.
 
 **The IMU project has EH2.5 and AMP2.0 connector variants.** [Both projects](README.en.md) · [AMP2.0 version](AMP2.0-VERSION.en.md). Both use the same J2 SWD pin assignments.
 
@@ -96,6 +96,7 @@ Current FT6 LED behavior is defined by [`main.c`](../microduck-hd1910/firmware/f
 
 ## Current source and build
 
-For a normal build, flash the `.bin` above without compiling. The developer entry is [`Makefile.feetech`](../microduck-hd1910/firmware/firmware/imu-source/Makefile.feetech). Toolchain and pinned dependencies are listed in [Build IMU firmware](../microduck-hd1910/docs/BUILD.en.md#imu-stm32); protocol details are in [FT6 protocol and compatibility](../microduck-hd1910/firmware/firmware/imu-source/README_FT6_SYNC15.en.md). The fast block is address 56, 15 bytes, with ID 200 first in Sync Read; address 124 retains a 20-byte diagnostic block.
+For a self-soldered board or maintenance, use the `.bin` above without compiling. The author's assembled IMU needs no initial flashing. The developer entry is [`Makefile.feetech`](../microduck-hd1910/firmware/firmware/imu-source/Makefile.feetech). Toolchain and pinned dependencies are listed in [Build IMU firmware](../microduck-hd1910/docs/BUILD.en.md#imu-stm32); protocol details are in [FT6 protocol and compatibility](../microduck-hd1910/firmware/firmware/imu-source/README_FT6_SYNC15.en.md). The fast block is address 56, 15 bytes, with ID 200 first in Sync Read; address 124 retains a 20-byte diagnostic block.
 
 [IMU build video and timeline](IMU-TIMELINE.en.md) · [Hardware and shopping](README.en.md) · [Project homepage](../README.en.md)
+

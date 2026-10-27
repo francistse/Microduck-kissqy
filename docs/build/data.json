@@ -260,26 +260,26 @@
     {
       "id": "hat",
       "name": "HAT 成品板",
-      "spec": "作者同款成品板；下单确认舵机总线、喇叭与麦克风接头版本。",
+      "spec": "作者自行设计绘制的成品板，嘉立创 SMT 贴片生产；下单确认舵机总线、喇叭与麦克风接头版本。",
       "unit": "块",
       "quantity": 1,
       "unitQuote": "119.00",
       "subtotalCents": 11900,
       "group": "boards",
       "url": "https://item.taobao.com/item.htm?id=1095121548583",
-      "note": "与 ZERO 配对，连接舵机总线和外围。"
+      "note": "经长期真机使用与迭代验证；与 ZERO 配对，整合供电、通信与音频外围。"
     },
     {
       "id": "imu",
       "name": "IMU 成品板",
-      "spec": "本仓库独立躯干 IMU；下单确认固件及接头版本。",
+      "spec": "作者自行设计绘制的独立躯干 IMU，嘉立创 SMT 贴片生产；已预烧录飞特 FT6 固件。",
       "unit": "块",
       "quantity": 1,
       "unitQuote": "99.00",
       "subtotalCents": 9900,
       "group": "boards",
       "url": "https://item.taobao.com/item.htm?id=1095121548583",
-      "note": "固定在电池仓背面，端子朝上，提供姿态反馈。"
+      "note": "到手无需另行烧录；固定在电池仓背面、端子朝上，安装后完成本机 IMU 标定。"
     }
   ],
   "groups": [

@@ -8,7 +8,7 @@
 
 **更新：修复鸭身抖动的问题。**
 
-**自制 IMU 板单独刷 STM32 FT6：** [下载与烧录指南](../hardware/IMU-FIRMWARE.md)；control.43 安装到 ZERO，不会烧录外置 IMU。
+**作者成品 IMU 已烧录 FT6，无需为首次装机另行烧录。** 自焊新板、换芯片或维护升级时使用 [IMU 下载与烧录指南](../hardware/IMU-FIRMWARE.md)；control.43 安装到 ZERO，不会烧录外置 IMU。成品安装后仍需完成本机标定。
 
 ## 和镜像、中控是什么关系
 
@@ -18,7 +18,7 @@
 | 机器人中控 V167 `.zip` | 电脑端操作工具；`updates/` 中包含同一个已编译固件包。 |
 | 本页独立固件 `.tar.gz` | 与 V167 随包固件逐字节一致，供已有系统单独升级服务。 |
 
-**普通用户用「系统镜像＋机器人中控」即可。** 镜像 R1 仍预装 control.40；刷好镜像后，通过 V167 中控安装随包固件，升级到 control.43。本包是 ZERO 的 Linux 服务包，HAT / IMU 单片机固件另有 `.bin`；`.tar.gz` 不能作为 TF 卡系统镜像刷写。
+**普通用户用「系统镜像＋机器人中控」即可。** 镜像 R1 仍预装 control.40；刷好镜像后，通过 V167 中控安装随包固件，升级到 control.43。本包是 ZERO 的 Linux 服务包；需要自行烧录或维护 IMU 时使用单独的 `.bin`（作者成品已预刷 FT6）；`.tar.gz` 不能作为 TF 卡系统镜像刷写。
 
 ## 用中控安装
 
@@ -67,3 +67,4 @@ Compress-Archive -Path .\Microduck-Robotd-FT6-R17.tar.gz -DestinationPath .\Micr
 本次整理确认独立固件与 V167 随包载荷一致，160 项包内校验通过。此前构建与测试记录见 [V167 构建说明](../microduck-hd1910/firmware/BUILDING-V167.md)。
 
 [固件源码及版本说明](../microduck-hd1910/firmware/README-R17.zh-CN.md) · [从源码编译](../microduck-hd1910/docs/BUILD.md) · [分项许可](../microduck-hd1910/LICENSE)
+

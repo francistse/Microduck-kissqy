@@ -8,7 +8,7 @@ An **ARM64 robot-service installation package for Radxa ZERO 3W**, based on offi
 
 **Update: Fixed body jitter.**
 
-**Flash STM32 FT6 separately on a newly built IMU:** [download and flashing guide](../hardware/IMU-FIRMWARE.en.md); installing control.43 on ZERO does not program the external IMU.
+**The author's assembled IMU already has FT6 firmware and needs no initial flashing.** Use the [IMU download and flashing guide](../hardware/IMU-FIRMWARE.en.md) for self-soldered boards, replacement MCUs, maintenance or upgrades. Installing control.43 on ZERO does not program the external IMU. Calibrate each robot after installation.
 
 ## Image, console, and standalone firmware
 
@@ -18,7 +18,7 @@ An **ARM64 robot-service installation package for Radxa ZERO 3W**, based on offi
 | Robot Console V167 `.zip` | Computer-side control tool; `updates/` contains this same compiled firmware. |
 | Standalone `.tar.gz` here | The exact V167 firmware payload, offered separately for existing-system upgrades. |
 
-**Ordinary users need the system image and Robot Console.** Image R1 still includes control.40. After flashing, install V167 bundled firmware to upgrade to control.43. This package updates ZERO Linux services; HAT/IMU microcontroller firmware uses separate `.bin` files. This `.tar.gz` is not a microSD system image.
+**Ordinary users need the system image and Robot Console.** Image R1 still includes control.40. After flashing, install V167 bundled firmware to upgrade to control.43. This package updates ZERO Linux services. IMU DIY programming or maintenance uses a separate `.bin`; the author's assembled IMU is already preflashed with FT6. This `.tar.gz` is not a microSD system image.
 
 ## Install with the console
 
@@ -67,3 +67,4 @@ Download progress is shown; a failed checksum stops the commands. The existing `
 This cleanup verified byte identity with V167 bundled firmware and all 160 archive checksum entries. Prior build records are in [the V167 guide](../microduck-hd1910/firmware/BUILDING-V167.en.md).
 
 [Firmware source and versions](../microduck-hd1910/firmware/README-R17.en.md) · [Build from source](../microduck-hd1910/docs/BUILD.en.md) · [Component licenses](../microduck-hd1910/LICENSE)
+

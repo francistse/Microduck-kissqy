@@ -29,7 +29,7 @@ A 32GB microSD card is sufficient. One [SAMZHE dual-head high-speed card reader 
 
 Use the [interactive shopping list (Chinese)](https://kissqy.github.io/Microduck-kissqy/build/shopping.html) for the default assembled-board route. The [historical shopping details](../DUCK-SHOPPING-LIST.en.md) retain order specifications and price references. The reference build uses ZERO 3W, 15 HD1910 servos, a camera, ToF, speaker, battery, HAT and a separate torso IMU. Prices are historical order references; check the included and excluded costs.
 
-See the [tool list](BUILD-TOOLS.en.md) for soldering, reflow and flashing tools. Other controllers and servos are not automatically supported by this image or mechanical layout.
+An assembled IMU needs no programming tools. For DIY boards, see the [tool list](BUILD-TOOLS.en.md) for soldering, reflow and flashing tools. Other controllers and servos are not automatically supported by this image or mechanical layout.
 
 ## 3. How do I assemble it?
 
@@ -45,7 +45,7 @@ This page links the build stages; individual part instructions are on the printi
 
 The [hardware guide](../hardware/README.en.md) contains PCB projects, parts tables and two connector versions. See the [HAT build record](../hardware/HAT-TIMELINE.en.md) and [IMU build record and video](../hardware/IMU-TIMELINE.en.md).
 
-**A newly built STM32 IMU needs its separate FT6 firmware.** Imaging ZERO or upgrading robot services does not flash the IMU. Use the [IMU flashing guide](../hardware/IMU-FIRMWARE.en.md) for downloads, SWD wiring and checks.
+**The author's assembled IMU comes with FT6 preflashed and needs no initial flashing; calibrate it for your robot after assembly.** Use the [IMU flashing guide](../hardware/IMU-FIRMWARE.en.md) for self-soldered boards, replacement MCUs, maintenance or upgrades. Imaging ZERO or upgrading robot services does not program the external IMU.
 
 Follow the [assembly notes](ASSEMBLY-NOTES.en.md) for 5 GHz Wi-Fi and power connections. The HUB already includes the 1000 µF main-power buffer capacitor; no separate purchase is needed. Check its polarity, voltage rating and placement during assembly.
 

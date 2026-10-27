@@ -63,7 +63,7 @@
 
 首次制作按 [刷机与首次行走教程](https://kissqy.github.io/Microduck-kissqy/build/start.html) 下载和操作；所需文件就在对应步骤。
 
-[📥 系统镜像 R1](https://kissqy.github.io/Microduck-kissqy/build/start.html#flash) · [📥 机器人中控 R17 V167](https://kissqy.github.io/Microduck-kissqy/build/start.html#connect) · [固件与 IMU 烧录说明](release-assets/README.md)
+[📥 系统镜像 R1](https://kissqy.github.io/Microduck-kissqy/build/start.html#flash) · [📥 机器人中控 R17 V167](https://kissqy.github.io/Microduck-kissqy/build/start.html#connect) · [固件下载与自焊 IMU 烧录](release-assets/README.md)
 
 ## 🎮 中文机器人中控
 
@@ -81,7 +81,9 @@
 
 ## 🔧 HAT 与 IMU 自制记录
 
-自制 HAT 与独立躯干 IMU 已在作者实机上长期使用，提供**电路板工程、材料清单与完整制作记录**。可以自己动手制作，也可选择作者同款成品板。
+HAT 与独立躯干 IMU 由作者自行设计绘制，经长期真机使用与迭代验证；成品板由**嘉立创 SMT 贴片生产**，整合复刻所需功能，降低分散采购与自行制作的成本。提供电路板工程、材料清单与制作记录，可自己制作或选择作者同款成品板。
+
+**成品 IMU 已预烧录 FT6，到手无需另行烧录；安装后仍需完成本机标定。** 作者享有权利的原创设计与工程资料限个人非商业复刻，商业复制生产、销售或集成须事先取得书面授权。[板卡设计许可](hardware/LICENSE)
 
 [硬件工程与制作说明](hardware/README.md) · [IMU 手工制作视频](https://www.bilibili.com/video/BV1qapz6PERs/) · [购买成品板](https://item.taobao.com/item.htm?id=1095121548583)
 
@@ -89,7 +91,7 @@
 
 这是作者基于官方 Microduck 完成的个人复刻与开发项目，包含 AI 辅助编程。希望这些资料帮你少走弯路，让自己的小鸭动起来。欢迎 Star ⭐、交流和反馈。[作者的学习记录](docs/AUTHOR-JOURNEY.md)
 
-作者有权授权的原创部分仅供个人学习、研究与非商业使用，商业使用需取得书面授权；官方及第三方内容遵循各自许可。[分项许可](microduck-hd1910/LICENSE) · [个人非商业许可](microduck-hd1910/LICENSES/Personal-NonCommercial.txt) · [第三方说明](microduck-hd1910/docs/THIRD-PARTY.md)
+作者有权授权的原创部分仅供个人学习、研究与非商业使用，商业使用需取得书面授权；官方及第三方内容遵循各自许可。[分项许可](LICENSE) · [个人非商业许可](microduck-hd1910/LICENSES/Personal-NonCommercial.txt) · [第三方说明](microduck-hd1910/docs/THIRD-PARTY.md)
 
 ## 🧠 进阶玩法 · 训练自己的动作
 
