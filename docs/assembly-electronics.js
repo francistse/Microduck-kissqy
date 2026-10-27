@@ -2,6 +2,7 @@ import * as T from './vendor/three.module.min.js?demo=20261013';
 import {createBoardModel} from './assembly-board-models.js?v=20261026-terminals';
 import {attachPrintExplosion} from './assembly-explosion.js?v=20261026-terminals';
 import {prepareServoModels,attachServoModel} from './assembly-servo-models.js?v=20261027-mounts';
+import {createWireRouter} from './assembly-wire-routing.js?v=20261027-wire-clearance';
 
 // Board footprints are documented; mounting offsets are assembly-reference
 // placements, not a mechanical clearance or connector pin-direction drawing.
@@ -192,6 +193,7 @@ export async function attachElectronics(view,onSelect=()=>{}){
   const batteryPort=makeTerminal(batteryMount,'BATTERY-POWER',{count:2,position:vector(0,.034,.011),quaternion:new T.Quaternion().setFromAxisAngle(vector(1,0,0),Math.PI/2)});
   batteryPort.root.visible=false;
   const wireRoot=new T.Group();wireRoot.name='assembly-wiring-route-reference';root.add(wireRoot);wireRoot.visible=false;
+  const wireRouter=createWireRouter(root,[...servoDetails.values()].map(detail=>detail.group.parent));
   const portPairs=spec=>{
     if(spec.id==='hat-zero')return[components.get('hat').ports.J4,components.get('zero').ports.gpio40];
     if(spec.id==='hat-34')return[components.get('hat').ports.J13,servoDetails.get(34).ports.in];
@@ -229,6 +231,7 @@ export async function attachElectronics(view,onSelect=()=>{}){
   }
   function updateWires(){
     if(!wiringVisible)return;root.updateMatrixWorld(true);
+    wireRouter.update();
     batteryPort.root.visible=components.get('hub').visible&&batteryVisible;
     for(const item of wires){
       item.group.visible=endpointVisible(item.from)&&endpointVisible(item.to);
@@ -236,27 +239,25 @@ export async function attachElectronics(view,onSelect=()=>{}){
       // Include connector direction so rotating a socket about a fixed contact
       // centre still updates the exit bend.
       positions.push(...item.fromPort.outward.getWorldPosition(new T.Vector3()).toArray(),...item.toPort.outward.getWorldPosition(new T.Vector3()).toArray());
-      const signature=positions.map(x=>x.toFixed(7)).join(',');if(signature===item.last)continue;item.last=signature;
+      const signature=wireRouter.signature+'|'+positions.map(x=>x.toFixed(7)).join(',');if(signature===item.last)continue;item.last=signature;
       item.conductors.forEach((c,index)=>{
         const start=root.worldToLocal(c.start.getWorldPosition(new T.Vector3())),end=root.worldToLocal(c.end.getWorldPosition(new T.Vector3()));
         const leadA=portLead(item.fromPort,c.start),leadB=portLead(item.toPort,c.end);
-        let points;
+        let curve,routing=null;
         if(item.header){
           // Forty separate contacts join the opposed HAT/Zero headers. Contact
           // order is geometric, not a GPIO pin assignment or a three-wire bus.
-          points=[start,start.clone().lerp(end,.33),start.clone().lerp(end,.67),end];
+          curve=new T.LineCurve3(start,end);
         }else{
-          const mid=leadA.clone().lerp(leadB,.5),lane=(index-(item.conductors.length-1)/2)*.00085;
-          if(item.region==='left'){mid.y+=.009;mid.x+=lane;}
-          else if(item.region==='right'){mid.y-=.009;mid.x+=lane;}
-          else if(item.region==='neck'){mid.y-=.014;mid.x-=.003;mid.z+=lane;}
-          else if(item.region==='trunk'){mid.y-=.033;mid.x-=.007;mid.z+=lane;}
-          else if(item.region==='battery'){mid.x-=.010;mid.y+=lane;}
-          else{mid.y-=.006;mid.z+=.003+lane;}
-          points=[start,leadA,mid,leadB,end];
+          const owner=id=>id.startsWith('servo')?servoDetails.get(Number(id.slice(5))).group.parent:null;
+          routing=wireRouter.route({start,leadA,leadB,end,fromServo:owner(item.from),toServo:owner(item.to),lane:index-(item.conductors.length-1)/2});
+          if(!routing){c.mesh.visible=false;c.mesh.userData.routingError=wireRouter.lastFailure;return;}
+          curve=routing.curve;
         }
-        const curve=new T.CatmullRomCurve3(points,false,'centripetal'),geometry=new T.TubeGeometry(curve,item.header?12:24,item.header?.000105:.00034,5,false);
-        c.mesh.geometry.dispose();c.mesh.geometry=geometry;c.mesh.userData.start=start.toArray();c.mesh.userData.end=end.toArray();
+        const segments=item.header?12:Math.max(32,Math.min(384,Math.ceil(curve.getLength()/.0008))),geometry=new T.TubeGeometry(curve,segments,item.header?.000105:.00034,6,false);
+        c.mesh.visible=true;c.mesh.geometry.dispose();c.mesh.geometry=geometry;
+        c.mesh.userData.start=start.toArray();c.mesh.userData.end=end.toArray();c.mesh.userData.leadA=leadA.toArray();c.mesh.userData.leadB=leadB.toArray();
+        c.mesh.userData.routingError=null;c.mesh.userData.clearance=routing?.clearance??null;
       });
     }
   }
