@@ -118,3 +118,9 @@
 - [Licenses and sources](../microduck-hd1910/training-console/NOTICE.md)
 
 [🦆 项目首页](../README.md)
+
+## 许可与原创归属
+
+- [软件与自训模型：原创归属、个人使用与商业授权](../microduck-hd1910/docs/SOFTWARE-MODEL-RIGHTS.md) · [English](../microduck-hd1910/docs/SOFTWARE-MODEL-RIGHTS.en.md)
+- [逐模型来源：十个随包动作、六份源码权重及历史样本](../microduck-hd1910/docs/MODEL-PROVENANCE.md) · [English](../microduck-hd1910/docs/MODEL-PROVENANCE.en.md)
+- [分项许可索引](../LICENSE) · [第三方来源](../microduck-hd1910/docs/THIRD-PARTY.md)

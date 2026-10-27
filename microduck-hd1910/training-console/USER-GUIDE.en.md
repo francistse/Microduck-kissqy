@@ -39,3 +39,5 @@ Training, history, and models are stored in the execution host's data directory.
 - Automated test methods are in [tests / README.md](tests/README.md). Passing tests does not establish long GPU training or real-robot deployment acceptance.
 
 Licensing and third-party sources: [NOTICE.md](NOTICE.md) and `docs/licenses/`.
+
+The original UI, orchestration and adaptations follow their personal noncommercial scope. Upstream engines, community HD1910 parameters and users' outputs remain separate. See [software/model rights](../docs/SOFTWARE-MODEL-RIGHTS.en.md) and [released model provenance](../docs/MODEL-PROVENANCE.en.md). This software license does not automatically assign users' trained models to the project author.

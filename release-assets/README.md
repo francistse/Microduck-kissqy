@@ -68,3 +68,8 @@ Compress-Archive -Path .\Microduck-Robotd-FT6-R17.tar.gz -DestinationPath .\Micr
 
 [固件源码及版本说明](../microduck-hd1910/firmware/README-R17.zh-CN.md) · [从源码编译](../microduck-hd1910/docs/BUILD.md) · [分项许可](../microduck-hd1910/LICENSE)
 
+## 软件与动作模型许可
+
+明确适用本项目个人非商业条款的原创中控、工具及自训模型，限个人非商业使用；商业／组织用途须事先书面授权。运行固件与第三方依赖保留其原有许可，不能把整份固件统称为禁止商用。详见 [软件与自训模型权利说明](../microduck-hd1910/docs/SOFTWARE-MODEL-RIGHTS.md) 与 [逐模型来源表](../microduck-hd1910/docs/MODEL-PROVENANCE.md)。
+
+本次更新仓库与下载页说明，未重新打包上述 ZIP、固件载荷或镜像，未改变程序／权重字节；旧包内许可按其实际内容查验，此前已有效授予的许可继续有效。

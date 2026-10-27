@@ -1,5 +1,7 @@
 [简体中文](SELF-TRAINED.zh-CN.md) | **English**
 
+> This is a historical version record, not the current model count. See [model provenance](../docs/MODEL-PROVENANCE.en.md) for V167/control.43's ten bundled policies, six source weights and training sources; see [software/model rights](../docs/SOFTWARE-MODEL-RIGHTS.en.md) for ownership and use.
+
 # R17 v1.0.137 / official 0.15.1 self-trained models
 
 Run / install instructions are in [the console guide](console/USER-GUIDE.en.md) and [bundled firmware guide](packaging/README.en.md). Bundled models: rough-walking teacher 14000 iterations, sit / stand 10000, ground picking 5000, forward roll 10000, and LB recovery teacher 11000. Automatic Stand is empty; LB uses official named skill `stand_test`; stationary holding uses Walk.

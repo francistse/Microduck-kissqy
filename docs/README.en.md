@@ -118,3 +118,9 @@ Training Studio is optional after first walking. Everyday operation uses the rel
 - [Licenses and sources](../microduck-hd1910/training-console/NOTICE.md)
 
 [🦆 Project homepage](../README.en.md)
+
+## Licensing and attribution
+
+- [Software and model ownership, personal use and commercial permission](../microduck-hd1910/docs/SOFTWARE-MODEL-RIGHTS.en.md) · [简体中文](../microduck-hd1910/docs/SOFTWARE-MODEL-RIGHTS.md)
+- [Model provenance: ten bundled policies, six source weights and historical samples](../microduck-hd1910/docs/MODEL-PROVENANCE.en.md) · [简体中文](../microduck-hd1910/docs/MODEL-PROVENANCE.md)
+- [Component license index](../LICENSE) · [Third-party sources](../microduck-hd1910/docs/THIRD-PARTY.en.md)

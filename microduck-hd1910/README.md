@@ -4,11 +4,11 @@
 
 基于 Microduck 官方 **0.15.1** 的飞特 HD1910 适配，包含机器人固件、R17 机器人中控和独立训练中控。参考硬件：Radxa ZERO 3W、官方骨架、15 个 HD1910。社区个人项目，与 Pollen Robotics 无官方隶属关系。
 
-**源码公开；作者原创部分仅供个人非商业使用。第三方内容保留原许可证，范围见 [LICENSE](LICENSE)。**
+**源码公开、分项许可；明确适用个人非商业条款的原创部分限个人非商业使用，商业及组织用途须书面授权。其余内容保留各自许可，范围见 [LICENSE](LICENSE)。**
 
 **已有编译好的固件。** control.43 已随 V167 中控提供；系统镜像 R1 仍预装 control.40；单独使用见[固件安装与下载说明](../release-assets/README.md)。
 
-**自制 IMU 板单独刷 STM32 FT6：** [下载与烧录指南](../hardware/IMU-FIRMWARE.md)；control.43 安装到 ZERO，不会烧录外置 IMU。
+**作者成品 IMU 已预烧录 FT6，到手无需另行烧录，安装后仍需本机标定。** 自焊新板、换芯片或维护升级再看 [STM32 FT6 下载与烧录指南](../hardware/IMU-FIRMWARE.md)；control.43 安装到 ZERO，不会烧录外置 IMU。
 
 ## 当前版本与源码
 
@@ -37,6 +37,7 @@ V167 中控配套已编译的 **control.43** 固件。更新：**修复鸭身抖
 - 训练中控启动入口：`training-console/start-training.cmd` 或 `start-training.command`。
 - 固件编译：[BUILD.md](docs/BUILD.md)。编译不是日常使用的前置要求。
 - 发布版本与验证范围：[BASELINE.md](docs/BASELINE.md)。完整来源及校验记录：[PUBLICATION-MANIFEST.json](PUBLICATION-MANIFEST.json)。
+- 原创归属与使用：[软件与自训模型权利说明](docs/SOFTWARE-MODEL-RIGHTS.md) · [逐模型来源](docs/MODEL-PROVENANCE.md)。
 - 许可与第三方来源：[LICENSE](LICENSE) · [THIRD-PARTY.md](docs/THIRD-PARTY.md)。
 
 每台机器人都需要核对自己的关节零位、方向、限位和 IMU。程序、模型和原有控制实现按交付包同步；本次源码公开不扩大原有模型的实机验收范围。

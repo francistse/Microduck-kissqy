@@ -4,11 +4,11 @@
 
 A Feetech HD1910 adaptation based on official Microduck **0.15.1**, including robot firmware, the R17 Robot Console, and an independent Training Studio. Reference hardware: Radxa ZERO 3W, official chassis, and 15 HD1910 servos. This is a personal community project with no official affiliation to Pollen Robotics.
 
-**Source is published; the author's original work is licensed for personal noncommercial use only. Third-party content retains its original licenses. See [LICENSE](LICENSE).**
+**Source-available under component licenses. Original material explicitly covered by personal noncommercial terms requires written permission for commercial or organizational use. Other material retains its applicable license. See [LICENSE](LICENSE).**
 
 **Compiled firmware is available.** control.43 is already supplied in Public Image R1 and Robot Console V167; see the [standalone package and installation guide](../release-assets/README.en.md).
 
-**Flash STM32 FT6 separately on a newly built IMU:** [download and flashing guide](../hardware/IMU-FIRMWARE.en.md); installing control.43 on ZERO does not program the external IMU.
+**The author's assembled IMU is pre-flashed with FT6; no initial flashing is needed. Calibrate it after installation.** For a new self-soldered board, replacement MCU or maintenance, see the [FT6 guide](../hardware/IMU-FIRMWARE.en.md); installing control.43 on ZERO does not program the external IMU.
 
 ## Current versions and source
 
@@ -40,3 +40,5 @@ Training uses an NVIDIA GPU and Linux / WSL2. Install Git and [uv](https://docs.
 - Licensing and third-party sources: [LICENSE](LICENSE) · [THIRD-PARTY.md](docs/THIRD-PARTY.en.md).
 
 Each robot needs its own joint zero, direction, limit, and IMU checks. Programs, models, and existing control implementation were synchronized from the delivery packages; publication of source does not expand the original real-robot acceptance scope.
+
+Licensing details: [software and self-trained model rights](docs/SOFTWARE-MODEL-RIGHTS.en.md) · [model provenance](docs/MODEL-PROVENANCE.en.md) · [component licenses](LICENSE).

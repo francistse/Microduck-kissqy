@@ -91,7 +91,7 @@ The author designs and lays out the HAT and independent torso IMU, with extended
 
 This is an individual replica and development project based on the official Microduck, with AI-assisted programming. I hope these materials help you get your own duck moving sooner. Stars ⭐, discussion and feedback are welcome. [The author's learning journey](docs/AUTHOR-JOURNEY.en.md)
 
-Original work the author owns and can license is for personal learning, research and noncommercial use; commercial use requires written permission. Upstream and third-party content retain their own licenses. [Component licenses](LICENSE) · [Personal noncommercial terms](microduck-hd1910/LICENSES/Personal-NonCommercial.txt) · [Third-party credits](microduck-hd1910/docs/THIRD-PARTY.en.md)
+Original consoles, tools, documentation and HD1910 self-trained models explicitly covered by the personal noncommercial terms require written permission for commercial or organizational use. Other material, including the author's adaptations already released under Apache, retains its applicable license. [Software and model rights](microduck-hd1910/docs/SOFTWARE-MODEL-RIGHTS.en.md) · [Model provenance](microduck-hd1910/docs/MODEL-PROVENANCE.en.md) · [Component licenses](LICENSE) · [Personal noncommercial terms](microduck-hd1910/LICENSES/Personal-NonCommercial.txt) · [Third-party credits](microduck-hd1910/docs/THIRD-PARTY.en.md)
 
 ## 🧠 Advanced play · Train your own movements
 

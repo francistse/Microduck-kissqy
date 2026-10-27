@@ -68,3 +68,8 @@ This cleanup verified byte identity with V167 bundled firmware and all 160 archi
 
 [Firmware source and versions](../microduck-hd1910/firmware/README-R17.en.md) · [Build from source](../microduck-hd1910/docs/BUILD.en.md) · [Component licenses](../microduck-hd1910/LICENSE)
 
+## Software and policy licenses
+
+Original consoles/tools and self-trained models explicitly covered by personal noncommercial terms are limited to that scope; commercial/organizational use requires prior written permission. Runtime firmware and dependencies retain their original licenses. See [software/model rights](../microduck-hd1910/docs/SOFTWARE-MODEL-RIGHTS.en.md) and [model provenance](../microduck-hd1910/docs/MODEL-PROVENANCE.en.md).
+
+This updates repository/download-page documentation without repacking the ZIPs, payload or image, or changing program/weight bytes. Inspect notices actually contained in each historical package; previously valid grants remain effective.

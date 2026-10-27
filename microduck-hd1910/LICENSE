@@ -9,9 +9,16 @@ Microduck HD1910 — 许可范围 / License Scope
    - 本仓库新增的 README.md、docs/、tools/ 发布资料与工具；
    - firmware/policies/ 中由作者自训练并有权授权的权重及自有记录。
 
+   自训策略、运行固件和三维模型分别处理。其他发布副本、packaging/models/
+   与 packaging/roller/ 中的模型及来源记录，按其具体声明、来源和此前
+   有效授权确认，不仅凭所在目录或训练框架的许可证判定全部权重许可。
+   逐模型清单：docs/MODEL-PROVENANCE.md（英文 .en.md）。
+
 2. 明确排除于个人条款之外的内容：
    - firmware/ 的原固件/Rust工作区及相关上游代码，继续依 firmware/LICENSE
      和 Cargo.toml 声明的 Apache-2.0 使用；不把整份固件改为禁止商用。
+   - firmware/packaging/ 已有 Apache 声明的软件与部署内容，以及 FT6 IMU
+     软件的现有许可、ST 驱动版权头；硬件设计许可不自动改变软件许可。
    - firmware/console/static/vendor/、static/assets/、licenses/、updates/；
    - training-console/training/_vendor/、training/hd1910_m6.json、
      training/hd1910_actuator.py、data/ 中的上游参数/配置和 docs/licenses/；
@@ -27,7 +34,12 @@ Microduck HD1910 — 许可范围 / License Scope
    申请授权请联系本仓库维护者；维护者只能授权其拥有的权利。
 
 5. 本仓库不是 OSI 定义下统一采用自由开源许可的项目。请对外使用
-   “源码公开 / Source-available，原创部分仅限个人非商业”这一表述。
+   “源码公开、分项许可；明确适用个人非商业条款的原创部分限个人非商业
+   使用，商业及组织用途须书面授权；其余内容按各自许可”这一表述。
+
+6. 软件逐项范围、作者训练贡献、使用情形与旧发布包说明：
+   docs/SOFTWARE-MODEL-RIGHTS.md（英文 .en.md）。原创贡献与第三方义务
+   分别判断，不主张对通用算法、动作概念、接口或全部模型数值的排他权。
 
 English: This is a mixed-license repository. Personal non-commercial terms
 apply only to the authors' own, separately licensable original material in
@@ -35,3 +47,8 @@ the scopes above. The firmware Rust workspace remains Apache-2.0. Third-party
 code, configurations, drivers, dependencies, models and assets retain their
 original licenses. No third-party or previously granted rights are revoked.
 See LICENSES/Personal-NonCommercial.txt and docs/THIRD-PARTY.md.
+
+Existing Apache declarations for packaging software and existing FT6 software
+terms remain. Policy weights and geometry are separate from software; consult
+docs/SOFTWARE-MODEL-RIGHTS.en.md and docs/MODEL-PROVENANCE.en.md for model-specific
+sources, recorded training relationships, prior grants and release limitations.
