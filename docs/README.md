@@ -6,14 +6,14 @@
 
 ## 从预算到第一次行走
 
-日常使用直接采用发布包里的现成动作模型和机器人中控，无须自己训练。按当前进度进入：
+正常复刻只需前三步，使用配套现成动作模型和机器人中控，**无需训练**。第④项为可选进阶，仅供想自训新动作或学习训练流程时探索。按当前进度进入：
 
 | 步骤 | 直接入口 |
 | --- | --- |
-| **01 · 我要花多少钱？** | [先看方案总额，再看费用明细](https://kissqy.github.io/Microduck-kissqy/build/budget.html) |
-| **02 · 我要买什么？** | [规格、数量、购买链接与采购勾选](https://kissqy.github.io/Microduck-kissqy/build/shopping.html) |
-| **03 · 我要怎么装？** | [分步装配、接线与 3D 参考](https://kissqy.github.io/Microduck-kissqy/build/assembly.html) |
-| **04 · 我要让鸭子走起来** | [刷机、配网、标定、HOME 与行走](https://kissqy.github.io/Microduck-kissqy/build/start.html) |
+| **01 · 预算与采购** | [方案总额与采购入口](https://kissqy.github.io/Microduck-kissqy/build/budget.html) · [详细采购清单](https://kissqy.github.io/Microduck-kissqy/build/shopping.html) |
+| **02 · 我要怎么装？** | [分步装配、接线与 3D 参考](https://kissqy.github.io/Microduck-kissqy/build/assembly.html) |
+| **03 · 我要让鸭子走起来** | [刷机、配网、标定、HOME 与行走](https://kissqy.github.io/Microduck-kissqy/build/start.html) |
+| **04 · 进阶玩法（可选）** | [仅在想自训新动作或学习训练流程时进入](https://kissqy.github.io/Microduck-kissqy/build/advanced.html) |
 
 [新手路线总入口](https://kissqy.github.io/Microduck-kissqy/build/) · [中控图文使用教程](https://kissqy.github.io/Microduck-kissqy/console-guide.html)
 
@@ -64,7 +64,7 @@
 
 ## Advanced / 进阶：训练自己的动作
 
-已经能稳定行走后，再按需探索训练。普通操作使用现成模型和机器人中控。
+**正常复刻与日常使用无需训练。** 只有想自己训练新动作或学习训练流程时，再进入可选的进阶玩法。
 
 | 说明 | 中文 | English |
 | --- | --- | --- |

@@ -6,16 +6,16 @@
 
 从零件到一只会走路、会翻跟头的小鸭。基于 [Pollen Robotics Microduck](https://github.com/pollen-robotics/microduck) 完成飞特 HD1910 实机复刻，提供**系统镜像、中文机器人中控、自制 HAT／IMU 与全套 3D 打印件**。
 
-**配套现成动作模型，装好、刷机并完成本机标定后即可体验，无须自己训练。**
+**正常复刻无需训练。配套现成动作模型，装好、刷机并完成本机标定后即可体验。**
 
 <table>
   <tr>
-    <td width="50%" align="left"><a href="https://kissqy.github.io/Microduck-kissqy/build/budget.html"><b>① 我要花多少钱？</b></a><br>先看各方案参考总额，再看费用明细。</td>
-    <td width="50%" align="left"><a href="https://kissqy.github.io/Microduck-kissqy/build/shopping.html"><b>② 我要买什么？</b></a><br>按规格、数量和链接，准备采购清单。</td>
+    <td width="50%" align="left"><a href="https://kissqy.github.io/Microduck-kissqy/build/budget.html"><b>① 我要花多少钱、买什么？</b></a><br>先选预算方案，再按对应清单备齐零件。</td>
+    <td width="50%" align="left"><a href="https://kissqy.github.io/Microduck-kissqy/build/assembly.html"><b>② 我要怎么装？</b></a><br>部位装配、3D 结构与端子接线。</td>
   </tr>
   <tr>
-    <td align="left"><a href="https://kissqy.github.io/Microduck-kissqy/build/assembly.html"><b>③ 我要怎么装？</b></a><br>部位装配、3D 结构与端子接线。</td>
-    <td align="left"><a href="https://kissqy.github.io/Microduck-kissqy/build/start.html"><b>④ 我要让鸭子走起来</b></a><br>刷机、配网、标定，使用现成模型行走。</td>
+    <td align="left"><a href="https://kissqy.github.io/Microduck-kissqy/build/start.html"><b>③ 我要让鸭子走起来</b></a><br>刷机、配网、标定，使用现成模型行走。</td>
+    <td align="left"><a href="https://kissqy.github.io/Microduck-kissqy/build/advanced.html"><b>④ 进阶玩法（可选）</b></a><br><b>正常复刻无需训练。</b>想自训新动作或学习训练流程时，再进入。</td>
   </tr>
 </table>
 
@@ -53,11 +53,11 @@
 
 **系统镜像 R1 已通过刷卡实测**，预装官方系统、本项目机器人服务和运动模型。刷入 Radxa ZERO 3W、连接 Wi-Fi 后即可打开中文中控，无须自行编译固件。
 
-## 🧭 一条完整制作路线
+## 🧭 三步完成复刻
 
-**[看预算](https://kissqy.github.io/Microduck-kissqy/build/budget.html) → [买齐零件](https://kissqy.github.io/Microduck-kissqy/build/shopping.html) → [装配与接线](https://kissqy.github.io/Microduck-kissqy/build/assembly.html) → [让鸭子走起来](https://kissqy.github.io/Microduck-kissqy/build/start.html)**
+**[① 预算与采购](https://kissqy.github.io/Microduck-kissqy/build/budget.html) → [② 装配与接线](https://kissqy.github.io/Microduck-kissqy/build/assembly.html) → [③ 让鸭子走起来](https://kissqy.github.io/Microduck-kissqy/build/start.html)**
 
-每一步先看完整答案，再展开明细；已完成的步骤可以直接跳过。
+完成这三步即可使用配套模型体验已有动作，已完成的步骤可以直接跳过。[进阶玩法](https://kissqy.github.io/Microduck-kissqy/build/advanced.html)供自训新动作或学习训练流程时选用。
 
 ## 下载与版本
 
@@ -93,9 +93,9 @@ HAT 与独立躯干 IMU 由作者自行设计绘制，经长期真机使用与�
 
 明确适用本项目个人非商业条款的原创中控、工具、文档及 HD1910 自训模型，仅供个人学习、研究与非商业使用，商业／组织用途须书面授权；包括作者已按 Apache 发布的适配代码在内，其余内容遵循各自许可。[软件与自训模型权利说明](microduck-hd1910/docs/SOFTWARE-MODEL-RIGHTS.md) · [模型来源清单](microduck-hd1910/docs/MODEL-PROVENANCE.md) · [分项许可](LICENSE) · [个人非商业许可](microduck-hd1910/LICENSES/Personal-NonCommercial.txt) · [第三方说明](microduck-hd1910/docs/THIRD-PARTY.md)
 
-## 🧠 进阶玩法 · 训练自己的动作
+## 🧠 进阶玩法（可选）· 训练自己的动作
 
-已经能稳定使用现成模型后，可以用独立训练中控探索自己的动作：选择任务与配方、观察训练奖励、在仿真中评估，再导出模型进行实机验证。
+**正常复刻和日常使用无需训练，直接使用配套现成模型即可。** 只有想自己训练新动作，或学习强化学习训练流程时，再使用独立训练中控：选择任务与配方、观察训练奖励、在仿真中评估，再导出模型进行实机验证。
 
 [训练中控 R1.5.27 指南](microduck-hd1910/training-console/README.zh-CN.md) · [在线演示](https://kissqy.github.io/Microduck-kissqy/training/) · [下载训练中控](https://github.com/kissqy/Microduck-kissqy/raw/refs/heads/main/release-assets/Microduck-Training-Studio-R1.5.27.zip)
 

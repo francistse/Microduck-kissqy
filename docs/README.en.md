@@ -6,14 +6,14 @@ English editions of the homepage, user guides, hardware records, and technical n
 
 ## From budget to first walking
 
-Use the released motion models and Robot Console for everyday operation. The guided pages below are currently in **Chinese**.
+Normal replication takes the first three steps and uses the supplied motion models and Robot Console. **No training is required.** Entry ④ is optional, only for training new movements or learning the process. The guided pages below are in **Chinese**.
 
 | Step | Direct entry |
 | --- | --- |
-| 01 · How much will it cost? | [Scheme totals and detailed costs](https://kissqy.github.io/Microduck-kissqy/build/budget.html) |
-| 02 · What should I buy? | [Specifications, quantities and purchase checklist](https://kissqy.github.io/Microduck-kissqy/build/shopping.html) |
-| 03 · How do I assemble it? | [Assembly steps, wiring and 3D reference](https://kissqy.github.io/Microduck-kissqy/build/assembly.html) |
-| 04 · How do I make it walk? | [Ready-made models: imaging, network, calibration and walking](https://kissqy.github.io/Microduck-kissqy/build/start.html) |
+| 01 · Budget and shopping | [Scheme totals and purchasing entry](https://kissqy.github.io/Microduck-kissqy/build/budget.html) · [Detailed checklist](https://kissqy.github.io/Microduck-kissqy/build/shopping.html) |
+| 02 · Assembly and wiring | [Assembly steps, wiring and 3D reference](https://kissqy.github.io/Microduck-kissqy/build/assembly.html) |
+| 03 · Make it walk | [Ready-made models: imaging, network, calibration and walking](https://kissqy.github.io/Microduck-kissqy/build/start.html) |
+| 04 · Advanced play (optional) | [Only for training new movements or learning the training process](https://kissqy.github.io/Microduck-kissqy/build/advanced.html) |
 
 [Build-route overview (Chinese)](https://kissqy.github.io/Microduck-kissqy/build/) · [Illustrated console guide (Chinese)](https://kissqy.github.io/Microduck-kissqy/console-guide.html)
 
