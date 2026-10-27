@@ -293,7 +293,7 @@
     },
     {
       "id": "bearings",
-      "name": "结构轴承"
+      "name": "轴承"
     },
     {
       "id": "screws",
@@ -327,12 +327,15 @@
   "optional": [
     {
       "id": "rollers",
-      "name": "滑轮选配轴承 623ZZ",
+      "name": "623ZZ 微型轴承",
       "spec": "623 内 3 外 10 厚 4，参考采购 8 只；普通脚掌首次行走不需要。",
       "quantity": 8,
       "unit": "只",
       "subtotalCents": 1200,
-      "url": "https://item.taobao.com/item.htm?id=618009195719"
+      "url": "https://item.taobao.com/item.htm?id=618009195719",
+      "group": "bearings",
+      "unitQuote": "1.50",
+      "note": "滑轮选配；普通脚掌首次行走不需要，不计入基础采购合计。"
     }
   ],
   "printServiceReferenceCents": 19900,

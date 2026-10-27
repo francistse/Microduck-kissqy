@@ -76,25 +76,33 @@ budget+=f'<section class="panel" id="self-solder"><h2>手工焊的材料与工�
 budget=budget.replace('value="3500"',f'value="{D["printerReferenceCents"]/100:g}"').replace('value="199"',f'value="{D["printServiceReferenceCents"]/100:g}"')
 (OUT/'budget.html').write_text(shell('budget.html','我要花多少钱','切换成品板或手工焊，再比较自己打印、找人代打、买机器自己打的费用，预算与采购清单按方案对应。',budget,0))
 
-def purchase_row(item):
+def purchase_row(item,optional=False):
  spec=E(item['spec']);note=E(item['note'])
- return f'<tr><td class="item-name"><label class="prepared-label"><input type="checkbox" data-prepared="{item["id"]}" aria-label="{E(item["name"],quote=True)} 已备齐"><span><strong>{E(item["name"])}</strong><span class="spec">{spec}<br>{note}</span></span></label></td><td class="quantity" data-label="参考采购量">{item["quantity"]} {E(item["unit"])}</td><td class="amount" data-label="历史单价">¥{E(item["unitQuote"])}</td><td class="amount" data-label="小计">{money(item["subtotalCents"])}</td><td class="buy">'+link(item['url'],'购买 ↗')+'</td></tr>'
+ name=f'<strong>{E(item["name"])}</strong>'
+ if optional:
+  name+=' <span class="badge">滑轮选配</span>'
+  body=name+f'<span class="spec">{spec}<br>{note}</span>'
+ else:
+  body=f'<label class="prepared-label"><input type="checkbox" data-prepared="{item["id"]}" aria-label="{E(item["name"],quote=True)} 已备齐"><span>'+name+f'<span class="spec">{spec}<br>{note}</span></span></label>'
+ anchor=' id="optional"' if optional and item['id']=='rollers' else ''
+ return f'<tr{anchor}><td class="item-name">{body}</td><td class="quantity" data-label="参考采购量">{item["quantity"]} {E(item["unit"])}</td><td class="amount" data-label="历史单价">¥{E(item["unitQuote"])}</td><td class="amount" data-label="小计">{money(item["subtotalCents"])}</td><td class="buy">'+link(item['url'],'购买 ↗')+'</td></tr>'
 
 shop=head('02 / SHOPPING','我要买什么？','下面就是成品板路线的采购清单：按型号、数量和购买入口准备。','完整参考配置 · 含备料')
 shop+='<section class="panel" id="printing-choice" hidden><span class="badge">当前采购路线</span><h2 id="printing-choice-title" style="margin-top:12px"></h2><p id="printing-choice-description"></p><ul id="printing-choice-items"></ul><div class="actions"><a class="btn primary" href="#boards">查看基础零件清单 ↓</a><a class="btn" href="'+FILE+'hardware/3d-print-frankenduck/README.md">查看打印文件与材料说明 ↗</a><a class="btn" id="printing-choice-quote" href="budget.html#calculator">返回预算 →</a></div></section>'
 shop+=f'<div class="summary-bar"><div><small>{QUOTED_COUNT} 项已列价采购参考</small><strong data-base-total>{money(BASE)}</strong><small>整套代打 ¥199 单列，HUB 等待报价项目另计</small></div>'+link('budget.html','返回预算明细','btn')+'</div>'
 shop+=f'<div class="check-status"><span id="prepared-count">0 / {REQUIRED_COUNT} 项已备齐</span><button id="reset-prepared" type="button">重置勾选</button></div><div class="progress" aria-hidden="true"><span id="prepared-bar"></span></div>'
 shop+='<p class="price-note">勾选自己已买到或可复用的物品，进度只保存在这台设备。下表保留作者的历史采购数量，包含整包备料；相同规格的实际装机数量按打印件与走线核对。</p>'
-shop+='<nav class="toc" aria-label="采购分类">'+''.join(link('#'+g['id'],g['name']) for g in D['groups'])+link('#printing-kit','打印件与代打')+link('#unpriced','待补项目')+link('#optional','选配')+'</nav>'
+shop+='<nav class="toc" aria-label="采购分类">'+''.join(link('#'+g['id'],g['name']) for g in D['groups'])+link('#printing-kit','打印件与代打')+link('#unpriced','待补项目')+'</nav>'
 for group in D['groups']:
- shop+=f'<section class="purchase-group" id="{group["id"]}"><h2>{group["name"]} <span class="small">{money(totals[group["id"]])}</span></h2>'
- shop+='<div class="table-wrap"><table class="shopping-table"><thead><tr><th>物品与指定规格</th><th>参考采购量</th><th class="amount">历史单价</th><th class="amount">小计</th><th>购买入口</th></tr></thead><tbody>'+''.join(purchase_row(item) for item in D['boards']+D['items'] if item['group']==group['id'])+'</tbody></table></div></section>'
+ optional_items=[item for item in D['optional'] if item.get('group')==group['id']]
+ subtotal_note='（必选小计，选配另计）' if optional_items else ''
+ shop+=f'<section class="purchase-group" id="{group["id"]}"><h2>{group["name"]} <span class="small">{money(totals[group["id"]])}{subtotal_note}</span></h2>'
+ shop+='<div class="table-wrap"><table class="shopping-table"><thead><tr><th>物品与指定规格</th><th>参考采购量</th><th class="amount">历史单价</th><th class="amount">小计</th><th>购买入口</th></tr></thead><tbody>'+''.join(purchase_row(item) for item in D['boards']+D['items'] if item['group']==group['id'])+''.join(purchase_row(item,True) for item in optional_items)+'</tbody></table></div></section>'
 shop+=printing_panel('printing-kit',True)
 shop+='<section class="panel" id="unpriced"><h2>还要补齐这些项目</h2><p class="small">下面尚无完整报价，没有假设为免费；取得报价后填回预算页。已有并可复用的项目也可以勾选。</p><div class="unpriced-list">'
 for item in D['unpriced']:
  shop+=f'<article class="unpriced-item"><label><input type="checkbox" data-prepared="{item["id"]}"><span>{E(item["name"])}</span></label><p>{E(item["spec"])}</p>'+link(item['url'],'看规格或联系入口 ↗')+'</article>'
 shop+='</div></section>'
-shop+='<section class="panel" id="optional"><h2>选配：装滑轮时再买</h2><p>623ZZ 轴承，款式“623 内3外10厚4”，参考采购 8 只，历史商品小计 ¥12。此项不计入基础采购合计。</p>'+actions(link(D['optional'][0]['url'],'查看滑轮轴承 ↗','btn'),link(FILE+'hardware/3d-print-frankenduck/README.md','查看滑轮与脚掌打印件','btn'))+'</section>'
 shop+=f'<section class="panel" id="diy"><h2>手工焊 HAT／IMU：材料与工具</h2><p>上面的默认清单购买成品板。选择自焊时，去掉成品 HAT／IMU 的 {money(BOARDS)}，改购 PCB 与元件。首批材料参考 {money(D["diyMaterialsMinCents"])}–{money(D["diyMaterialsMaxCents"])}；从零配工具与耗材另预留 {money(D["diyToolsMinCents"])}–{money(D["diyToolsMaxCents"])}，已有设备可复用。</p><p class="small">材料价按首批整包采购计算；还需准备贴装、焊接与 IMU 烧录工具。同一工具或耗材不重复计入预算。</p>'+actions(link(FILE+'hardware/README.md#采购清单','PCB 详细 BOM 与采购表 ↗','btn primary'),link(FILE+'docs/BUILD-TOOLS.md','焊接工具与耗材 ↗','btn'),link(FILE+'hardware/IMU-FIRMWARE.md','自焊 IMU 烧录指南 ↗','btn'),link('budget.html#self-solder','返回自焊总价 →','btn'))+'</section>'
 shop+='<section class="panel"><h2>准备好了再开始装</h2><p>确认打印件、舵机、主控、HAT／IMU、电池接入、轴承螺丝和匹配线材都已到手。按电池仓方案补齐 HUB。</p><p class="small">未勾选的已列价项目参考合计：<strong id="remaining-total">'+money(BASE)+'</strong>；待报价项目另计。</p>'+actions('<button class="btn" id="print-list" type="button">打印这份清单</button>')+'</section>'+next_page(1)
 (OUT/'shopping.html').write_text(shell('shopping.html','我要买什么','Microduck 成品板路线的完整参考采购清单：型号、数量、价格、购买链接和待补项目。',shop,1))
