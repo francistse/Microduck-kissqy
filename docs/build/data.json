@@ -1,7 +1,7 @@
 {
   "currency": "CNY",
-  "reviewed": "2026-10-27",
-  "priceBasis": "作者历史采购记录、成品板与缝合怪版代打定价，以及补充的京东 TF 卡与读卡器报价；商品价格以下单时为准。",
+  "reviewed": "2026-10-28",
+  "priceBasis": "作者历史采购记录、成品板与缝合怪版代打定价，以及补充的京东 TF 卡与读卡器报价、作者更新的双头反向舵机线单价；商品价格以下单时为准。",
   "items": [
     {
       "id": "part-01",
@@ -221,24 +221,24 @@
     },
     {
       "id": "part-20",
-      "name": "AMP2.0 3P 舵机线 20cm",
-      "spec": "200mm;1007/24#;3P;AMP2.0；200mm / 1007 / 24AWG / 3P / AMP2.0",
+      "name": "AMP2.0 3P 舵机线 20cm（双头反向）",
+      "spec": "200mm;1007/24#;3P;AMP2.0；200mm / 1007 / 24AWG / 3P / AMP2.0 / 双头反向",
       "unit": "条",
       "quantity": 30,
-      "unitQuote": "0.90",
-      "subtotalCents": 2700,
+      "unitQuote": "1.50",
+      "subtotalCents": 4500,
       "group": "wiring",
       "url": "https://item.taobao.com/item.htm?id=825340808235",
       "note": "历史采购数量含备料，10 cm／20 cm 按走线长度使用。"
     },
     {
       "id": "part-21",
-      "name": "AMP2.0 3P 舵机线 10cm",
-      "spec": "100mm;1007/24#;3P;AMP2.0；100mm / 1007 / 24AWG / 3P / AMP2.0",
+      "name": "AMP2.0 3P 舵机线 10cm（双头反向）",
+      "spec": "100mm;1007/24#;3P;AMP2.0；100mm / 1007 / 24AWG / 3P / AMP2.0 / 双头反向",
       "unit": "条",
       "quantity": 30,
-      "unitQuote": "0.90",
-      "subtotalCents": 2700,
+      "unitQuote": "1.50",
+      "subtotalCents": 4500,
       "group": "wiring",
       "url": "https://item.taobao.com/item.htm?id=825340808235",
       "note": "历史采购数量含备料，并非装机必须各用 30 条。"

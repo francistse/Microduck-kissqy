@@ -4,7 +4,7 @@
 
 [🏠 Project homepage](README.en.md)
 
-**Assembled-board reference subtotal: CNY 2787.80**, including the 32GB microSD card and card reader, before printing. The complete FrankenDuck printing service is listed at CNY 199, making the assembled-board plus printing reference subtotal **CNY 2986.80**. Unpriced HUB / battery-connection parts and shipping are extra.
+**Assembled-board reference subtotal: CNY 2823.80**, including the 32GB microSD card and card reader, before printing. The complete FrankenDuck printing service is listed at CNY 199, making the assembled-board plus printing reference subtotal **CNY 3022.80**. Unpriced HUB / battery-connection parts and shipping are extra.
 
 **[Open the shopping checklist (Chinese) →](https://kissqy.github.io/Microduck-kissqy/build/shopping.html)** · [Compare budget totals (Chinese)](https://kissqy.github.io/Microduck-kissqy/build/budget.html)
 
@@ -16,14 +16,14 @@ The online pages show totals first, then specifications, quantities and purchase
 
 | Item | Buy assembled boards | DIY boards, including tools |
 | --- | ---: | ---: |
-| Duck body, including gamepad and reference spare stock | ¥2569.80 | ¥2569.80 |
+| Duck body, including gamepad and reference spare stock | ¥2605.80 | ¥2605.80 |
 | HAT + IMU | [HAT ¥119 + IMU ¥99](https://item.taobao.com/item.htm?id=1095121548583) | ¥94.22–134.22 · first component purchase |
 | Soldering / programming tools and consumables | No board-soldering tools; assembled IMU has FT6 preflashed | ¥800–1000 |
-| **Total without a printer** | **¥2787.80** | **¥3464.02–3704.02** |
+| **Total without a printer** | **¥2823.80** | **¥3500.02–3740.02** |
 | 3D printer allowance | +¥3500 | +¥3500 |
-| **Total including a printer** | **¥6287.80** | **¥6964.02–7204.02** |
+| **Total including a printer** | **¥6323.80** | **¥7000.02–7240.02** |
 
-**For the FrankenDuck printing service, add CNY 199: assembled boards CNY 2986.80; DIY boards with existing tools CNY 2863.02–2903.02; DIY boards with new tools CNY 3663.02–3903.02.** No printer purchase is needed. [Edition features and printing instructions](hardware/3d-print-frankenduck/README.en.md).
+**For the FrankenDuck printing service, add CNY 199: assembled boards CNY 3022.80; DIY boards with existing tools CNY 2899.02–2939.02; DIY boards with new tools CNY 3699.02–3939.02.** No printer purchase is needed. [Edition features and printing instructions](hardware/3d-print-frankenduck/README.en.md).
 
 - **The base table excludes printed parts or filament; the printing-service subtotals include CNY 199. Robot-assembly labor, a computer, unpriced HUB / battery-connection parts, new-order shipping and losses are extra.** The body includes 15 HD1910 servos at ¥119 each; the microSD card and card reader are priced and included.
 - The HUB includes the main-power buffer capacitor. Do not buy or budget for a separate capacitor.
@@ -33,7 +33,7 @@ The author supplied reference prices for the EAGET 32GB monitoring / dashcam mic
 
 ## Duck body
 
-**Choose ready-made cables matching the assembled HAT / IMU connectors. Feetech HD1910 servos use AMP2.0 3P servo cables; select matching ready-made adapter cables for peripheral modules.** See the [board connector guide](hardware/AMP2.0-VERSION.en.md) for details.
+**Choose ready-made cables matching the assembled HAT / IMU connectors. Feetech HD1910 servos use AMP2.0 3P double-ended cables with reversed connector orientation (双头反向), at CNY 1.50 each; select matching ready-made adapter cables for peripheral modules.** See the [board connector guide](hardware/AMP2.0-VERSION.en.md) for details.
 
 ### 🦆 Controller, servos and external modules
 
@@ -75,8 +75,8 @@ The author supplied reference prices for the EAGET 32GB monitoring / dashcam mic
 | Item / exact variant | Unit | Reference quantity | Historical unit price | Subtotal | Shop / link |
 | --- | --- | ---: | ---: | ---: | --- |
 | **SH1.0 4P 转杜邦母线**<br>0.2m;1.0-4P转杜邦母（5条）；SH1.0 4P / 20cm / 杜邦母 | 包（5个） | 1 | ¥4.56 | ¥4.56 | 信容芯旗舰店<br>[Product](https://item.taobao.com/item.htm?id=895049863252) |
-| **AMP2.0 3P 舵机线 20cm**<br>200mm;1007/24#;3P;AMP2.0；200mm / 1007 / 24AWG / 3P / AMP2.0 | 条 | 30 | ¥0.90 | ¥27.00 | 永茂电子<br>[Product](https://item.taobao.com/item.htm?id=825340808235) |
-| **AMP2.0 3P 舵机线 10cm**<br>100mm;1007/24#;3P;AMP2.0；100mm / 1007 / 24AWG / 3P / AMP2.0 | 条 | 30 | ¥0.90 | ¥27.00 | 永茂电子<br>[Product](https://item.taobao.com/item.htm?id=825340808235) |
+| **AMP2.0 3P 舵机线 20cm（双头反向）**<br>200mm;1007/24#;3P;AMP2.0；200mm / 1007 / 24AWG / 3P / AMP2.0 | 条 | 30 | ¥1.50 | ¥45.00 | 永茂电子<br>[Product](https://item.taobao.com/item.htm?id=825340808235) |
+| **AMP2.0 3P 舵机线 10cm（双头反向）**<br>100mm;1007/24#;3P;AMP2.0；100mm / 1007 / 24AWG / 3P / AMP2.0 | 条 | 30 | ¥1.50 | ¥45.00 | 永茂电子<br>[Product](https://item.taobao.com/item.htm?id=825340808235) |
 | **彩色热缩管套装**<br>袋装 164片 彩色 【2倍收缩】；164片 / 彩色 / 2倍收缩 | 个 | 1 | ¥0.99 | ¥0.99 | 圣佰路旗舰店<br>[Product](https://item.taobao.com/item.htm?id=945215173380) |
 
 NP-F550 is the original 2200mAh kit with two batteries and a standard dual charger. The M2×5 screws had a historical ¥0 promotional amount; this is not a regular selling price.
@@ -100,8 +100,8 @@ NP-F550 is the original 2200mAh kit with two batteries and a standard dual charg
 - **M2×12 十字盘头平尾自攻螺丝**：每种买1包（200只），包含备料；按打印模型及对应安装位置选择长度；每包数量是备料数量。
 - **M2.6×8 十字盘头平尾自攻螺丝**：每种买1包（200只），包含备料；按打印模型及对应安装位置选择长度；每包数量是备料数量。
 - **SH1.0 4P 转杜邦母线**：用于外部接口转接；每根线的脚序按 HAT J5 与模块核对，不按线色猜。
-- **AMP2.0 3P 舵机线 20cm**：按订单参考采购数量计入，包含备料；用于飞特舵机线束；10cm和20cm按实际走线位置选择。
-- **AMP2.0 3P 舵机线 10cm**：按订单参考采购数量计入，包含备料；与20cm线是不同长度选项，数量按实际线束方案准备。
+- **AMP2.0 3P 舵机线 20cm（双头反向）**：按订单参考采购数量计入，包含备料；用于飞特舵机线束；10cm和20cm按实际走线位置选择。
+- **AMP2.0 3P 舵机线 10cm（双头反向）**：按订单参考采购数量计入，包含备料；与20cm线是不同长度选项，数量按实际线束方案准备。
 - **彩色热缩管套装**：用于接线处绝缘及整理。
 
 </details>
